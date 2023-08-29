@@ -740,13 +740,13 @@
                         <h2 class="text-base font-semibold leading-7 text-gray-900">Hace parte de un grupo de investigación de SENNOVA </h2>
                         <div class="mt-6 space-y-6">
                             <div class="flex items-center gap-x-3">
-                                <input id="sennova_si" value="sennova_si" name="parte_sennova" type="radio"
+                                <input id="sennova_si" value="si" name="parte_sennova" type="radio"
                                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                 <label for="sennova_si"
                                     class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                             </div>
                             <div class="flex items-center gap-x-3">
-                                <input id="sennova_no" value="sennova_no" name="parte_sennova" type="radio"
+                                <input id="sennova_no" value="no" name="parte_sennova" type="radio"
                                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                 <label for="sennova_no"
                                     class="block text-sm font-medium leading-6 text-gray-900">No</label>
@@ -808,13 +808,13 @@
                         <h2 class="text-base font-semibold leading-7 text-gray-900">El grupo cuenta con un Semillero de Investigación </h2>
                         <div class="mt-6 space-y-6">
                             <div class="flex items-center gap-x-3">
-                                <input id="semillero_senova_si" value="semillero_senova_si" name="sennova_semillero_investigacion" type="radio"
+                                <input id="semillero_senova_si" value="si" name="sennova_semillero_investigacion" type="radio"
                                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                 <label for="semillero_senova_si"
                                     class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                             </div>
                             <div class="flex items-center gap-x-3">
-                                <input id="semillero_sennova_no" value="semillero_sennova_no" name="sennova_semillero_investigacion" type="radio"
+                                <input id="semillero_sennova_no" value="no" name="sennova_semillero_investigacion" type="radio"
                                     class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                 <label for="semillero_sennova_no"
                                     class="block text-sm font-medium leading-6 text-gray-900">No</label>
@@ -861,13 +861,13 @@
                     <h2 class="text-base font-semibold leading-7 text-gray-900">En la actualidad tiene una idea con capacidad de convertirse en un producto o un prototipo </h2>
 
                         <div class="flex items-center gap-x-3">
-                            <input id="investigador_idea_capacidad_producto_si" value="investigador_idea_capacidad_producto_si" name="investigador_idea_capacidad_producto" type="radio"
+                            <input id="investigador_idea_capacidad_producto_si" value="si" name="investigador_idea_capacidad_producto" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             <label for="investigador_idea_capacidad_producto_si"
                                 class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                         </div>
                         <div class="flex items-center gap-x-3">
-                            <input id="investigador_idea_capacidad_producto_no" value="investigador_idea_capacidad_producto_no" name="investigador_idea_capacidad_producto" type="radio"
+                            <input id="investigador_idea_capacidad_producto_no" value="no" name="investigador_idea_capacidad_producto" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             <label for="investigador_idea_capacidad_producto_no"
                                 class="block text-sm font-medium leading-6 text-gray-900">No</label>
@@ -1106,13 +1106,13 @@
                             </h2>
                             <div class="mt-6 space-y-6">
                                 <div class="flex items-center gap-x-3">
-                                    <input id="empresa_innovacion_desarrollo_producto_si" value="empresa_innovacion_desarrollo_producto_si" name="empresa_innovacion_desarrollo_producto" type="radio"
+                                    <input id="empresa_innovacion_desarrollo_producto_si" value="si" name="empresa_innovacion_desarrollo_producto" type="radio"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     <label for="empresa_innovacion_desarrollo_producto_si"
                                         class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="empresa_innovacion_desarrollo_producto_no" value="empresa_innovacion_desarrollo_producto_no" name="empresa_innovacion_desarrollo_producto" type="radio"
+                                    <input id="empresa_innovacion_desarrollo_producto_no" value="no" name="empresa_innovacion_desarrollo_producto" type="radio"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     <label for="empresa_innovacion_desarrollo_producto_no"
                                         class="block text-sm font-medium leading-6 text-gray-900">No</label>
@@ -1126,13 +1126,13 @@
                             </h2>
                             <div class="mt-6 space-y-6">
                                 <div class="flex items-center gap-x-3">
-                                    <input id="empresa_proyecto_desarrollo_avances_requiere_prototipos_si" name="empresa_proyecto_desarrollo_avances_requiere_prototipos" value="empresa_proyecto_desarrollo_avances_requiere_prototipos_si" type="radio"
+                                    <input id="empresa_proyecto_desarrollo_avances_requiere_prototipos_si" name="empresa_proyecto_desarrollo_avances_requiere_prototipos" value="si" type="radio"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     <label for="empresa_proyecto_desarrollo_avances_requiere_prototipos_si"
                                         class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                                 </div>
                                 <div class="flex items-center gap-x-3">
-                                    <input id="empresa_proyecto_desarrollo_avances_requiere_prototipos_no" name="empresa_proyecto_desarrollo_avances_requiere_prototipos" value="empresa_proyecto_desarrollo_avances_requiere_prototipos_no" type="radio"
+                                    <input id="empresa_proyecto_desarrollo_avances_requiere_prototipos_no" name="empresa_proyecto_desarrollo_avances_requiere_prototipos" value="no" type="radio"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     <label for="empresa_proyecto_desarrollo_avances_requiere_prototipos_no"
                                         class="block text-sm font-medium leading-6 text-gray-900">No</label>
@@ -1321,7 +1321,7 @@
                                 </li>
                                 <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                                     <div class="flex items-center pl-3">
-                                        <input id="producto_servicio_desarrollado_desplegado" type="radio" value="" name="producto_servicio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                        <input id="producto_servicio_desarrollado_desplegado" type="radio" value="producto_servicio_desarrollado_desplegado" name="producto_servicio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                         <label for="producto_servicio_desarrollado_desplegado" class="w-full py-3 ml-2 text-sm font-medium text-black">Desarrollado y desplegado actualmente con ventas en el mercado Producto o Servicio </label>
                                     </div>
                                 </li>
@@ -1391,14 +1391,14 @@
                             <div class="mt-6 space-y-6">
 
                                 <div class="flex items-center gap-x-3">
-                                    <input id="idea_genera_ventas_permanentes_si" value="idea_genera_ventas_permanentes_si" name="idea_genera_ventas" type="radio"
+                                    <input id="idea_genera_ventas_permanentes_si" value="si" name="idea_genera_ventas" type="radio"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     <label for="idea_genera_ventas_permanentes_si"
                                         class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                                 </div>
 
                                 <div class="flex items-center gap-x-3">
-                                    <input id="idea_genera_ventas_permanentes_no" value="idea_genera_ventas_permanentes_no" name="idea_genera_ventas" type="radio"
+                                    <input id="idea_genera_ventas_permanentes_no" value="no" name="idea_genera_ventas" type="radio"
                                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                     <label for="idea_genera_ventas_permanentes_no"
                                         class="block text-sm font-medium leading-6 text-gray-900">No</label>
@@ -1784,37 +1784,31 @@
                             </legend>
                                 <div class="mt-6 space-y-6">
                                     <div class="flex items-center gap-x-3">
-                                        <input id="conocimientos_lineas_seleccionada_no" name="conocimientos_lineas_seleccionada" value="" type="radio"
+                                        <input id="conocimientos_lineas_seleccionada_no" name="conocimientos_lineas_seleccionada" value="no" type="radio"
                                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="conocimientos_lineas_seleccionada_no"
                                             class="block text-sm font-medium leading-6 text-gray-900">No</label>
                                     </div>
                                     <div class="flex items-center gap-x-3">
-                                        <input id="conocimientos_lineas_seleccionada_basico" value="" name="conocimientos_lineas_seleccionada"
+                                        <input id="conocimientos_lineas_seleccionada_basico" value="basico" name="conocimientos_lineas_seleccionada"
                                             type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="conocimientos_lineas_seleccionada_basico"
                                             class="block text-sm font-medium leading-6 text-gray-900">Basico
                                         </label>
                                     </div>
                                     <div class="flex items-center gap-x-3">
-                                        <input id="conocimientos_lineas_seleccionada_medio" value="" name="conocimientos_lineas_seleccionada" type="radio"
+                                        <input id="conocimientos_lineas_seleccionada_medio" value="medio" name="conocimientos_lineas_seleccionada" type="radio"
                                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="conocimientos_lineas_seleccionada_medio"
                                             class="block text-sm font-medium leading-6 text-gray-900">Medio
                                         </label>
                                     </div>
                                     <div class="flex items-center gap-x-3">
-                                        <input id="conocimientos_lineas_seleccionada_avanzado" value="" name="conocimientos_lineas_seleccionada" type="radio"
+                                        <input id="conocimientos_lineas_seleccionada_avanzado" value="avanzados" name="conocimientos_lineas_seleccionada" type="radio"
                                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         <label for="conocimientos_lineas_seleccionada_avanzado"
                                             class="block text-sm font-medium leading-6 text-gray-900">Avanzados
                                         </label>
-                                    </div>
-                                    <div class="flex items-center gap-x-3">
-                                        <label for=""
-                                            class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
-                                        <input type="text" name="conocimientos_lineas_seleccionada" id="" autocomplete=""
-                                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
                               </div>
                         </fieldset>

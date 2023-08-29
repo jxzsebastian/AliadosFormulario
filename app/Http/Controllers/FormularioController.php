@@ -18,7 +18,7 @@ class FormularioController extends Controller
         $hub_innovacion = $this->obtenerValorCampo($request, 'hub_innovacion_servicios', 'otro_hub_innovacion_servicios');
         $linea_tecnologias_hub = $this->obtenerValorCampo($request, 'linea_tecnologica_hub', 'otro_linea_tecnologica_hub'); //Ver array
         $tecnoparque_postulado = $this->obtenerValorCampo($request, 'tecnoparque_postulado', 'otro_tecnoparque_postulado');
-        dd($request->except(null));
+        dd($request->all());
 
         dd($ocupacion, $empleado, $tipo_usuario, $nivel_proyecto_empresa, $centro_formacion_servicios, $hub_innovacion, $linea_tecnologias_hub, $tecnoparque_postulado);
 
