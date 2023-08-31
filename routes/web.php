@@ -16,7 +16,9 @@ use App\Http\Controllers\FormularioController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('wizard', function () {
+    return view('default');
+});
 Route::get('default/', function () {
     return view('home');
 });
