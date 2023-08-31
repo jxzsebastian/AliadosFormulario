@@ -3,7 +3,7 @@
 @section('title', 'Home Page')
 
 @section('content')
-    <h1>lista</h1>
+    <h1>Lista</h1>
     {{-- <ul>
         @foreach ($formulario as $formulario)
             <li>
