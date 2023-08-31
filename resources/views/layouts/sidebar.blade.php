@@ -31,7 +31,7 @@
                     x-show="profileOpen" x-transition>
                     <div class="flex items-center space-x-2 p-2">
                         <img src="https://plchldr.co/i/40x40?bg=111111" alt="plchldr.co" class="h-9 w-9 rounded-full" />
-                        <div class="font-medium">Hafiz Haziq</div>
+                        <div class="font-medium">Negrito Feliz :).</div>
                     </div>
 
                     <div class="flex flex-col space-y-3 p-2">
