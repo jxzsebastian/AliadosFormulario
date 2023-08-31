@@ -23,3 +23,6 @@ Route::get('default/', function () {
 Route::controller(FormularioController::class)->group(function () {
     Route::post('/default', 'store')->name('formulario-store');
 });
+
+Route::get('lista',[FormularioController::class,'index'])->name('lista.index');;
+Route::get('lista/{id}',[FormularioController::class,'show'])->name('lista.show');
