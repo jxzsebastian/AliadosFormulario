@@ -122,8 +122,7 @@ class Formulario extends Component
             $otro_nivel_proyecto_empresa;
     //
     public $successMessage = '';
-
-
+    public $formProgress = [];
 
     public function render()
     {
@@ -132,66 +131,80 @@ class Formulario extends Component
 
     public function pasoPrimeroInformacionUsuario()
     {
-        /*         $validatedData = $this->validate([
+        $validatedData = $this->validate([
             'nombre_emprendedor' => 'required',
             'numero_contacto_emprendedor' => 'required',
-            'correo_emprendedor' => 'required',
+            'correo_emprendedor' => 'email',
             'identificacion_emprendedor' => 'required',
             'tipo_identificacion_emprendedor' => 'required',
             'ciudad_municipio_emprendedor' => 'required',
-        ]); */
+        ]);
+
+        if (!in_array($this->currentStep, $this->formProgress)) {
+            $this->formProgress[] = $this->currentStep;
+        }
 
         $this->currentStep = 2;
+
+
     }
 
     public function pasoSegundoOcupacionEscolaridad()
     {
+        $validatedData = $this->validate([
+            'ocupacion' => 'required',
+            'niveles_educacion_emprendedor' => 'required',
+        ]);
 
-        /*
-                $validatedData = $this->validate([
-                    'ocupacion' => 'required',
-                    'niveles_educacion_emprendedor' => 'required',
-                ]); */
         $this->ocupacion = $this->obtenerValorCampo($this->ocupacion, $this->ocupacion, $this->otra_ocupacion);
-
-
+        $this->formProgress[] = $this->currentStep;
         switch ($this->ocupacion) {
             case 'empleado':
                 $this->currentStep = 3; //Formulario Empleado
                 break;
             case 'trabajador_independiente':
                 $this->currentStep = 4; //Tipo de Usuario
+
                 break;
             case 'egresado_sena':
                 $this->currentStep = 18; //Formulario Egresado Sena y Aprendiz
+
                 break;
             case 'aprendiz_sena':
                 $this->currentStep = 18; //Formulario Egresado Sena y Aprendiz
+
                 break;
             case 'estudiante_universitario':
                 $this->currentStep = 4; //Tipo de Usuario
+
                 break;
             case 'instructor_sena':
                 $this->currentStep = 19; //Formulario Instructor SENA
+
                 break;
             case 'investigador_universidad':
                 $this->currentStep = 22; //Formulario Investigador Universidad
+
                 break;
             default:
                 $this->currentStep = 4; //Tipo de Usuario
                 break;
-
         }
+        session(['formProgress' => $this->formProgress]);
+
 
     }
 
     public function pasoSiOcupacionEmpleado()
     {
-        /*         $validatedData = $this->validate([
+        $validatedData = $this->validate([
             'empleado_idea_negocio' => 'required',
-        ]); */
+        ]);
+
         $this->empleado_idea_negocio = $this->obtenerValorCampo($this->empleado_idea_negocio, $this->empleado_idea_negocio, $this->otro_idea_negocio);
-        #, proyecto_empresa_empleado
+
+        // Declaras $this->formProgress fuera del switch
+        $this->formProgress[] = $this->currentStep;
 
         switch ($this->empleado_idea_negocio) {
             case 'proyecto_propio_idea':
@@ -204,6 +217,10 @@ class Formulario extends Component
                 dd($this->empleado_idea_negocio);
                 break;
         }
+
+        // Declaras $this->formProgress fuera del switch
+        $this->formProgress[] = $this->currentStep;
+        dd($this->formProgress,  $this->currentStep);
 
     }
 
@@ -478,9 +495,19 @@ class Formulario extends Component
      *
      * @return response()
      */
-    public function back($step)
+    public function back()
     {
-        $this->currentStep = $step;
+
+        if (!empty($this->formProgress)) {
+            // Si no estás en el primer paso
+            if ($this->currentStep > 1) {
+                // Elimina el último paso del registro
+                $this->currentStep = end($this->formProgress);
+                array_pop($this->formProgress);
+
+            }
+
+        }
     }
 
     /**

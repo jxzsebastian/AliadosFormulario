@@ -211,7 +211,7 @@
                     class="block text-sm font-medium leading-6 text-gray-900">Ciudad o Municipio donde esta
                     ubicado</label>
                 <div class="mt-2">
-                    <input id="text" type="" wire:model="ciudad_municipio_emprendedor"
+                    <input id="ciudad_municipio_emprendedor" type="text" wire:model="ciudad_municipio_emprendedor"
                         autocomplete="ciudad_municipio_emprendedor"
                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     @error('ciudad_municipio_emprendedor')
@@ -525,7 +525,7 @@
                 </div>
             </fieldset>
             <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
-                wire:click="back(2)">Volver</button>
+                wire:click="back()">Volver</button>
             <button type="submit"
                 class="rounded-md bg-indigo-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 wire:click="pasoSiOcupacionEmpleado">Siguiente</button>
@@ -1856,7 +1856,7 @@
                     </div>
             </fieldset>
             {{-- interés emprendedor se da por --}}
-            <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900" wire:click="back(1)">Volver</button>
+            <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900" wire:click="back()">Volver</button>
             <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" wire:click="pasoSiAprendizEgresadoSENA">Siguiente</button>
         </div>
     </div>
@@ -2013,7 +2013,7 @@
                     </div>
                 </div>
             </fieldset>
-            <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900" wire:click="back(1)">Volver</button>
+            <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900" wire:click="back()">Volver</button>
             <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" wire:click="pasoSiInstructorSENA">Siguiente</button>
 
         </div>
@@ -2085,7 +2085,7 @@
                 </div>
             </fieldset>
 
-            <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900" wire:click="back(1)">Volver</button>
+            <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900" wire:click="back()">Volver</button>
             <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" wire:click="pasoSiInstructorSENNOVA">Siguiente</button>
         </div>
     </div>
@@ -2187,7 +2187,7 @@
                     </div>
                 </div>
             </fieldset>
-            <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900" wire:click="back(1)">Volver</button>
+            <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900" wire:click="back()">Volver</button>
             <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" wire:click="pasoSiInvestigadorUniversidad">Siguiente</button>
         </div>
 
@@ -2251,7 +2251,7 @@
     {{-- Nivel del Proyecto de Empresa --}}
 
     {{-- Final --}}
-    <div class=" {{ $currentStep != 4 ? 'displayNone' : '' }}" id="step-4">
+    <div class=" {{ $currentStep != 24 ? 'displayNone' : '' }}" id="step-24">
 
         <table class="" id="step-26">
             <h3>Datos ingresados</h3>
