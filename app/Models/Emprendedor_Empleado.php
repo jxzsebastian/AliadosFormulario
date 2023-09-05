@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Emprendedor_Empleado extends Model
 {
     use HasFactory;
+    protected $table = 'emprendedor_empleado';
     protected $fillable = [
-        'name', 'amount', 'description', 'status', 'stock'
-    ];
-
+        'empleado_idea_negocio',
+        'emprendedor_id',
+];
 }
