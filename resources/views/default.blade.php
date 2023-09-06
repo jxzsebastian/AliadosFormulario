@@ -16,12 +16,22 @@
 
     @livewireScripts
     <script>
-        document.addEventListener('livewire:load', function () {
-            Livewire.on('updateStep', function (step) {
+        document.addEventListener('livewire:load', function() {
+            Livewire.on('updateStep', function(step) {
                 // Actualiza el componente con el nuevo estado
                 Livewire.emit('updateStep', step);
             });
         });
     </script>
-@endsection
 
+    <script>
+        $(document).ready(function() {
+            $(window).keydown(function(event) {
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
+@endsection

@@ -16,9 +16,16 @@ use App\Http\Controllers\FormularioController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('formulario', function () {
     return view('default');
-});
+})->name('formulario');
+
+Route::get('listado', function () {
+    return view('listado');
+})->name('listado');
+
+
 Route::get('default/', function () {
     return view('home');
 });

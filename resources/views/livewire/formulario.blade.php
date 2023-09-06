@@ -4,8 +4,11 @@
 <div class="space-y-12">
 
     @if (!empty($successMessage))
-        <div class="alert alert-success">
-            {{ $successMessage }}
+        <div class="flex bg-green-100 rounded-lg p-4 mb-4 text-sm text-green-700" role="alert">
+            <svg class="w-5 h-5 inline mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+            <div>
+                <span class="font-medium">Completado!</span> {{ $successMessage }}.
+            </div>
         </div>
     @endif
 
@@ -259,45 +262,45 @@
                 <p class="mt-1 text-sm leading-6 text-gray-600">¿Cuál es su ocupación?</p>
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
-                        <input id="empleado" value="empleado" wire:model="ocupacion_emprendedor" type="radio"
+                        <input id="empleado" value="empleado" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="empleado"
                             class="block text-sm font-medium leading-6 text-gray-900">Empleado</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="trabajador_independiente" value="trabajador_independiente" wire:model="ocupacion_emprendedor"
+                        <input id="trabajador_independiente" value="trabajador_independiente" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor"
                             type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="trabajador_independiente"
                             class="block text-sm font-medium leading-6 text-gray-900">Trabajador
                             Independiente</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="egresado_sena" value="egresado_sena" wire:model="ocupacion_emprendedor" type="radio"
+                        <input id="egresado_sena" value="egresado_sena" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="egresado_sena" class="block text-sm font-medium leading-6 text-gray-900">Egresado
                             SENA</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="estudiante_universitario" value="estudiante_universitario" wire:model="ocupacion_emprendedor"
+                        <input id="estudiante_universitario" value="estudiante_universitario" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor"
                             type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="estudiante_universitario"
                             class="block text-sm font-medium leading-6 text-gray-900">Estudiante
                             Universitario</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="instructor_sena" value="instructor_sena" wire:model="ocupacion_emprendedor" type="radio"
+                        <input id="instructor_sena" value="instructor_sena" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_sena"
                             class="block text-sm font-medium leading-6 text-gray-900">Instructor Sena</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="aprendiz_sena" value="aprendiz_sena" wire:model="ocupacion_emprendedor" type="radio"
+                        <input id="aprendiz_sena" value="aprendiz_sena" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="aprendiz_sena" class="block text-sm font-medium leading-6 text-gray-900">Aprendiz
                             Sena</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="investigador_universidad" value="investigador_universidad" wire:model="ocupacion_emprendedor"
+                        <input id="investigador_universidad" value="investigador_universidad" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor"
                             type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="investigador_universidad"
                             class="block text-sm font-medium leading-6 text-gray-900">Investigador
@@ -308,7 +311,7 @@
                     @enderror
 
                     <div class="flex items-center gap-x-3">
-                        <input id="otro_ocupacion_emprendedor" value="otro" wire:model="ocupacion_emprendedor" type="radio"
+                        <input id="otro_ocupacion_emprendedor" value="otro" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="otro_ocupacion_emprendedor"
                             class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
@@ -341,7 +344,7 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="proyecto_propio_idea" value="proyecto_propio_idea"
-                            wire:model="empleado_idea_negocio" type="radio"
+                            wire:model="empleado_idea_negocio" type="radio" name="empleado_idea_negocio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
 
                         <label for="proyecto_propio_idea" class="block text-sm font-medium leading-6 text-gray-900">Un
@@ -349,7 +352,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="proyecto_empresa_empleado" value="proyecto_empresa_empleado"
-                            wire:model="empleado_idea_negocio" type="radio"
+                            wire:model="empleado_idea_negocio" type="radio" name="empleado_idea_negocio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
 
                         <label for="proyecto_empresa_empleado"
@@ -358,7 +361,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="otro_idea_negocio" value="otro" wire:model="empleado_idea_negocio"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="empleado_idea_negocio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="otro_idea_negocio"
                             class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
                         <input type="text" wire:model="otro_idea_negocio" autocomplete=""
@@ -389,19 +392,19 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="tipo_usuario_emprendedor" value="tipo_usuario_emprendedor"
-                            wire:model="tipo_usuario" type="radio"
+                            wire:model="tipo_usuario" type="radio" name="tipo_usuario"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="tipo_usuario_emprendedor"
                             class="block text-sm font-medium leading-6 text-gray-900">Emprendedor</label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="tipo_usuario_empresa" value="tipo_usuario_empresa" wire:model="tipo_usuario"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="tipo_usuario" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="tipo_usuario_empresa"
                             class="block text-sm font-medium leading-6 text-gray-900">Empresa</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="otro_tipo_usuario" value="otro" wire:model="tipo_usuario" type="radio"
+                        <input id="otro_tipo_usuario" value="otro" wire:model="tipo_usuario" type="radio" name="tipo_usuario"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="otro_tipo_usuario"
                             class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
@@ -433,14 +436,14 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="tipo_empresa_persona_natural" value="tipo_empresa_persona_natural"
-                            wire:model="tipo_empresa" type="radio"
+                            wire:model="tipo_empresa" type="radio" name="tipo_empresa"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="tipo_empresa_persona_natural"
                             class="block text-sm font-medium leading-6 text-gray-900">Persona Natural</label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="tipo_empresa_juridica" value="tipo_empresa_persona_juridica"
-                            wire:model="tipo_empresa" type="radio"
+                            wire:model="tipo_empresa" type="radio" name="tipo_empresa"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="tipo_empresa_juridica"
                             class="block text-sm font-medium leading-6 text-gray-900">Persona
@@ -535,25 +538,25 @@
                     2022 y responda en que tamaño de empresa se encuentra.</p>
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
-                        <input id="microempresa" value="microempresa" wire:model="empresa_tamaño" type="radio"
+                        <input id="microempresa" value="microempresa" wire:model="empresa_tamaño" type="radio"  name="empresa_tamaño"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="microempresa"
                             class="block text-sm font-medium leading-6 text-gray-900">Microempresa</label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="empresa_pequeña" value="empresa_pequeña" wire:model="empresa_tamaño"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="empresa_tamaño" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="empresa_pequeña" class="block text-sm font-medium leading-6 text-gray-900">Pequeña
                             Empresa</label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="empresa_mediana" value="empresa_mediana" wire:model="empresa_tamaño"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="empresa_tamaño" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="empresa_mediana" class="block text-sm font-medium leading-6 text-gray-900">Mediana
                             empresa</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="empresa_grande" value="empresa_grande" wire:model="empresa_tamaño" type="radio"
+                        <input id="empresa_grande" value="empresa_grande" wire:model="empresa_tamaño" type="radio" name="empresa_tamaño"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="empresa_grande" class="block text-sm font-medium leading-6 text-gray-900">Gran
                             empresa</label>
@@ -572,14 +575,14 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="empresa_innovacion_desarrollo_producto_si" value="si"
-                            wire:model="empresa_innovacion_desarrollo_producto" type="radio"
+                            wire:model="empresa_innovacion_desarrollo_producto" type="radio" name="empresa_innovacion_desarrollo_producto"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="empresa_innovacion_desarrollo_producto_si"
                             class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="empresa_innovacion_desarrollo_producto_no" value="no"
-                            wire:model="empresa_innovacion_desarrollo_producto" type="radio"
+                            wire:model="empresa_innovacion_desarrollo_producto" type="radio" name="empresa_innovacion_desarrollo_producto"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="empresa_innovacion_desarrollo_producto_no"
                             class="block text-sm font-medium leading-6 text-gray-900">No</label>
@@ -599,14 +602,14 @@
                     <div class="flex items-center gap-x-3">
                         <input id="empresa_proyecto_desarrollo_avances_requiere_prototipos_si"
                             wire:model="empresa_proyecto_desarrollo_avances_requiere_prototipos" value="si"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="empresa_proyecto_desarrollo_avances_requiere_prototipos" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="empresa_proyecto_desarrollo_avances_requiere_prototipos_si"
                             class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="empresa_proyecto_desarrollo_avances_requiere_prototipos_no"
                             wire:model="empresa_proyecto_desarrollo_avances_requiere_prototipos" value="no"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="empresa_proyecto_desarrollo_avances_requiere_prototipos" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="empresa_proyecto_desarrollo_avances_requiere_prototipos_no"
                             class="block text-sm font-medium leading-6 text-gray-900">No</label>
                     </div>
@@ -737,7 +740,7 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="no_idea_innovacion" value="no_idea_innovacion"
-                            wire:model="emprendedores_nivel_idea" type="radio"
+                            wire:model="emprendedores_nivel_idea" type="radio" name="emprendedores_nivel_idea"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
 
                         <label for="no_idea_innovacion" class="block text-sm font-medium leading-6 text-gray-900">Aún
@@ -746,7 +749,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="idea_sin_prototipo" value="idea_sin_prototipo"
-                            wire:model="emprendedores_nivel_idea" type="radio"
+                            wire:model="emprendedores_nivel_idea" type="radio" name="emprendedores_nivel_idea"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
 
                         <label for="idea_sin_prototipo" class="block text-sm font-medium leading-6 text-gray-900">Solo
@@ -754,7 +757,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="idea_prototipo_funcional" value="idea_prototipo_funcional"
-                            wire:model="emprendedores_nivel_idea" type="radio"
+                            wire:model="emprendedores_nivel_idea" type="radio" name="emprendedores_nivel_idea"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="idea_prototipo_funcional"
                             class="block text-sm font-medium leading-6 text-gray-900">Tengo una idea de la cual ya he
@@ -763,7 +766,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="proyecto_empresa_empleadora" value="proyecto_empresa_empleadora"
-                            wire:model="emprendedores_nivel_idea" type="radio"
+                            wire:model="emprendedores_nivel_idea" type="radio" name="emprendedores_nivel_idea"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="proyecto_empresa_empleadora"
                             class="block text-sm font-medium leading-6 text-gray-900">Es un proyecto para la empresa
@@ -772,7 +775,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="producto_elaborado_funcional" value="producto_elaborado_funcional"
-                            wire:model="emprendedores_nivel_idea" type="radio"
+                            wire:model="emprendedores_nivel_idea" type="radio" name="emprendedores_nivel_idea"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="producto_elaborado_funcional"
                             class="block text-sm font-medium leading-6 text-gray-900">Tengo un producto elaborado con
@@ -845,7 +848,7 @@
 
                         <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                             <div class="flex items-center pl-3">
-                                <input id="modelo_negocio_no_desarrollado" type="radio"
+                                <input id="modelo_negocio_no_desarrollado" type="radio" name="modelo_negocio"
                                     value="modelo_no_desarrollado" wire:model="modelo_negocio"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                 <label for="modelo_negocio_no_desarrollado"
@@ -855,7 +858,7 @@
 
                         <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                             <div class="flex items-center pl-3">
-                                <input id="modelo_negocio_desarrollado_conceptual" type="radio"
+                                <input id="modelo_negocio_desarrollado_conceptual" type="radio" name="modelo_negocio"
                                     value="modelo_desarrollado_nivel_conceptual" wire:model="modelo_negocio"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                 <label for="modelo_negocio_desarrollado_conceptual"
@@ -866,7 +869,7 @@
 
                         <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                             <div class="flex items-center pl-3">
-                                <input id="modelo_negocio_desarrollado" type="radio"
+                                <input id="modelo_negocio_desarrollado" type="radio" name="modelo_negocio"
                                     value="modelo_desarrollado_probado_validacion" wire:model="modelo_negocio"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                 <label for="modelo_negocio_desarrollado"
@@ -877,7 +880,7 @@
 
                         <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                             <div class="flex items-center pl-3">
-                                <input id="modelo_negocio_desarrollado_probando" type="radio"
+                                <input id="modelo_negocio_desarrollado_probando" type="radio" name="modelo_negocio"
                                     value="modelo_desarrollado_probado_efectiva" wire:model="modelo_negocio"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                 <label for="modelo_negocio_desarrollado_probando"
@@ -910,7 +913,7 @@
 
                         <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                             <div class="flex items-center pl-3">
-                                <input id="producto_servicio_no_desarrollado" type="radio"
+                                <input id="producto_servicio_no_desarrollado" type="radio" name="producto_servicio"
                                     value="producto_servicio_no_desarrollado" wire:model="producto_servicio"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                 <label for="producto_servicio_no_desarrollado"
@@ -920,7 +923,7 @@
 
                         <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                             <div class="flex items-center pl-3">
-                                <input id="producto_servicio_desarrollado_conceptual" type="radio"
+                                <input id="producto_servicio_desarrollado_conceptual" type="radio" name="producto_servicio"
                                     value="producto_servicio_desarrollado_conceptual" wire:model="producto_servicio"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                 <label for="producto_servicio_desarrollado_conceptual"
@@ -931,7 +934,7 @@
 
                         <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                             <div class="flex items-center pl-3">
-                                <input id="producto_servicio_desarrollado" type="radio"
+                                <input id="producto_servicio_desarrollado" type="radio" name="producto_servicio"
                                     value="producto_servicio_desarrollado_validado_usuario"
                                     wire:model="producto_servicio"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
@@ -943,7 +946,7 @@
 
                         <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                             <div class="flex items-center pl-3">
-                                <input id="producto_servicio_desarrollado_prototipo_funcional" type="radio"
+                                <input id="producto_servicio_desarrollado_prototipo_funcional" type="radio" name="producto_servicio"
                                     value="producto_servicio_desarrollado_prototipo_funcional"
                                     wire:model="producto_servicio"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
@@ -954,7 +957,7 @@
                         </li>
                         <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                             <div class="flex items-center pl-3">
-                                <input id="producto_servicio_desarrollado_producto_minimo_viable" type="radio"
+                                <input id="producto_servicio_desarrollado_producto_minimo_viable" type="radio" name="producto_servicio"
                                     value="producto_servicio_desarrollado_producto_minimo_viable"
                                     wire:model="producto_servicio"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
@@ -966,7 +969,7 @@
                         </li>
                         <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                             <div class="flex items-center pl-3">
-                                <input id="producto_servicio_desarrollado_desplegado" type="radio"
+                                <input id="producto_servicio_desarrollado_desplegado" type="radio" name="producto_servicio"
                                     value="producto_servicio_desarrollado_desplegado" wire:model="producto_servicio"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                 <label for="producto_servicio_desarrollado_desplegado"
@@ -1076,7 +1079,7 @@
 
                         <div class="flex items-center gap-x-3">
                             <input id="idea_genera_ventas_permanentes_si" value="si"
-                                wire:model="idea_genera_ventas" type="radio"
+                                wire:model="idea_genera_ventas" type="radio"  name="idea_genera_ventas"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             <label for="idea_genera_ventas_permanentes_si"
                                 class="block text-sm font-medium leading-6 text-gray-900">Si</label>
@@ -1084,7 +1087,7 @@
 
                         <div class="flex items-center gap-x-3">
                             <input id="idea_genera_ventas_permanentes_no" value="no"
-                                wire:model="idea_genera_ventas" type="radio"
+                                wire:model="idea_genera_ventas" type="radio" name="idea_genera_ventas"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                             <label for="idea_genera_ventas_permanentes_no"
                                 class="block text-sm font-medium leading-6 text-gray-900">No</label>
@@ -1200,7 +1203,7 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="tecnoparque_medellin" wire:model="tecnoparque_postulado"
-                            value="tecnoparque_medellin" type="radio"
+                            value="tecnoparque_medellin" type="radio" name="tecnoparque_postulado"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="tecnoparque_medellin"
                             class="block text-sm font-medium leading-6 text-gray-900">Tecnoparque Nodo Medellín</label>
@@ -1208,7 +1211,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="tecnoparque_rionegro" value="tecnoparque_rionegro"
-                            wire:model="tecnoparque_postulado" type="radio"
+                            wire:model="tecnoparque_postulado" type="radio" name="tecnoparque_postulado"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="tecnoparque_rionegro"
                             class="block text-sm font-medium leading-6 text-gray-900">Tecnoparque Nodo Rionegro
@@ -1217,7 +1220,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="otro_tecnoparque_postulado" value="otro" wire:model="tecnoparque_postulado"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="tecnoparque_postulado" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="otro_tecnoparque_postulado"
                             class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
                         <input type="text" wire:model="otro_tecnoparque_postulado"
@@ -1236,7 +1239,7 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="fortalecimiento_servicio_tecnoparque" wire:model="servicios_accedidos_tecnoparque"
-                            value="fortalecimiento_servicio_tecnoparque" type="radio"
+                            value="fortalecimiento_servicio_tecnoparque" type="radio" name="servicios_accedidos_tecnoparque"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="fortalecimiento_servicio_tecnoparque"
                             class="block text-sm font-medium leading-6 text-gray-900">Fortalecimiento</label>
@@ -1245,7 +1248,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="desarrollo_tecnologico_servicio_tecnoparque"
                             value="desarrollo_tecnologico_servicio_tecnoparque"
-                            wire:model="servicios_accedidos_tecnoparque" type="radio"
+                            wire:model="servicios_accedidos_tecnoparque" type="radio" name="servicios_accedidos_tecnoparque"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="desarrollo_tecnologico_servicio_tecnoparque"
                             class="block text-sm font-medium leading-6 text-gray-900">Proyecto para desarrollo
@@ -1254,7 +1257,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="proyecto_articulacion_servicio" value="proyecto_articulacion_servicio"
-                            wire:model="servicios_accedidos_tecnoparque" type="radio"
+                            wire:model="servicios_accedidos_tecnoparque" type="radio" name="servicios_accedidos_tecnoparque"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="proyecto_articulacion_servicio"
                             class="block text-sm font-medium leading-6 text-gray-900">Proyecto en proceso de
@@ -1367,13 +1370,13 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="fomento" wire:model="emprendimiento_servicios" value="fomento"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="emprendimiento_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="fomento"
                             class="block text-sm font-medium leading-6 text-gray-900">Fomento</label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="creacion_empresa_fondo_emprender" value="creacion_empresa_fondo_emprender"
-                            wire:model="emprendimiento_servicios" type="radio"
+                            wire:model="emprendimiento_servicios" type="radio" name="emprendimiento_servicios"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="creacion_empresa_fondo_emprender"
                             class="block text-sm font-medium leading-6 text-gray-900">Creación de empresa Fondo
@@ -1382,7 +1385,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="creacion_empresa_otras_fuentes" value="creacion_empresa_otras_fuentes"
-                            wire:model="emprendimiento_servicios" type="radio"
+                            wire:model="emprendimiento_servicios" type="radio" name="emprendimiento_servicios"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="creacion_empresa_otras_fuentes"
                             class="block text-sm font-medium leading-6 text-gray-900">Creación de empresa otras
@@ -1391,7 +1394,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="fortalecimiento_empresarial" value="fortalecimiento_empresarial"
-                            wire:model="emprendimiento_servicios" type="radio"
+                            wire:model="emprendimiento_servicios" type="radio" name="emprendimiento_servicios"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="fortalecimiento_empresarial"
                             class="block text-sm font-medium leading-6 text-gray-900">Fortalecimiento empresarial
@@ -1421,7 +1424,7 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="agencia_publica_empleo" wire:model="centro_formacion_servicios"
-                            value="agencia_publica_empleo" type="radio"
+                            value="agencia_publica_empleo" type="radio" name="centro_formacion_servicios"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="agencia_publica_empleo"
                             class="block text-sm font-medium leading-6 text-gray-900">Agencia Publica de
@@ -1429,7 +1432,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="certificado_competencias_laborales" value="certificado_competencias_laborales"
-                            wire:model="centro_formacion_servicios" type="radio"
+                            wire:model="centro_formacion_servicios" type="radio" name="centro_formacion_servicios"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="certificado_competencias_laborales"
                             class="block text-sm font-medium leading-6 text-gray-900">Certificación de competencias
@@ -1438,20 +1441,20 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="formacion" value="formacion" wire:model="centro_formacion_servicios"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="centro_formacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="formacion" class="block text-sm font-medium leading-6 text-gray-900">Formación
                         </label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="investigacion" value="investigacion" wire:model="centro_formacion_servicios"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="centro_formacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="investigacion"
                             class="block text-sm font-medium leading-6 text-gray-900">Investigación
                         </label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="servicios_tecnologicos" value="servicios_tecnologicos"
-                            wire:model="centro_formacion_servicios" type="radio"
+                            wire:model="centro_formacion_servicios" type="radio" name="centro_formacion_servicios"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="servicios_tecnologicos"
                             class="block text-sm font-medium leading-6 text-gray-900">Servicios Tecnológicos
@@ -1459,7 +1462,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="otro_centro_formacion_servicios" value="otro"
-                            wire:model="centro_formacion_servicios" type="radio"
+                            wire:model="centro_formacion_servicios" type="radio" name="centro_formacion_servicios"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="otro_centro_formacion_servicios"
                             class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
@@ -1495,7 +1498,7 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="fortalecimiento_capacidades" wire:model="hub_innovacion_servicios"
-                            value="fortalecimiento_capacidades" type="radio"
+                            value="fortalecimiento_capacidades" type="radio" name="hub_innovacion_servicios"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="fortalecimiento_capacidades"
                             class="block text-sm font-medium leading-6 text-gray-900">Fortalecimiento de
@@ -1503,7 +1506,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="desarrollo_soluciones" value="desarrollo_soluciones"
-                            wire:model="hub_innovacion_servicios" type="radio"
+                            wire:model="hub_innovacion_servicios" type="radio" name="hub_innovacion_servicios"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="desarrollo_soluciones"
                             class="block text-sm font-medium leading-6 text-gray-900">Desarrollo de Soluciones
@@ -1511,14 +1514,14 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="relacionamiento" value="relacionamiento" wire:model="hub_innovacion_servicios"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="hub_innovacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="relacionamiento"
                             class="block text-sm font-medium leading-6 text-gray-900">Relacionamiento
                         </label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="otro_hub_innovacion_servicios" value="otro"
-                            wire:model="hub_innovacion_servicios" type="radio"
+                            wire:model="hub_innovacion_servicios" type="radio" name="hub_innovacion_servicios"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="otro_hub_innovacion_servicios"
                             class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
@@ -1622,7 +1625,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="otro_linea_tecnologica_hub" value="otro"
-                            wire:model="otro_linea_tecnologica_hub" type="radio"
+                            wire:model="otro_linea_tecnologica_hub" type="radio" name="otro_linea_tecnologica_hub"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="otro_linea_tecnologica_hub"
                             class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
@@ -1642,14 +1645,14 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="conocimientos_lineas_seleccionada_no"
-                            wire:model="conocimientos_lineas_seleccionada" value="no" type="radio"
+                            wire:model="conocimientos_lineas_seleccionada" value="no" type="radio" name="conocimientos_lineas_seleccionada"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="conocimientos_lineas_seleccionada_no"
                             class="block text-sm font-medium leading-6 text-gray-900">No</label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="conocimientos_lineas_seleccionada_basico" value="basico"
-                            wire:model="conocimientos_lineas_seleccionada" type="radio"
+                            wire:model="conocimientos_lineas_seleccionada" type="radio" name="conocimientos_lineas_seleccionada"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="conocimientos_lineas_seleccionada_basico"
                             class="block text-sm font-medium leading-6 text-gray-900">Basico
@@ -1657,7 +1660,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="conocimientos_lineas_seleccionada_medio" value="medio"
-                            wire:model="conocimientos_lineas_seleccionada" type="radio"
+                            wire:model="conocimientos_lineas_seleccionada" type="radio" name="conocimientos_lineas_seleccionada"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="conocimientos_lineas_seleccionada_medio"
                             class="block text-sm font-medium leading-6 text-gray-900">Medio
@@ -1665,7 +1668,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="conocimientos_lineas_seleccionada_avanzado" value="avanzados"
-                            wire:model="conocimientos_lineas_seleccionada" type="radio"
+                            wire:model="conocimientos_lineas_seleccionada" type="radio" name="conocimientos_lineas_seleccionada"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="conocimientos_lineas_seleccionada_avanzado"
                             class="block text-sm font-medium leading-6 text-gray-900">Avanzados
@@ -1732,7 +1735,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="centro_recursos_naturales_renovables"
                             value="centro_recursos_naturales_renovables"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_recursos_naturales_renovables"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1741,7 +1744,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="centro_diseño_manufactura_cuero" value="centro_diseño_manufactura_cuero"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_diseño_manufactura_cuero"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1751,7 +1754,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="centro_comercio" value="centro_comercio"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_comercio" class="block text-sm font-medium leading-6 text-gray-900">
                             CENTRO DE COMERCIO</label>
@@ -1761,7 +1764,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="centro_formacion_diseño_confeccion_moda"
                             value="centro_formacion_diseño_confeccion_moda"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_formacion_diseño_confeccion_moda"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1772,7 +1775,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="centro_innovacion_agroindustria_aviacion"
                             value="centro_innovacion_agroindustria_aviacion"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_innovacion_agroindustria_aviacion"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1781,7 +1784,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="centro_servicios_salud" value="centro_servicios_salud"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_servicios_salud"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1792,7 +1795,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="centro_servicios_gestion_empresarial"
                             value="centro_servicios_gestion_empresarial"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_servicios_gestion_empresarial"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1803,7 +1806,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="centro_tecnologia_manufactura_avanzada"
                             value="centro_tecnologia_manufactura_avanzada"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_tecnologia_manufactura_avanzada"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1814,7 +1817,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="centro_desarrollo_habitat_construccion"
                             value="centro_desarrollo_habitat_construccion"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_desarrollo_habitat_construccion"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1824,7 +1827,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="centro_tecnologico_mobiliario" value="centro_tecnologico_mobiliario"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_tecnologico_mobiliario"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1834,7 +1837,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="complejo_tecnologico_agroindustrial" value="complejo_tecnologico_agroindustrial"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="complejo_tecnologico_agroindustrial"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1845,7 +1848,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="complejo_tecnoogico_minero_agroempresarial"
                             value="complejo_tecnoogico_minero_agroempresarial"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="complejo_tecnoogico_minero_agroempresarial"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1854,7 +1857,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="centro_textil_gestion_industrial" value="centro_textil_gestion_industrial"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_textil_gestion_industrial"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1864,7 +1867,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="complejo_tecnologico_turistico_agroindustrial_occidente_antioqueño"
                             value="complejo_tecnologico_turistico_agroindustrial_occidente_antioqueño"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="complejo_tecnologico_turistico_agroindustrial_occidente_antioqueño"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1874,7 +1877,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="centro_formacion_minero_ambiental_bagre"
                             value="centro_formacion_minero_ambiental_bagre"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="centro_formacion_minero_ambiental_bagre"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1884,7 +1887,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="complejo_tecnologico_gestion_agroempresarial"
                             value="complejo_tecnologico_gestion_agroempresarial"
-                            wire:model="centro_formacion_actual_aprendiz" type="radio"
+                            wire:model="centro_formacion_actual_aprendiz" name="centro_formacion_actual_aprendiz" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="complejo_tecnologico_gestion_agroempresarial"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1915,7 +1918,7 @@
             <fieldset class="mt-6 space-y-6">
                 <h2 class="text-base font-semibold leading-7 text-gray-900">Su interés emprendedor se da por..</h2>
                 <div class="flex items-center gap-x-3">
-                    <input id="proyecto_aula" wire:model="interes_emprendedor_es" type="radio"
+                    <input id="proyecto_aula" wire:model="interes_emprendedor_es" type="radio" name="interes_emprendedor_es"
                         value="interes_proyecto_aula_participar_programas_emprendimiento"
                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                     <label for="proyecto_aula" class="block text-sm font-medium leading-6 text-gray-900">
@@ -1924,7 +1927,7 @@
 
                 <div class="flex items-center gap-x-3">
                     <input id="idea_no_surgida_proyectos" value="interes_idea_no_surgida"
-                        wire:model="interes_emprendedor_es" type="radio"
+                        wire:model="interes_emprendedor_es" type="radio" name="interes_emprendedor_es"
                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                     <label for="idea_no_surgida_proyectos"
                         class="block text-sm font-medium leading-6 text-gray-900">
@@ -1934,7 +1937,7 @@
 
                 <div class="flex items-center gap-x-3">
                     <input id="asistencia_charla_interesado" value="interes_asistencia_charla"
-                        wire:model="interes_emprendedor_es" type="radio"
+                        wire:model="interes_emprendedor_es" type="radio" name="interes_emprendedor_es"
                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                     <label for="asistencia_charla_interesado"
                         class="block text-sm font-medium leading-6 text-gray-900">
@@ -1943,7 +1946,7 @@
                 </div>
                 <div class="flex items-center gap-x-3">
                     <input id="idea_aprendiz_formacion" value="interes_idea_aprendiz_formacion"
-                        wire:model="interes_emprendedor_es" type="radio"
+                        wire:model="interes_emprendedor_es" type="radio" name="interes_emprendedor_es"
                         class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                     <label for="idea_aprendiz_formacion" class="block text-sm font-medium leading-6 text-gray-900">
                         Fue una idea que surgió cuando era aprendiz en formación</label>
@@ -1973,7 +1976,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_recursos_naturales_renovables"
                             value="instructor_centro_recursos_naturales_renovables"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_recursos_naturales_renovables"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1983,7 +1986,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_diseño_manufactura_cuero"
                             value="instructor_centro_diseño_manufactura_cuero"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_diseño_manufactura_cuero"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -1993,7 +1996,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_comercio" value="instructor_centro_comercio"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_comercio"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2004,7 +2007,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_formacion_diseño_confeccion_moda"
                             value="instructor_centro_formacion_diseño_confeccion_moda"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_formacion_diseño_confeccion_moda"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2015,7 +2018,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_innovacion_agroindustria_aviacion"
                             value="instructor_centro_innovacion_agroindustria_aviacion"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_innovacion_agroindustria_aviacion"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2024,7 +2027,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_servicios_salud" value="instructor_centro_servicios_salud"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_servicios_salud"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2035,7 +2038,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_servicios_gestion_empresarial"
                             value="instructor_centro_servicios_gestion_empresarial"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_servicios_gestion_empresarial"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2046,7 +2049,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_tecnologia_manufactura_avanzada"
                             value="instructor_centro_tecnologia_manufactura_avanzada"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_tecnologia_manufactura_avanzada"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2057,7 +2060,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_desarrollo_habitat_construccion"
                             value="instructor_centro_desarrollo_habitat_construccion"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_desarrollo_habitat_construccion"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2068,7 +2071,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_tecnologico_mobiliario"
                             value="instructor_centro_tecnologico_mobiliario"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_tecnologico_mobiliario"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2079,7 +2082,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_complejo_tecnologico_agroindustrial"
                             value="instructor_complejo_tecnologico_agroindustrial"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_complejo_tecnologico_agroindustrial"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2090,7 +2093,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_complejo_tecnoogico_minero_agroempresarial"
                             value="instructor_complejo_tecnoogico_minero_agroempresarial"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_complejo_tecnoogico_minero_agroempresarial"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2100,7 +2103,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_textil_gestion_industrial"
                             value="instructor_centro_textil_gestion_industrial"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_textil_gestion_industrial"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2109,7 +2112,7 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_complejo_tecnologico_turistico_agroindustrial_occidente_antioqueño"
-                            wire:model="centro_formacion_actual_instructor"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor"
                             value="instructor_complejo_tecnologico_turistico_agroindustrial_occidente_antioqueño"
                             type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_complejo_tecnologico_turistico_agroindustrial_occidente_antioqueño"
@@ -2120,7 +2123,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_centro_formacion_minero_ambiental_bagre"
                             value="instructor_centro_formacion_minero_ambiental_bagre"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_centro_formacion_minero_ambiental_bagre"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2130,7 +2133,7 @@
                     <div class="flex items-center gap-x-3">
                         <input id="instructor_complejo_tecnologico_gestion_agroempresarial"
                             value="instructor_complejo_tecnologico_gestion_agroempresarial"
-                            wire:model="centro_formacion_actual_instructor" type="radio"
+                            wire:model="centro_formacion_actual_instructor" name="centro_formacion_actual_instructor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_complejo_tecnologico_gestion_agroempresarial"
                             class="block text-sm font-medium leading-6 text-gray-900">
@@ -2144,12 +2147,12 @@
                     SENNOVA </h2>
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
-                        <input id="sennova_si" value="si" wire:model="parte_sennova" type="radio"
+                        <input id="sennova_si" value="si" wire:model="parte_sennova" name="parte_sennova" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="sennova_si" class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="sennova_no" value="no" wire:model="parte_sennova" type="radio"
+                        <input id="sennova_no" value="no" wire:model="parte_sennova" name="parte_sennova" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="sennova_no" class="block text-sm font-medium leading-6 text-gray-900">No</label>
                     </div>
@@ -2219,14 +2222,14 @@
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
                         <input id="semillero_senova_si" value="si"
-                            wire:model="sennova_semillero_investigacion" type="radio"
+                            wire:model="sennova_semillero_investigacion" type="radio" name="sennova_semillero_investigacion"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="semillero_senova_si"
                             class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="semillero_sennova_no" value="no"
-                            wire:model="sennova_semillero_investigacion" type="radio"
+                            wire:model="sennova_semillero_investigacion" type="radio" name="sennova_semillero_investigacion"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="semillero_sennova_no"
                             class="block text-sm font-medium leading-6 text-gray-900">No</label>
@@ -2333,14 +2336,14 @@
 
                     <div class="flex items-center gap-x-3">
                         <input id="investigador_idea_capacidad_producto_si" value="si"
-                            wire:model="investigador_idea_capacidad_producto" type="radio"
+                            wire:model="investigador_idea_capacidad_producto" type="radio" name="investigador_idea_capacidad_producto"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="investigador_idea_capacidad_producto_si"
                             class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="investigador_idea_capacidad_producto_no" value="no"
-                            wire:model="investigador_idea_capacidad_producto" type="radio"
+                            wire:model="investigador_idea_capacidad_producto" type="radio" name="investigador_idea_capacidad_producto"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="investigador_idea_capacidad_producto_no"
                             class="block text-sm font-medium leading-6 text-gray-900">No</label>
@@ -2367,16 +2370,16 @@
                 <p class="mt-1 text-sm leading-6 text-gray-600">En que nivel clasificaría su proyecto.</p>
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
-                        <input id="proyecto_investigacion" value="proyecto_investigacion"
+                        <input id="proyecto_investigacion"
                             wire:model="nivel_proyecto_empresa" value="proyecto_nivel_investigacion"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="proyecto_investigacion"
                             class="block text-sm font-medium leading-6 text-gray-900">Es una idea que está a nivel de
                             articulo de investigación</label>
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="proyecto_formulado_concepto" wire:model="nivel_proyecto_empresa"
-                            value="proyecto_formulado_concepto" type="radio"
+                            value="proyecto_formulado_concepto" type="radio" name="nivel_proyecto_empresa"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="proyecto_formulado_concepto"
                             class="block text-sm font-medium leading-6 text-gray-900">Es un proyecto de investigación
@@ -2384,7 +2387,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="proyecto_prototipos_basicos" value="proyecto_prototipos_basicos"
-                            wire:model="nivel_proyecto_empresa" type="radio"
+                            wire:model="nivel_proyecto_empresa" type="radio" name="nivel_proyecto_empresa"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="proyecto_prototipos_basicos"
                             class="block text-sm font-medium leading-6 text-gray-900">Es un proyecto del cual ya se
@@ -2392,7 +2395,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="proyecto_prototipos_funcionales" value="proyecto_prototipos_funcionales"
-                            wire:model="nivel_proyecto_empresa" type="radio"
+                            wire:model="nivel_proyecto_empresa" type="radio" name="nivel_proyecto_empresa"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="proyecto_prototipos_funcionales"
                             class="block text-sm font-medium leading-6 text-gray-900">Es un proyecto del cual ya se
@@ -2400,7 +2403,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="producto_mercado_mejorable" value="producto_mercado_mejorable"
-                            wire:model="nivel_proyecto_empresa" type="radio"
+                            wire:model="nivel_proyecto_empresa" type="radio" name="nivel_proyecto_empresa"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="producto_mercado_mejorable"
                             class="block text-sm font-medium leading-6 text-gray-900">Es un producto en el mercado
@@ -2408,7 +2411,7 @@
                     </div>
                     <div class="flex items-center gap-x-3">
                         <input id="otro_nivel_proyecto_empresa" value="otro" wire:model="nivel_proyecto_empresa"
-                            type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            type="radio" name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="otro_nivel_proyecto_empresa"
                             class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
                         <input type="text" wire:model="otro_nivel_proyecto_empresa"

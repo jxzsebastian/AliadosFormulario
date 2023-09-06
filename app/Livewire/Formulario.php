@@ -32,13 +32,12 @@ class Formulario extends Component
             $status = 1,
             $identificacion_emprendedor,
             $tipo_identificacion_emprendedor,
-            $ciudad_municipio_emprendedor;
-
+            $ciudad_municipio_emprendedor,
+            $infoUsuarioCompleto;
     //Variables para los datos del usuario de ocupacion y escolaridad
     public  $ocupacion_emprendedor,
             $otra_ocupacion_emprendedor,
             $niveles_educacion_emprendedor = [];
-
     //Variables para el fomulario de empleados
     public  $empleado_idea_negocio,
             $otro_idea_negocio;
@@ -157,6 +156,7 @@ class Formulario extends Component
             'ciudad_municipio_emprendedor' => 'required',
         ]);
 
+
         if (!in_array($this->currentStep, $this->formProgress)) {
             $this->formProgress[] = $this->currentStep;
         }
@@ -172,10 +172,11 @@ class Formulario extends Component
             'niveles_educacion_emprendedor' => 'required',
         ]);
 
+        $this->infoUsuarioCompleto = True;
+
         $this->ocupacion_emprendedor = $this->obtenerValorCampo($this->ocupacion_emprendedor, $this->ocupacion_emprendedor, $this->otra_ocupacion_emprendedor);
 
         $this->formProgress[] = $this->currentStep;
-
         switch ($this->ocupacion_emprendedor) {
             case 'empleado':
                 $this->currentStep = 3; //Formulario Empleado
@@ -612,11 +613,18 @@ class Formulario extends Component
         }
         else{
             $informacionUsuario->necesidad_asesoria_sena = implode(', ', $this->necesidad_asesoria_sena) ?? "Ninguna";
-
         }
+
+        $informacionUsuario->save();
+        $user_id = $informacionUsuario->id;
 
         //Si es Empleado
         $infoEmpleado->empleado_idea_negocio= $this->empleado_idea_negocio;
+        $infoEmpleado->emprendedor_id = $user_id;
+        if (!empty($infoEmpleado->empleado_idea_negocio)) {
+            $infoEmpleado->save();
+        }
+
 
         //Info Empresa
         $infoEmpresa ->tipo_empresa= $this->tipo_empresa;
@@ -626,6 +634,11 @@ class Formulario extends Component
         $infoEmpresa ->empresa_innovacion_desarrollo_producto= $this->empresa_innovacion_desarrollo_producto;
         $infoEmpresa ->empresa_proyecto_desarrollo_avances_requiere_prototipos= $this->empresa_proyecto_desarrollo_avances_requiere_prototipos;
         $infoEmpresa ->nivel_proyecto_empresa= $this->nivel_proyecto_empresa;
+        if (!empty($infoEmpresa->empresa_nit) && !empty($infoEmpresa->tipo_empresa) && !empty($infoEmpresa->tipo_persona_juridica)){
+            $infoEmpresa->emprendedor_id = $user_id;
+            $infoEmpresa->save();
+
+        }
 
         //Info idea
         $infoIdea ->nombre_idea= $this->nombre_idea;
@@ -636,14 +649,22 @@ class Formulario extends Component
         $infoIdea ->idea_genera_ventas= $this->idea_genera_ventas;
         $infoIdea ->ventas_promedio_mes= $this->ventas_promedio_mes;
         $infoIdea ->idea_cantidad_empleados_genera= $this->idea_cantidad_empleados_genera;
+        $infoIdea->emprendedor_id = $user_id;
+        $infoIdea->save();
 
         //Nivel de idea y Info de idea
         $infoEmprendedorIdea ->emprendedores_nivel_idea= $this->emprendedores_nivel_idea;
+        $infoEmprendedorIdea ->emprendedor_id = $user_id;
+        if (!empty($infoEmprendedorIdea->emprendedores_nivel_idea)) {
+            $infoEmprendedorIdea->save();
+        }
 
         //Info aprendiz
         $infoAprendiz ->centro_formacion_actual_aprendiz= $this->centro_formacion_actual_aprendiz;
         $infoAprendiz ->programa_formacion_adscrito= $this->programa_formacion_adscrito;
         $infoAprendiz ->interes_emprendedor_es= $this->interes_emprendedor_es;
+        $infoAprendiz->emprendedor_id = $user_id;
+        $infoAprendiz->save();
 
         //Info instructor
         $infoInstructor ->centro_formacion_actual_instructor= $this->centro_formacion_actual_instructor;
@@ -653,14 +674,22 @@ class Formulario extends Component
         $infoInstructor ->nombre_semillero= $this->nombre_semillero;
         $infoInstructor ->semillero_cantidad_integrantes= $this->semillero_cantidad_integrantes;
         $infoInstructor ->semillero_tema_trabajo= $this->semillero_tema_trabajo;
+        $infoInstructor->emprendedor_id = $user_id;
+        $infoInstructor->save();
 
         //Info investigador
         $infoInvestigador ->investigador_universidad_nombre= $this->investigador_universidad_nombre;
         $infoInvestigador ->investigador_universidad_grupo_investigacion= $this->investigador_universidad_grupo_investigacion;
         $infoInvestigador ->investigador_idea_capacidad_producto= $this->investigador_idea_capacidad_producto;
+        $infoInvestigador->emprendedor_id = $user_id;
+        $infoInvestigador->save();
 
         //Hub emprendimiento
-        $infoProgramaEmprendimiento ->emprendimiento_servicios= $this->emprendimiento_servicios;
+        $infoProgramaEmprendimiento->emprendimiento_servicios= $this->emprendimiento_servicios;
+        $infoProgramaEmprendimiento->emprendedor_id = $user_id;
+        if (!empty($infoProgramaEmprendimiento->emprendimiento_servicios)) {
+            $infoProgramaEmprendimiento->save();
+        }
 
         //Programa hub innovacion
         $infoProgramaHubInnovacion ->hub_innovacion_servicios= $this->hub_innovacion_servicios;
@@ -668,18 +697,25 @@ class Formulario extends Component
         $infoProgramaHubInnovacion ->conocimientos_lineas_seleccionada= $this->conocimientos_lineas_seleccionada;
         $infoProgramaHubInnovacion ->necesidad_puntual_proyecto= $this->necesidad_puntual_proyecto;
         $infoProgramaHubInnovacion ->cuenta_equipo_trabajo= $this->cuenta_equipo_trabajo;
+        $infoProgramaHubInnovacion->emprendedor_id = $user_id;
+        $infoProgramaHubInnovacion->save();
 
         //Tecnoparque
         $infoProgramaTecnoparque ->tecnoparque_postulado= $this->tecnoparque_postulado;
         $infoProgramaTecnoparque ->servicios_accedidos_tecnoparque= $this->servicios_accedidos_tecnoparque;
         $infoProgramaTecnoparque ->linea_tecnica_adscribe_tecnoparque= implode(', ', $this->linea_tecnica_adscribe_tecnoparque);
         $infoProgramaTecnoparque ->condiciones_cumplidas_idea=implode(', ', $this->condiciones_cumplidas_idea);
+        $infoProgramaTecnoparque->emprendedor_id = $user_id;
+        $infoProgramaTecnoparque->save();
 
         //Centro Formacion Servicios
-        $infoProgramaCentroFormacion ->centro_formacion_servicios= $this->centro_formacion_servicios;
+        $infoProgramaCentroFormacion->centro_formacion_servicios= $this->centro_formacion_servicios;
+        $infoProgramaCentroFormacion->emprendedor_id = $user_id;
+        if (!empty($infoProgramaCentroFormacion->centro_formacion_servicios)) {
+            $infoProgramaCentroFormacion->save();
+        }
 
-
-       dd($informacionUsuario, $infoEmpleado, $infoEmpresa, $infoIdea, $infoEmprendedorIdea, $infoInstructor, $infoAprendiz, $infoInvestigador, $infoProgramaTecnoparque,$infoProgramaEmprendimiento, $infoProgramaHubInnovacion, $infoProgramaCentroFormacion );
+        $this->successMessage = 'El formulario ha sido guardado exitosamente!.';
 
         $this->clearForm();
 

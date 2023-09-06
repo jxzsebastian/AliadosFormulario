@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Idea extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'idea';
     protected $fillable = [
         'nombre_idea',

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class EmprendedorIdea extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'emprendedor_idea';
     protected $fillable = [
         'emprendedores_nivel_idea',

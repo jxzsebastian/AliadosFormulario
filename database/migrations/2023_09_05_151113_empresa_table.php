@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('empresa_tamaño')->nullable();
             $table->string('empresa_innovacion_desarrollo_producto')->nullable();
             $table->string('empresa_proyecto_desarrollo_avances_requiere_prototipos')->nullable();
-            $table->string('nivel_proyecto_empresa')->nullable();
+            $table->longText('nivel_proyecto_empresa')->nullable();
             $table->unsignedBigInteger('emprendedor_id');
             $table->foreign('emprendedor_id')->references('id')->on('emprendedor');
 

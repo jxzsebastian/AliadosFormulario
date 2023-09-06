@@ -21,11 +21,13 @@ return new class extends Migration
         $table->string('correo_emprendedor')->nullable();
         $table->string('tipo_identificacion_emprendedor')->nullable();
         $table->string('identificacion_emprendedor')->nullable();
-        $table->string('niveles_educacion_emprendedor')->nullable();
+        $table->string('ciudad_municipio_emprendedor')->nullable();
+        $table->longText('niveles_educacion_emprendedor')->nullable();
         $table->string('ocupacion_emprendedor')->nullable();
         $table->string('tipo_usuario')->nullable();
         $table->string('programa_sena_ingreso')->nullable();
-        $table->string('necesidad_asesoria_sena')->nullable();
+        $table->longText('necesidad_asesoria_sena')->nullable();
+        $table->timestamps();
         });
 
 

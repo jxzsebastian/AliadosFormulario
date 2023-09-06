@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Programa_Sena_Emprendimiento extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'programa_sena_emprendimiento';
     protected $fillable = [
     'emprendimiento_servicios',

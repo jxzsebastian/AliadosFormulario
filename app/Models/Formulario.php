@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Formulario extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'form';
     protected $fillable = [
     'nombre_emprendimiento',
