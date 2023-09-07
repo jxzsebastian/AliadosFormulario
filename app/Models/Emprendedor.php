@@ -20,6 +20,7 @@ class Emprendedor extends Model
         'tipo_usuario',
         'programa_sena_ingreso',
         'necesidad_asesoria_sena',
+        'ciudad_municipio_emprendedor',
     ];
     public function emprendedor_aprendiz(){
         return $this->hasMany(Emprendedor_AprendizEgresado::class);

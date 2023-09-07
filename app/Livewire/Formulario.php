@@ -621,7 +621,7 @@ class Formulario extends Component
         //Si es Empleado
         $infoEmpleado->empleado_idea_negocio= $this->empleado_idea_negocio;
         $infoEmpleado->emprendedor_id = $user_id;
-        if (!empty($infoEmpleado->empleado_idea_negocio)) {
+        if ($this->empleado_idea_negocio) {
             $infoEmpleado->save();
         }
 
@@ -634,7 +634,7 @@ class Formulario extends Component
         $infoEmpresa ->empresa_innovacion_desarrollo_producto= $this->empresa_innovacion_desarrollo_producto;
         $infoEmpresa ->empresa_proyecto_desarrollo_avances_requiere_prototipos= $this->empresa_proyecto_desarrollo_avances_requiere_prototipos;
         $infoEmpresa ->nivel_proyecto_empresa= $this->nivel_proyecto_empresa;
-        if (!empty($infoEmpresa->empresa_nit) && !empty($infoEmpresa->tipo_empresa) && !empty($infoEmpresa->tipo_persona_juridica)){
+        if ($this->empresa_nit && $this->tipo_empresa){
             $infoEmpresa->emprendedor_id = $user_id;
             $infoEmpresa->save();
 
@@ -650,7 +650,18 @@ class Formulario extends Component
         $infoIdea ->ventas_promedio_mes= $this->ventas_promedio_mes;
         $infoIdea ->idea_cantidad_empleados_genera= $this->idea_cantidad_empleados_genera;
         $infoIdea->emprendedor_id = $user_id;
-        $infoIdea->save();
+        if (
+            $this->nombre_idea &&
+            $this->descripcion_idea &&
+            $this->producto_servicio &&
+            $this->validacion_producto &&
+            $this->modelo_negocio &&
+            $this->idea_genera_ventas &&
+            $this->ventas_promedio_mes &&
+            $this->idea_cantidad_empleados_genera
+        ) {
+            $infoIdea->save();
+        }
 
         //Nivel de idea y Info de idea
         $infoEmprendedorIdea ->emprendedores_nivel_idea= $this->emprendedores_nivel_idea;
@@ -664,30 +675,50 @@ class Formulario extends Component
         $infoAprendiz ->programa_formacion_adscrito= $this->programa_formacion_adscrito;
         $infoAprendiz ->interes_emprendedor_es= $this->interes_emprendedor_es;
         $infoAprendiz->emprendedor_id = $user_id;
-        $infoAprendiz->save();
-
+        if (
+            $this->centro_formacion_actual_aprendiz &&
+            $this->programa_formacion_adscrito &&
+            $this->interes_emprendedor_es
+        ) {
+            $infoAprendiz->save();
+        }
         //Info instructor
         $infoInstructor ->centro_formacion_actual_instructor= $this->centro_formacion_actual_instructor;
         $infoInstructor ->parte_sennova= $this->parte_sennova;
         $infoInstructor ->participacion_sennova= implode(', ', $this->participacion_sennova);
+
         $infoInstructor ->sennova_semillero_investigacion= $this->sennova_semillero_investigacion;
         $infoInstructor ->nombre_semillero= $this->nombre_semillero;
         $infoInstructor ->semillero_cantidad_integrantes= $this->semillero_cantidad_integrantes;
         $infoInstructor ->semillero_tema_trabajo= $this->semillero_tema_trabajo;
         $infoInstructor->emprendedor_id = $user_id;
-        $infoInstructor->save();
+        if (
+            $this->centro_formacion_actual_instructor &&
+            $this->parte_sennova &&
+            $this->participacion_sennova
+        ) {
+            $infoInstructor->save();
+        }
+
 
         //Info investigador
         $infoInvestigador ->investigador_universidad_nombre= $this->investigador_universidad_nombre;
         $infoInvestigador ->investigador_universidad_grupo_investigacion= $this->investigador_universidad_grupo_investigacion;
         $infoInvestigador ->investigador_idea_capacidad_producto= $this->investigador_idea_capacidad_producto;
         $infoInvestigador->emprendedor_id = $user_id;
-        $infoInvestigador->save();
+        if (
+            $this->investigador_universidad_nombre &&
+            $this->investigador_universidad_grupo_investigacion &&
+            $this->investigador_idea_capacidad_producto
+        ) {
+            $infoInvestigador->save();
+        }
+
 
         //Hub emprendimiento
         $infoProgramaEmprendimiento->emprendimiento_servicios= $this->emprendimiento_servicios;
         $infoProgramaEmprendimiento->emprendedor_id = $user_id;
-        if (!empty($infoProgramaEmprendimiento->emprendimiento_servicios)) {
+        if ($this->emprendimiento_servicios) {
             $infoProgramaEmprendimiento->save();
         }
 
@@ -698,7 +729,15 @@ class Formulario extends Component
         $infoProgramaHubInnovacion ->necesidad_puntual_proyecto= $this->necesidad_puntual_proyecto;
         $infoProgramaHubInnovacion ->cuenta_equipo_trabajo= $this->cuenta_equipo_trabajo;
         $infoProgramaHubInnovacion->emprendedor_id = $user_id;
-        $infoProgramaHubInnovacion->save();
+        if (
+            $this->hub_innovacion_servicios &&
+            $this->linea_tecnologica_hub &&
+            $this->conocimientos_lineas_seleccionada &&
+            $this->necesidad_puntual_proyecto &&
+            $this->cuenta_equipo_trabajo
+        ) {
+            $infoProgramaHubInnovacion->save();
+        }
 
         //Tecnoparque
         $infoProgramaTecnoparque ->tecnoparque_postulado= $this->tecnoparque_postulado;
@@ -706,12 +745,18 @@ class Formulario extends Component
         $infoProgramaTecnoparque ->linea_tecnica_adscribe_tecnoparque= implode(', ', $this->linea_tecnica_adscribe_tecnoparque);
         $infoProgramaTecnoparque ->condiciones_cumplidas_idea=implode(', ', $this->condiciones_cumplidas_idea);
         $infoProgramaTecnoparque->emprendedor_id = $user_id;
-        $infoProgramaTecnoparque->save();
-
+        if (
+            $this->tecnoparque_postulado &&
+            $this->servicios_accedidos_tecnoparque &&
+            $this->linea_tecnica_adscribe_tecnoparque &&
+            $this->condiciones_cumplidas_idea
+        ) {
+            $infoProgramaTecnoparque->save();
+        }
         //Centro Formacion Servicios
         $infoProgramaCentroFormacion->centro_formacion_servicios= $this->centro_formacion_servicios;
         $infoProgramaCentroFormacion->emprendedor_id = $user_id;
-        if (!empty($infoProgramaCentroFormacion->centro_formacion_servicios)) {
+        if ($this->centro_formacion_servicios){
             $infoProgramaCentroFormacion->save();
         }
 

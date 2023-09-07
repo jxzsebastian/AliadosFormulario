@@ -21,10 +21,8 @@ Route::get('formulario', function () {
     return view('default');
 })->name('formulario');
 
-Route::get('listado', function () {
-    return view('listado');
-})->name('listado');
-
+Route::get('listado/',[FormularioController::class,'listado'])->name('listado');
+Route::get('listado/{id}',[FormularioController::class,'mostrarEmprendedor'])->name('lista.show');
 
 Route::get('default/', function () {
     return view('home');
@@ -34,4 +32,3 @@ Route::controller(FormularioController::class)->group(function () {
 });
 
 Route::get('lista',[FormularioController::class,'index'])->name('lista.index');;
-Route::get('lista/{id}',[FormularioController::class,'show'])->name('lista.show');
