@@ -178,30 +178,30 @@ class Formulario extends Component
 
         $this->formProgress[] = $this->currentStep;
         switch ($this->ocupacion_emprendedor) {
-            case 'empleado':
+            case 'Empleado':
                 $this->currentStep = 3; //Formulario Empleado
                 break;
-            case 'trabajador_independiente':
+            case 'Trabajador Independiente':
                 $this->currentStep = 4; //Tipo de Usuario
 
                 break;
-            case 'egresado_sena':
+            case 'Egresado SENA':
                 $this->currentStep = 18; //Formulario Egresado Sena y Aprendiz
 
                 break;
-            case 'aprendiz_sena':
+            case 'Aprendiz SENA':
                 $this->currentStep = 18; //Formulario Egresado Sena y Aprendiz
 
                 break;
-            case 'estudiante_universitario':
+            case 'Estudiante Universitario':
                 $this->currentStep = 4; //Tipo de Usuario
 
                 break;
-            case 'instructor_sena':
+            case 'Instructor SENA':
                 $this->currentStep = 19; //Formulario Instructor SENA
 
                 break;
-            case 'investigador_universidad':
+            case 'Investigador Universidad':
                 $this->currentStep = 22; //Formulario Investigador Universidad
 
                 break;
@@ -226,10 +226,10 @@ class Formulario extends Component
 
 
         switch ($this->empleado_idea_negocio) {
-            case 'proyecto_propio_idea':
+            case 'Un proyecto a nombre propio':
                 $this->currentStep = 4; //Tipo de Usuario
                 break;
-            case 'proyecto_empresa_empleado':
+            case 'Una idea de proyecto de la empresa para la cual es empleado':
                 $this->currentStep = 5; //Tipo de Empresa
                 break;
             default:
@@ -764,7 +764,8 @@ class Formulario extends Component
 
         $this->clearForm();
 
-        $this->currentStep = 1;
+        return redirect()->to('/formulario');
+
     }
 
     private function obtenerValorCampo($campo, $campoPrincipal, $campoOtro){

@@ -64,7 +64,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap text-center">
+                                <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap ">
                                     @if ($emprendedor->ideas->count() > 0)
                                         @foreach ($emprendedor->ideas as $idea)
                                             {{ $idea->nombre_idea }}
@@ -73,7 +73,7 @@
                                     <p>El emprendedor no tiene ideas registradas.</p>
                                 @endif
                                 </td>
-                                <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap text-center">
+                                <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                                     @if ($emprendedor->necesidad_asesoria_sena == "Ninguna")
                                         No
                                     @else

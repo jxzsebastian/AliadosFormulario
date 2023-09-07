@@ -262,45 +262,45 @@
                 <p class="mt-1 text-sm leading-6 text-gray-600">¿Cuál es su ocupación?</p>
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
-                        <input id="empleado" value="empleado" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
+                        <input id="empleado" value="Empleado" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="empleado"
                             class="block text-sm font-medium leading-6 text-gray-900">Empleado</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="trabajador_independiente" value="trabajador_independiente" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor"
+                        <input id="trabajador_independiente" value="Trabajador Independiente" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor"
                             type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="trabajador_independiente"
                             class="block text-sm font-medium leading-6 text-gray-900">Trabajador
                             Independiente</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="egresado_sena" value="egresado_sena" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
+                        <input id="egresado_sena" value="Egresado SENA" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="egresado_sena" class="block text-sm font-medium leading-6 text-gray-900">Egresado
                             SENA</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="estudiante_universitario" value="estudiante_universitario" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor"
+                        <input id="estudiante_universitario" value="Estudiante Univestitario" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor"
                             type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="estudiante_universitario"
                             class="block text-sm font-medium leading-6 text-gray-900">Estudiante
                             Universitario</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="instructor_sena" value="instructor_sena" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
+                        <input id="instructor_sena" value="Instructor SENA" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="instructor_sena"
                             class="block text-sm font-medium leading-6 text-gray-900">Instructor Sena</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="aprendiz_sena" value="aprendiz_sena" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
+                        <input id="aprendiz_sena" value="Aprendiz SENA" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="aprendiz_sena" class="block text-sm font-medium leading-6 text-gray-900">Aprendiz
                             Sena</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="investigador_universidad" value="investigador_universidad" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor"
+                        <input id="investigador_universidad" value="Investigador Universidad" wire:model="ocupacion_emprendedor" name="ocupacion_emprendedor"
                             type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         <label for="investigador_universidad"
                             class="block text-sm font-medium leading-6 text-gray-900">Investigador
@@ -343,7 +343,7 @@
                 <p class="mt-1 text-sm leading-6 text-gray-600">Su idea de negocio es...</p>
                 <div class="mt-6 space-y-6">
                     <div class="flex items-center gap-x-3">
-                        <input id="proyecto_propio_idea" value="proyecto_propio_idea"
+                        <input id="proyecto_propio_idea" value="Un proyecto a nombre propio"
                             wire:model="empleado_idea_negocio" type="radio" name="empleado_idea_negocio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
 
@@ -351,7 +351,7 @@
                             proyecto a nombre propio</label>
                     </div>
                     <div class="flex items-center gap-x-3">
-                        <input id="proyecto_empresa_empleado" value="proyecto_empresa_empleado"
+                        <input id="proyecto_empresa_empleado" value="Una idea de proyecto de la empresa para la cual es empleado"
                             wire:model="empleado_idea_negocio" type="radio" name="empleado_idea_negocio"
                             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
 
