@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('centro_formacion_actual_instructor')->nullable();
             $table->string('parte_sennova')->nullable();
-            $table->string('participacion_sennova')->nullable();
+            $table->longText('participacion_sennova')->nullable();
             $table->string('sennova_semillero_investigacion')->nullable();
             $table->string('nombre_semillero')->nullable();
             $table->string('semillero_cantidad_integrantes')->nullable();

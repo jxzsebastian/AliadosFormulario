@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('descripcion_idea')->nullable();
             $table->string('modelo_negocio')->nullable();
             $table->string('producto_servicio')->nullable();
-            $table->string('validacion_producto')->nullable();
+            $table->longText('validacion_producto')->nullable();
             $table->string('idea_genera_ventas')->nullable();
             $table->string('ventas_promedio_mes')->nullable();
             $table->string('idea_cantidad_empleados_genera')->nullable();

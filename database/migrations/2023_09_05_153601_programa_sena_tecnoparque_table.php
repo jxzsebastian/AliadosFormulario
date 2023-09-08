@@ -16,8 +16,8 @@ return new class extends Migration
             $table->id();
             $table->string('tecnoparque_postulado')->nullable();
             $table->string('servicios_accedidos_tecnoparque')->nullable();
-            $table->string('linea_tecnica_adscribe_tecnoparque')->nullable();
-            $table->string('condiciones_cumplidas_idea')->nullable();
+            $table->longText('linea_tecnica_adscribe_tecnoparque')->nullable();
+            $table->longText('condiciones_cumplidas_idea')->nullable();
             $table->unsignedBigInteger('emprendedor_id');
             $table->foreign('emprendedor_id')->references('id')->on('emprendedor');
 

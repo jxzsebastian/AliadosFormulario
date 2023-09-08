@@ -15,7 +15,7 @@ return new class extends Migration
 
             $table->id();
             $table->string('hub_innovacion_servicios')->nullable();
-            $table->string('linea_tecnologica_hub')->nullable();
+            $table->longText('linea_tecnologica_hub')->nullable();
             $table->string('conocimientos_lineas_seleccionada')->nullable();
             $table->string('necesidad_puntual_proyecto')->nullable();
             $table->string('cuenta_equipo_trabajo')->nullable();
