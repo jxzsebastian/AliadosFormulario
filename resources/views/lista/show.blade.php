@@ -4,22 +4,22 @@
 
 @section('content')
 
-    <div class="max-w-full  bg-white w-full rounded-lg shadow-xl">
+    <div class="max-w-full mx-auto  bg-white w-10/12  rounded-lg shadow-xl">
         <div class="p-4 border-b">
             <h2 class="text-2xl ">
                 Informacion sobre:
             </h2>
         </div>
 
-        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-            <p class="text-gray-600">
+        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 font-medium">
                 Ocupacion
             </p>
             <p> {{ $emprendedor->ocupacion_emprendedor }}</p>
         </div>
 
-        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-            <p class="text-gray-600">
+        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 font-medium">
                 Informacion Ocupacion
             </p>
             @foreach ($emprendedor->emprendedor_aprendiz as $aprendiz_egresado)
@@ -68,7 +68,7 @@
                     <p>No se ha proporcionado información sobre la idea de negocio.</p>
                 @endif
             @endforeach
-            
+
             @foreach ($emprendedor->emprendedor_instructor as $emprendedor_instructor)
                 @if (!empty($emprendedor_instructor->centro_formacion_actual_instructor) ||!empty($emprendedor_instructor->parte_sennova))
                     <span>
@@ -99,21 +99,26 @@
             @endforeach
         </div>
 
+        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 font-medium">
+                Tipo de Usuario
+            </p>
+            <strong> {{ $emprendedor->tipo_usuario }}</strong>
+        </div>
 
         @if ($emprendedor->necesidad_asesoria_sena)
-        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-            <p class="text-gray-600">
+        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 font-medium">
                Asesoria Necesitada:
             </p>
             <p> {{ $emprendedor->necesidad_asesoria_sena }}</p>
         </div>
         @endif
 
-
         <div>
             @if ($emprendedor->ideas->isNotEmpty())
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                    <p class="text-gray-600">
+                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+                    <p class="text-gray-600 font-medium">
                         Detalles de La idea Registrada
                     </p>
 
@@ -125,7 +130,6 @@
                                 !empty($idea->producto_servicio) &&
                                 !empty($idea->validacion_producto) &&
                                 !empty($idea->idea_genera_ventas) &&
-                                !empty($idea->ventas_promedio_mes) &&
                                 !empty($idea->idea_cantidad_empleados_genera))
                             <span>
                                 <p><strong>Nombre de la Idea:</strong> {{ $idea->nombre_idea }}</p>
@@ -134,7 +138,7 @@
                                 <p><strong>Producto o Servicio:</strong> {{ $idea->producto_servicio }}</p>
                                 <p><strong>Validación del Producto:</strong> {{ $idea->validacion_producto }}</p>
                                 <p><strong>¿La Idea Genera Ventas?</strong> {{ $idea->idea_genera_ventas }}</p>
-                                <p><strong>Ventas Promedio por Mes:</strong> {{ $idea->ventas_promedio_mes }}</p>
+                                @if($idea->ventas_promedio_mes)<p><strong>Ventas Promedio por Mes:</strong> {{ $idea->ventas_promedio_mes }}</p>@endif
                                 <p><strong>Cantidad de Empleados que Genera:</strong>
                                     {{ $idea->idea_cantidad_empleados_genera }}</p>
                             </span>
@@ -144,27 +148,31 @@
 
                 </div>
             @else
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                    <p class="text-gray-600">
+                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+                    <strong class="text-gray-600 font-medium">
                         Nombre de La idea Registrada
-                    </p>
+                    </strong>
                     <p>
                         No existe una idea dada.
                     </p>
                 </div>
             @endif
 
-            @if (!empty($emprendedor->emprendedores_nivel_idea))
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                    <p class="text-gray-600">
+            @if (!empty($emprendedor->emprendedor_nivel_idea))
+
+                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+                    <p class="text-gray-600 font-medium">
                         Nivel de la Idea
                     </p>
+                @foreach ($emprendedor->emprendedor_nivel_idea as $nivel_idea)
                     <p>
-                        {{ $emprendedor->emprendedores_nivel_idea }}
+                        {{ $nivel_idea->emprendedores_nivel_idea }}
                     </p>
+                @endforeach
+
                 </div>
             @else
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
 
                     <p class="text-gray-600">
                         Nivel de la Idea
@@ -176,14 +184,13 @@
 
 
             @if ($emprendedor->empresas->isNotEmpty())
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                    <p class="text-gray-600">
+                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+                    <p class="text-gray-600 font-medium">
                         Detalles de la Empresa
                     </p>
                     @foreach ($emprendedor->ideas as $empresa)
                         @if (
                             !empty($empresa->tipo_empresa) ||
-                                !empty($empresa->tipo_persona_juridica) ||
                                 !empty($empresa->empresa_nit) ||
                                 !empty($empresa->empresa_tamaño) ||
                                 !empty($empresa->empresa_innovacion_desarrollo_producto) ||
@@ -205,8 +212,8 @@
                     @endforeach
                 </div>
             @else
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                    <p class="text-gray-600">
+                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+                    <p class="text-gray-600 font-medium">
                         Detalles de la Empresa
                     </p>
                     <p>
@@ -215,8 +222,8 @@
                 </div>
             @endif
 
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                <p class="text-gray-600">
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+                <p class="text-gray-600 font-medium">
                     Servicio del SENA ingresado
                 </p>
                 <p>
@@ -224,8 +231,8 @@
                 </p>
             </div>
 
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                <p class="text-gray-600">
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+                <p class="text-gray-600 font-medium">
                     Servicios accedidos en {{ $emprendedor->programa_sena_ingreso }}
                 </p>
 
@@ -296,44 +303,7 @@
                 @endforeach
 
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
-                <p class="text-gray-600">
-                    Attachments
-                </p>
-                <div class="space-y-2">
-                    <div class="border-2 flex items-center p-2 rounded justify-between space-x-2">
-                        <div class="space-x-2 truncate">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="fill-current inline text-gray-500" width="24"
-                                height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M17 5v12c0 2.757-2.243 5-5 5s-5-2.243-5-5v-12c0-1.654 1.346-3 3-3s3 1.346 3 3v9c0 .551-.449 1-1 1s-1-.449-1-1v-8h-2v8c0 1.657 1.343 3 3 3s3-1.343 3-3v-9c0-2.761-2.239-5-5-5s-5 2.239-5 5v12c0 3.866 3.134 7 7 7s7-3.134 7-7v-12h-2z" />
-                            </svg>
-                            <span>
-                                resume_for_manager.pdf
-                            </span>
-                        </div>
-                        <a href="#" class="text-purple-700 hover:underline">
-                            Download
-                        </a>
-                    </div>
 
-                    <div class="border-2 flex items-center p-2 rounded justify-between space-x-2">
-                        <div class="space-x-2 truncate">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="fill-current inline text-gray-500" width="24"
-                                height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M17 5v12c0 2.757-2.243 5-5 5s-5-2.243-5-5v-12c0-1.654 1.346-3 3-3s3 1.346 3 3v9c0 .551-.449 1-1 1s-1-.449-1-1v-8h-2v8c0 1.657 1.343 3 3 3s3-1.343 3-3v-9c0-2.761-2.239-5-5-5s-5 2.239-5 5v12c0 3.866 3.134 7 7 7s7-3.134 7-7v-12h-2z" />
-                            </svg>
-                            <span>
-                                resume_for_manager.pdf
-                            </span>
-                        </div>
-                        <a href="#" class="text-purple-700 hover:underline">
-                            Download
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <a href="{{route('listado')}}" type="button" class="my-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

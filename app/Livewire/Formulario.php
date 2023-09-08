@@ -668,7 +668,6 @@ class Formulario extends Component
             $this->validacion_producto &&
             $this->modelo_negocio &&
             $this->idea_genera_ventas &&
-            $this->ventas_promedio_mes &&
             $this->idea_cantidad_empleados_genera
         ) {
             $infoIdea->save();
