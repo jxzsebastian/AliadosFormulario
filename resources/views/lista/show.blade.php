@@ -98,13 +98,15 @@
                 @endif
             @endforeach
         </div>
-
+        @if ($emprendedor->tipo_usuario)
         <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
             <p class="text-gray-600 font-medium">
                 Tipo de Usuario
             </p>
             <strong> {{ $emprendedor->tipo_usuario }}</strong>
         </div>
+        @endif
+
 
         @if ($emprendedor->necesidad_asesoria_sena)
         <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">

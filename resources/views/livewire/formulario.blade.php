@@ -2754,7 +2754,7 @@
 
 
                                         <button type="button" wire:click="back(1)"
-                                            class="inline-flex items-center justify-center w-full py-2 mb-4 text-lg font-medium leading-7 text-blue-500 border border-blue-500 rounded-md shadow-sm xl:w-auto hover:text-gray-100 px-7 h-14 hover:bg-blue-700 hover:border-blue-700 lg:mb-4 md:mr-4 dark:border-blue-300 dark:hover:text-gray-100 dark:hover:bg-blue-400 dark:hover:border-blue-400 dark:text-blue-200">
+                                            class="inline-flex items-center justify-center w-full py-2 mb-4 text-lg font-medium leading-7 text-indigo-500 border border-indigo-500 rounded-md shadow-sm xl:w-auto hover:text-gray-100 px-7 h-14 hover:bg-indigo-700 hover:border-indigo-700 lg:mb-4 md:mr-4 dark:border-indigo-300 dark:hover:text-gray-100 dark:hover:bg-indigo-400 dark:hover:border-indigo-400 dark:text-indigo-200">
                                             Volver</button>
                                     </div>
                                 </div>
