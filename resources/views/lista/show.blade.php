@@ -39,6 +39,14 @@
                 @endif
             @endforeach
 
+            @if (
+                $emprendedor->ocupacion_emprendedor == "Estudiante Univestitario"
+                )
+                <span>
+                    <p><strong>Estudiante Universitario</strong></p>
+                </span>
+            @endif
+
             @foreach ($emprendedor->emprendedor_empleado as $emprendedor_empleado)
                 @if (!empty($emprendedor_empleado->empleado_idea_negocio))
                     <span>
@@ -98,6 +106,7 @@
                 @endif
             @endforeach
         </div>
+        
         @if ($emprendedor->tipo_usuario)
         <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
             <p class="text-gray-600 font-medium">

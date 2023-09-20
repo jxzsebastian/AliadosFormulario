@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Http\Livewire;
 
+use Livewire\Component;
 use App\Models\Emprendedor;
 use App\Models\Emprendedor_AprendizEgresado;
 use App\Models\Emprendedor_Empleado;
@@ -17,8 +18,6 @@ use App\Models\Programa_Sena_HubInnovacion;
 use App\Models\Programa_Sena_Tecnoparque;
 use Illuminate\Http\Request;
 use Livewire\Wizard;
-use Livewire\Component;
-
 
 class Formulario extends Component
 {
@@ -346,7 +345,7 @@ class Formulario extends Component
 
     public function pasoFormularioIdeaProyecto()
     {
-       $validatedData = $this->validate([
+        $validatedData = $this->validate([
             'idea_genera_ventas' => 'required',
             'nombre_idea' => 'required',
             'descripcion_idea' => 'required',
@@ -504,7 +503,7 @@ class Formulario extends Component
     {
         $validatedData = $this->validate([
             'centro_formacion_actual_aprendiz' => 'required',
-            'programa_formacion_adscrito'=> 'required',
+            'programa_formacion_adscrito' => 'required',
             'interes_emprendedor_es' => 'required',
         ]);
 
@@ -817,80 +816,80 @@ class Formulario extends Component
         $this->identificacion_emprendedor = '';
         $this->tipo_identificacion_emprendedor = '';
         $this->ciudad_municipio_emprendedor = '';
-        $this->ocupacion_emprendedor= '';
-        $this->otra_ocupacion_emprendedor= '';
+        $this->ocupacion_emprendedor = '';
+        $this->otra_ocupacion_emprendedor = '';
         $this->niveles_educacion_emprendedor = [];
-         $this->empleado_idea_negocio= '';
-        $this->otro_idea_negocio= '';
+        $this->empleado_idea_negocio = '';
+        $this->otro_idea_negocio = '';
 
-         $this->tipo_usuario= '';
-        $this->otro_tipo_usuario= '';
-         $this->tipo_empresa= '';
-         $this->tipo_persona_juridica= '';
+        $this->tipo_usuario = '';
+        $this->otro_tipo_usuario = '';
+        $this->tipo_empresa = '';
+        $this->tipo_persona_juridica = '';
 
-         $this->empresa_nit= '';
-        $this->empresa_tamaño= '';
-        $this->empresa_innovacion_desarrollo_producto= '';
-        $this->empresa_proyecto_desarrollo_avances_requiere_prototipos= '';
+        $this->empresa_nit = '';
+        $this->empresa_tamaño = '';
+        $this->empresa_innovacion_desarrollo_producto = '';
+        $this->empresa_proyecto_desarrollo_avances_requiere_prototipos = '';
 
-         $this->nivel_proyecto_empresa= '';
-        $this->otro_nivel_proyecto_empresa= '';
+        $this->nivel_proyecto_empresa = '';
+        $this->otro_nivel_proyecto_empresa = '';
 
 
         $this->necesidad_asesoria_sena = [];
 
-         $this->emprendedores_nivel_idea= '';
+        $this->emprendedores_nivel_idea = '';
 
-        $this->nombre_idea= '';
-        $this->descripcion_idea= '';
-        $this->modelo_negocio= '';
-        $this->producto_servicio= '';
+        $this->nombre_idea = '';
+        $this->descripcion_idea = '';
+        $this->modelo_negocio = '';
+        $this->producto_servicio = '';
         $this->validacion_producto = [];
-        $this->idea_genera_ventas= '';
+        $this->idea_genera_ventas = '';
 
-        $this->ventas_promedio_mes= '';
+        $this->ventas_promedio_mes = '';
 
-        $this->idea_cantidad_empleados_genera= '';
+        $this->idea_cantidad_empleados_genera = '';
 
-        $this->programa_sena_ingreso= '';
+        $this->programa_sena_ingreso = '';
 
-        $this->emprendimiento_servicios= '';
+        $this->emprendimiento_servicios = '';
 
-         $this->tecnoparque_postulado= '';
-        $this->otro_tecnoparque_postulado= '';
-        $this->servicios_accedidos_tecnoparque= '';
+        $this->tecnoparque_postulado = '';
+        $this->otro_tecnoparque_postulado = '';
+        $this->servicios_accedidos_tecnoparque = '';
         $this->linea_tecnica_adscribe_tecnoparque = [];
         $this->condiciones_cumplidas_idea = [];
 
 
 
-         $this->centro_formacion_servicios= '';
-        $this->otro_centro_formacion_servicios= '';
+        $this->centro_formacion_servicios = '';
+        $this->otro_centro_formacion_servicios = '';
 
 
-         $this->hub_innovacion_servicios= '';
+        $this->hub_innovacion_servicios = '';
         $this->linea_tecnologica_hub = [];
-        $this->otro_hub_innovacion_servicios= '';
-        $this->otro_linea_tecnologica_hub= '';
-        $this->conocimientos_lineas_seleccionada= '';
-        $this->necesidad_puntual_proyecto= '';
-        $this->cuenta_equipo_trabajo= '';
+        $this->otro_hub_innovacion_servicios = '';
+        $this->otro_linea_tecnologica_hub = '';
+        $this->conocimientos_lineas_seleccionada = '';
+        $this->necesidad_puntual_proyecto = '';
+        $this->cuenta_equipo_trabajo = '';
 
-         $this->centro_formacion_actual_aprendiz= '';
-        $this->programa_formacion_adscrito= '';
-        $this->interes_emprendedor_es= '';
+        $this->centro_formacion_actual_aprendiz = '';
+        $this->programa_formacion_adscrito = '';
+        $this->interes_emprendedor_es = '';
 
-         $this->centro_formacion_actual_instructor= '';
-        $this->parte_sennova= '';
+        $this->centro_formacion_actual_instructor = '';
+        $this->parte_sennova = '';
 
-         $this->participacion_sennova = [];
+        $this->participacion_sennova = [];
         $this->sennova_semillero_investigacion;
-         $this->nombre_semillero= '';
-        $this->semillero_cantidad_integrantes= '';
-        $this->semillero_tema_trabajo= '';
-         $this->investigador_universidad_nombre= '';
-        $this->investigador_universidad_grupo_investigacion= '';
-        $this->investigador_idea_capacidad_producto= '';
+        $this->nombre_semillero = '';
+        $this->semillero_cantidad_integrantes = '';
+        $this->semillero_tema_trabajo = '';
+        $this->investigador_universidad_nombre = '';
+        $this->investigador_universidad_grupo_investigacion = '';
+        $this->investigador_idea_capacidad_producto = '';
 
 
         $this->status = 1;

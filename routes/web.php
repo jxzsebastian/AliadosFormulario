@@ -14,7 +14,7 @@ use App\Http\Controllers\FormularioController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('default');
 });
 
 Route::get('formulario', function () {
@@ -22,6 +22,8 @@ Route::get('formulario', function () {
 })->name('formulario');
 
 Route::get('listado/',[FormularioController::class,'listado'])->name('listado');
+Route::get('listado/{id}/remision',[FormularioController::class,'remision'])->name('remision');
+
 Route::get('listado/{id}',[FormularioController::class,'mostrarEmprendedor'])->name('lista.show');
 
 Route::get('default/', function () {

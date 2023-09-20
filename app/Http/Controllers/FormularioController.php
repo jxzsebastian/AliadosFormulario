@@ -43,7 +43,12 @@ class FormularioController extends Controller
             'ideas'
         ])->get();
 
-        return view('listado', compact('emprendedores'));
+        return view('lista/listado', compact('emprendedores'));
     }
+
+    public function remision (){
+        return view('formulario-remision');
+    }
+
 }
 

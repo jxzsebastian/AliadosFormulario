@@ -14,7 +14,8 @@
     </div>
 
 
-    @livewireScripts
+    <livewire:scripts>
+
     <script>
         document.addEventListener('livewire:load', function() {
             Livewire.on('updateStep', function(step) {
