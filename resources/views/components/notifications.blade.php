@@ -29,12 +29,14 @@
        aria-labelledby="notificationPanelLabel"
        class="fixed inset-y-0 z-20 w-full max-w-xs bg-white dark:bg-darker dark:text-light sm:max-w-md focus:outline-none">
        <div class="absolute right-0 p-2 transform translate-x-full">
-         <!-- Close button -->
+         <!-- Close button -->ñ
          <button
            @click="isNotificationsPanelOpen = false"
-           class="p-2 text-white rounded-md focus:outline-none focus:ring relative"
+           class="p-2 text-white rounded-md focus:outline-none focus:ring"
          >
-
+         <span class="absolute -top-2 left-4 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50">
+            1
+        </span>
            <svg
              class="w-5 h-5"
              xmlns="http://www.w3.org/2000/svg"
