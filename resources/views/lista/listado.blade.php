@@ -17,7 +17,7 @@
                             </div>
                         </div>
 
-                        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700" id="listado">
+                        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700" id="">
                             <thead class="bg-gray-50 dark:bg-gray-800">
                                 <tr>
                                     <th scope="col"
@@ -169,6 +169,7 @@
                         [3, 5, 10, -1],
                         [3, 5, 10, "Mostrar todos"]
                     ],
+                    order: [[ 1, 'asc' ]]
                 });
             });
 

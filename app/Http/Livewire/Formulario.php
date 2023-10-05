@@ -38,7 +38,7 @@ class Formulario extends Component
         $niveles_educacion_emprendedor = [];
     //Variables para el fomulario de empleados
     public  $empleado_idea_negocio,
-        $otro_idea_negocio;
+            $otro_idea_negocio;
 
     //Variables para el tipo de usuario
     public  $tipo_usuario,
@@ -138,6 +138,9 @@ class Formulario extends Component
     public $successMessage = '';
     public $formProgress = [];
 
+    public $resultProgress = [];
+
+
     public function render()
     {
         return view('livewire.formulario');
@@ -171,6 +174,7 @@ class Formulario extends Component
         $this->ocupacion_emprendedor = $this->obtenerValorCampo($this->ocupacion_emprendedor, $this->ocupacion_emprendedor, $this->otra_ocupacion_emprendedor);
 
         $this->formProgress[] = $this->currentStep;
+
         switch ($this->ocupacion_emprendedor) {
             case 'Empleado':
                 $this->currentStep = 3; //Formulario Empleado
@@ -203,9 +207,9 @@ class Formulario extends Component
                 $this->currentStep = 4; //Tipo de Usuario
                 break;
         }
-
         session(['formProgress' => $this->formProgress]);
     }
+
 
     public function pasoSiOcupacionEmpleado()
     {
@@ -675,7 +679,7 @@ class Formulario extends Component
         //Nivel de idea y Info de idea
         $infoEmprendedorIdea->emprendedores_nivel_idea = $this->emprendedores_nivel_idea;
         $infoEmprendedorIdea->emprendedor_id = $user_id;
-        if (!empty($infoEmprendedorIdea->emprendedores_nivel_idea)) {
+        if ($this->emprendedores_nivel_idea) {
             $infoEmprendedorIdea->save();
         }
 
@@ -795,7 +799,6 @@ class Formulario extends Component
         if (!empty($this->formProgress)) {
             // Si no estás en el primer paso
             if ($this->currentStep > 1) {
-
                 // Elimina el último paso del registro
                 $this->currentStep = end($this->formProgress);
                 array_pop($this->formProgress);

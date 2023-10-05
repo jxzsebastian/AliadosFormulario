@@ -20,6 +20,13 @@
 
         <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
             <p class="text-gray-600 font-medium">
+                Educación
+            </p>
+            <p> {{ $emprendedor->niveles_educacion_emprendedor }}</p>
+        </div>
+
+        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 font-medium">
                 Informacion Ocupacion
             </p>
             @foreach ($emprendedor->emprendedor_aprendiz as $aprendiz_egresado)
@@ -169,11 +176,12 @@
                 </div>
             @endif
 
-            @if (!empty($emprendedor->emprendedor_nivel_idea))
 
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+            @if ($emprendedor->emprendedor_nivel_idea->isNotEmpty())
+
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
                     <p class="text-gray-600 font-medium">
-                        Nivel de la Idea
+                        Nivel de la Idea del Emprendedor
                     </p>
                 @foreach ($emprendedor->emprendedor_nivel_idea as $nivel_idea)
                     <p>
@@ -199,24 +207,18 @@
                     <p class="text-gray-600 font-medium">
                         Detalles de la Empresa
                     </p>
-                    @foreach ($emprendedor->ideas as $empresa)
-                        @if (
-                            !empty($empresa->tipo_empresa) ||
-                                !empty($empresa->empresa_nit) ||
-                                !empty($empresa->empresa_tamaño) ||
-                                !empty($empresa->empresa_innovacion_desarrollo_producto) ||
-                                !empty($empresa->empresa_proyecto_desarrollo_avances_requiere_prototipos) ||
-                                !empty($empresa->nivel_proyecto_empresa))
+                    @foreach ($emprendedor->empresas as $empresa)
+                        @if (!empty($empresa->empresa_nit) )
                             <span>
-                                <p><strong>Tipo de Empresa:</strong> {{ $idea->tipo_empresa }}</p>
-                                <p><strong>Tipo de Persona Jurídica:</strong> {{ $idea->tipo_persona_juridica }}</p>
-                                <p><strong>NIT de la Empresa:</strong> {{ $idea->empresa_nit }}</p>
-                                <p><strong>Tamaño de la Empresa:</strong> {{ $idea->empresa_tamaño }}</p>
+                                <p><strong>Tipo de Empresa:</strong> {{ $empresa->tipo_empresa }}</p>
+                                <p><strong>Tipo de Persona Jurídica:</strong> {{ $empresa->tipo_persona_juridica }}</p>
+                                <p><strong>NIT de la Empresa:</strong> {{ $empresa->empresa_nit }}</p>
+                                <p><strong>Tamaño de la Empresa:</strong> {{ $empresa->empresa_tamaño }}</p>
                                 <p><strong>Innovación y Desarrollo de Producto:</strong>
-                                    {{ $idea->empresa_innovacion_desarrollo_producto }}</p>
+                                    {{ $empresa->empresa_innovacion_desarrollo_producto }}</p>
                                 <p><strong>Avances y Prototipos:</strong>
-                                    {{ $idea->empresa_proyecto_desarrollo_avances_requiere_prototipos }}</p>
-                                <p><strong>Nivel del Proyecto en la Empresa:</strong> {{ $idea->nivel_proyecto_empresa }}
+                                    {{ $empresa->empresa_proyecto_desarrollo_avances_requiere_prototipos }}</p>
+                                <p><strong>Nivel del Proyecto en la Empresa:</strong> {{ $empresa->nivel_proyecto_empresa }}
                                 </p>
                             </span>
                         @endif

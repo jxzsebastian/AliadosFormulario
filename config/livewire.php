@@ -54,8 +54,7 @@ return [
     |
     */
 
-    'asset_url' => 'http://localhost/AliadosFormulario/public',
-
+    'asset_url' => env('APP_URL'),
     /*
     |--------------------------------------------------------------------------
     | Livewire App URL

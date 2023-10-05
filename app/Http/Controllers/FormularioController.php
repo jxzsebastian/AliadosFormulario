@@ -34,14 +34,13 @@ class FormularioController extends Controller
             'programaSenaHubInnovacion',
             'programaSenaTecnoparque',
         ])->findOrFail($id);
-
         return view('lista.show', compact('emprendedor'));
     }
 
     public function listado (){
         $emprendedores = Emprendedor::with([
             'ideas'
-        ])->get();
+        ])->orderByDesc('created_at')->get();
 
         return view('lista/listado', compact('emprendedores'));
     }

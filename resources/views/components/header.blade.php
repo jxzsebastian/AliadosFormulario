@@ -148,7 +148,7 @@
             x-transition:leave-end="translate-y-1/2 opacity-0"
             @click.away="open = false"
             @keydown.escape="open = false"
-            class="absolute right-0 w-48 z-50 py-1 bg-white rounded-md shadow-lg top-12 ring-1 ring-black ring-opacity-5 dark:bg-dark focus:outline-none"
+            class="absolute right-0 w-48 z-10 py-1 bg-white rounded-md shadow-lg top-12 ring-1 ring-black ring-opacity-5 dark:bg-dark focus:outline-none"
             tabindex="-1"
             role="menu"
             aria-orientation="vertical"
@@ -316,6 +316,7 @@
             </a>
           </div>
         </div>
+
       </nav>
     </div>
     <!-- Mobile main manu -->

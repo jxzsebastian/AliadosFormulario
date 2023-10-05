@@ -195,7 +195,7 @@
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
                                 <input id="especializacion_tecnica_profesional"
-                                    value="EspecializaciOn Tecnica Profesional"
+                                    value="Especializacion Tecnica Profesional"
                                     wire:model.defer="niveles_educacion_emprendedor" type="checkbox"
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
