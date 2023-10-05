@@ -79,7 +79,6 @@
 
 </body>
 
-    <script src="{{ asset('js/validate-checkbox.js') }}"></script>
     <script>
         const setup = () => {
           const getTheme = () => {
