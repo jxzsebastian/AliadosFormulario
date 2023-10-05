@@ -46,11 +46,8 @@ class FormularioController extends Controller
         return view('lista/listado', compact('emprendedores'));
     }
 
-    public function remision ($id){
-
-        $emprendedor = Emprendedor::with(['ideas'])->where('id', $id)->get();
-
-        return view('formulario-remision', compact('emprendedor'));
+    public function remision (){
+        return view('formulario-remision');
     }
 
 }

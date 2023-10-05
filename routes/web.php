@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormularioController;
-use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,12 +21,8 @@ Route::get('formulario', function () {
     return view('default');
 })->name('formulario');
 
-
-Route::get('login/',[LoginController::class,'login'])->name('login');
-Route::get('register/',[LoginController::class,'register'])->name('register');
-
 Route::get('listado/',[FormularioController::class,'listado'])->name('listado');
-Route::get('listado/{id}/remision',[FormularioController::class,'remision'])->name('usuario.remision');
+Route::get('listado/{id}/remision',[FormularioController::class,'remision'])->name('remision');
 
 Route::get('listado/{id}',[FormularioController::class,'mostrarEmprendedor'])->name('lista.show');
 
