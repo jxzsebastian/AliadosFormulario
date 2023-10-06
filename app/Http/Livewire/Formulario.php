@@ -138,7 +138,7 @@ class Formulario extends Component
     public $successMessage = '';
     public $formProgress = [];
 
-    public $resultProgress = [];
+    public $pasosCompletados = [];
 
 
     public function render()
@@ -162,6 +162,7 @@ class Formulario extends Component
             $this->formProgress[] = $this->currentStep;
         }
         $this->currentStep = 2;
+        $this->pasosCompletados['pasoPrimeroInformacionUsuario'] = true;
     }
 
     public function pasoSegundoOcupacionEscolaridad()
@@ -174,6 +175,7 @@ class Formulario extends Component
         $this->ocupacion_emprendedor = $this->obtenerValorCampo($this->ocupacion_emprendedor, $this->ocupacion_emprendedor, $this->otra_ocupacion_emprendedor);
 
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoSegundoOcupacionEscolaridad'] = true;
 
         switch ($this->ocupacion_emprendedor) {
             case 'Empleado':
@@ -218,7 +220,7 @@ class Formulario extends Component
         ]);
         $this->empleado_idea_negocio = $this->obtenerValorCampo($this->empleado_idea_negocio, $this->empleado_idea_negocio, $this->otro_idea_negocio);
         $this->formProgress[] = $this->currentStep;
-
+        $this->pasosCompletados['pasoSiOcupacionEmpleado'] = true;
 
         switch ($this->empleado_idea_negocio) {
             case 'Un proyecto a nombre propio':
@@ -242,6 +244,8 @@ class Formulario extends Component
         ]);
         $this->tipo_usuario = $this->obtenerValorCampo($this->tipo_usuario, $this->tipo_usuario, $this->otro_tipo_usuario);
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoTipoUsuario'] = true;
+
         switch ($this->tipo_usuario) {
             case 'Empresa':
                 $this->currentStep = 5; //Tipo de Empresa
@@ -260,6 +264,8 @@ class Formulario extends Component
             'emprendedores_nivel_idea' => 'required',
         ]);
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoFormularioEmprendedores'] = true;
+
         switch ($this->emprendedores_nivel_idea) {
             case 'Aun no tengo una idea de negocio o proyecto de innovacion concreto':
                 $this->currentStep = 8; //Formulario Usuarios sin Proyecto
@@ -274,12 +280,12 @@ class Formulario extends Component
 
     public function pasoSiTipoUsuarioEmpresa()
     {
-        #tipo_empresa_persona_natural,tipo_empresa_persona_juridica
-        $this->formProgress[] = $this->currentStep;
         $validatedData = $this->validate([
             'tipo_empresa' => 'required',
         ]);
 
+        $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoSiTipoUsuarioEmpresa'] = true;
         switch ($this->tipo_empresa) {
             case 'Persona Juridica':
                 $this->currentStep = 6; //Tipo de Empresa
@@ -297,6 +303,8 @@ class Formulario extends Component
         $validatedData = $this->validate([
             'tipo_persona_juridica' => 'required',
         ]);
+        $this->pasosCompletados['pasoSiTipoEmpresaJuridica'] = true;
+
         $this->formProgress[] = $this->currentStep;
 
         $this->currentStep = 7;
@@ -309,6 +317,7 @@ class Formulario extends Component
         $validatedData = $this->validate([
             'necesidad_asesoria_sena' => 'required',
         ]);
+        $this->pasosCompletados['pasoUsuariosSinProyectoConcreto'] = true;
 
         $this->formProgress[] = $this->currentStep;
 
@@ -324,6 +333,7 @@ class Formulario extends Component
             'programa_sena_ingreso' => 'required',
         ]);
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoProgramaIngreso'] = true;
 
         #centros_formacion, emprendimiento, hub_innovacion, tecnoparque, extensionismo
         switch ($this->programa_sena_ingreso) {
@@ -341,6 +351,8 @@ class Formulario extends Component
                 break;
             case 'Extensionismo':
                 $this->currentStep = 24; //final step
+                $this->pasosCompletados['pasoExtensionismo'] = true;
+
                 break;
         }
         session(['formProgress' => $this->formProgress]);
@@ -357,16 +369,8 @@ class Formulario extends Component
             'validacion_producto' => 'required',
         ]);
 
-        /*          dd(
-        $this->nombre_idea,
-        $this->descripcion_idea,
-        $this->modelo_negocio,
-        $this->producto_servicio,
-        $this->validacion_producto,
-        $this->idea_genera_ventas,); */
-
-
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoFormularioIdeaProyecto'] = true;
 
         switch ($this->idea_genera_ventas) {
             case 'Si':
@@ -387,14 +391,8 @@ class Formulario extends Component
             'empresa_proyecto_desarrollo_avances_requiere_prototipos' => 'required',
         ]);
 
-        /*  dd(
-            $this->empresa_nit,
-            $this->empresa_tamaño,
-            $this->empresa_innovacion_desarrollo_producto,
-            $this->empresa_proyecto_desarrollo_avances_requiere_prototipos,
-        ); */
-
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoDatosEmpresa'] = true;
 
         switch ($this->empresa_proyecto_desarrollo_avances_requiere_prototipos) {
             case 'no':
@@ -412,8 +410,12 @@ class Formulario extends Component
         $validatedData = $this->validate([
             'nivel_proyecto_empresa' => 'required',
         ]);
+
         $this->nivel_proyecto_empresa = $this->obtenerValorCampo($this->nivel_proyecto_empresa, $this->nivel_proyecto_empresa, $this->otro_nivel_proyecto_empresa);
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoNivelProyecto'] = true;
+
+
         $this->currentStep = 11; //Formulario Idea proyecto
         session(['formProgress' => $this->formProgress]);
     }
@@ -425,6 +427,7 @@ class Formulario extends Component
             'ventas_promedio_mes' => 'required',
         ]);
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoVentasPorMesIdea'] = true;
 
         $this->currentStep = 13;
 
@@ -437,6 +440,7 @@ class Formulario extends Component
             'idea_cantidad_empleados_genera' => 'required',
         ]);
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoEmpleadosGenera'] = true;
 
         $this->currentStep = 9;
 
@@ -453,6 +457,7 @@ class Formulario extends Component
         ]);
         $this->tecnoparque_postulado = $this->obtenerValorCampo($this->tecnoparque_postulado, $this->tecnoparque_postulado, $this->otro_tecnoparque_postulado);
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoServicioTecnoparque'] = true;
 
         $this->currentStep = 24; //final step
 
@@ -465,6 +470,7 @@ class Formulario extends Component
             'emprendimiento_servicios' => 'required',
         ]);
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoServicioEmprendimiento'] = true;
 
         $this->currentStep = 24; //final step
 
@@ -479,6 +485,7 @@ class Formulario extends Component
         ]);
 
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoServicioCentrosFormacion'] = true;
 
         $this->currentStep = 24; //final step
 
@@ -497,6 +504,7 @@ class Formulario extends Component
             'cuenta_equipo_trabajo' => 'required',
         ]);
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoServicioHubInnovacion'] = true;
 
         $this->currentStep = 24; //final step
         session(['formProgress' => $this->formProgress]);
@@ -512,6 +520,7 @@ class Formulario extends Component
         ]);
 
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoSiAprendizEgresadoSENA'] = true;
 
         $this->currentStep = 4; //Tipo de Usuario
 
@@ -520,11 +529,13 @@ class Formulario extends Component
 
     public function pasoSiInstructorSENA()
     {
-        $this->formProgress[] = $this->currentStep;
         $validatedData = $this->validate([
             'centro_formacion_actual_instructor' => 'required',
             'parte_sennova' => 'required',
         ]);
+        $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoSiInstructorSENA'] = true;
+
         switch ($this->parte_sennova) {
             case 'no':
                 $this->currentStep = 10; //Formulario Emprendedores
@@ -538,12 +549,16 @@ class Formulario extends Component
 
     public function pasoSiInstructorSENNOVA()
     {
-        $this->formProgress[] = $this->currentStep;
 
         $validatedData = $this->validate([
             'sennova_semillero_investigacion' => 'required',
             'participacion_sennova' => 'required',
         ]);
+
+        $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoSiInstructorSENNOVA'] = true;
+
+
         switch ($this->sennova_semillero_investigacion) {
             case 'si':
                 $this->currentStep = 21; //Formulario Emprendedores
@@ -565,6 +580,8 @@ class Formulario extends Component
         ]);
 
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoSiSennovaSemillero'] = true;
+
         $this->currentStep = 9; //Programa o servicio por el que ingresa
 
 
@@ -580,6 +597,7 @@ class Formulario extends Component
         ]);
 
         $this->formProgress[] = $this->currentStep;
+        $this->pasosCompletados['pasoSiInvestigadorUniversidad'] = true;
 
         switch ($this->investigador_idea_capacidad_producto) {
             case 'Si':
@@ -598,6 +616,10 @@ class Formulario extends Component
 
     public function submit(Request $request)
     {
+
+        dd($this->pasosCompletados);
+
+
         $informacionUsuario = new  Emprendedor();
         $infoEmpleado = new  Emprendedor_Empleado();
         $infoEmpresa = new Empresa();
@@ -611,6 +633,14 @@ class Formulario extends Component
         $infoProgramaHubInnovacion = new Programa_Sena_HubInnovacion();
         $infoProgramaCentroFormacion = new Programa_Sena_CentroFormacion();
 
+
+       /*  if ($this->pasosCompletados['pasoPrimeroInformacionUsuario']) {
+            Emprendedor::create([
+                'nombre_emprendedor' => $this->nombre_emprendedor,
+
+            ]);
+
+        } */
 
         //Info persona
         $informacionUsuario->nombre_emprendedor = $this->nombre_emprendedor;
@@ -802,6 +832,8 @@ class Formulario extends Component
                 // Elimina el último paso del registro
                 $this->currentStep = end($this->formProgress);
                 array_pop($this->formProgress);
+                array_pop($this->pasosCompletados);
+
             }
         }
     }

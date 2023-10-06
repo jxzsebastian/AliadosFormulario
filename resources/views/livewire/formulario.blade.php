@@ -3,7 +3,8 @@
     <div class="space-y-12 mx-auto">
         <div class="flex flex-wrap w-full mb-10">
             <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">RIIES- CARACTERIZACIÓN DE USUARIOS</h1>
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">RIIES- CARACTERIZACIÓN DE
+                    USUARIOS</h1>
                 <div class="h-1 w-20 bg-blue-500 rounded"></div>
             </div>
         </div>
@@ -32,7 +33,8 @@
                         emprendedor(a)
                     </label>
                     <div class="mt-2">
-                        <input type="text" wire:model.defer="nombre_emprendedor" id="first-name" autocomplete="given-name"
+                        <input type="text" wire:model.defer="nombre_emprendedor" id="first-name"
+                            autocomplete="given-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
                         @error('nombre_emprendedor')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -44,8 +46,8 @@
                     <label for="numero_contacto_emprendedor"
                         class="block text-sm font-medium leading-6 text-gray-900">Teléfono de contacto</label>
                     <div class="mt-2">
-                        <input type="text" wire:model.defer="numero_contacto_emprendedor" id="numero_contacto_emprendedor"
-                            autocomplete="family-name"
+                        <input type="text" wire:model.defer="numero_contacto_emprendedor"
+                            id="numero_contacto_emprendedor" autocomplete="family-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
                         @error('numero_contacto_emprendedor')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -110,8 +112,8 @@
                         de Identificacion</label>
 
                     <div class="mt-2">
-                        <input type="text" wire:model.defer="identificacion_emprendedor" id="identificacion_emprendedor"
-                            autocomplete="address-level1"
+                        <input type="text" wire:model.defer="identificacion_emprendedor"
+                            id="identificacion_emprendedor" autocomplete="address-level1"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
                         @error('identificacion_emprendedor')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -140,8 +142,7 @@
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
                                 <input id="ninguno" value="Ninguno" wire:model.defer="niveles_educacion_emprendedor"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
+                                    type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
                                 <label for="ninguno" class="font-medium text-gray-900">Ninguno</label>
@@ -150,8 +151,8 @@
 
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="bachiller" value="Bachiller" wire:model.defer="niveles_educacion_emprendedor"
-                                    type="checkbox"
+                                <input id="bachiller" value="Bachiller"
+                                    wire:model.defer="niveles_educacion_emprendedor" type="checkbox"
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
@@ -161,8 +162,8 @@
 
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="tecnico" value="Tecnico" wire:model.defer="niveles_educacion_emprendedor"
-                                    type="checkbox"
+                                <input id="tecnico" value="Tecnico"
+                                    wire:model.defer="niveles_educacion_emprendedor" type="checkbox"
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
@@ -172,8 +173,8 @@
 
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="tecnologo" value="Tecnologo" wire:model.defer="niveles_educacion_emprendedor"
-                                    type="checkbox"
+                                <input id="tecnologo" value="Tecnologo"
+                                    wire:model.defer="niveles_educacion_emprendedor" type="checkbox"
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
@@ -232,8 +233,8 @@
 
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="maestria" value="Maestria" wire:model.defer="niveles_educacion_emprendedor"
-                                    type="checkbox"
+                                <input id="maestria" value="Maestria"
+                                    wire:model.defer="niveles_educacion_emprendedor" type="checkbox"
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
@@ -243,8 +244,8 @@
 
                         <div class="relative flex gap-x-3">
                             <div class="flex h-6 items-center">
-                                <input id="doctorado" value="Doctorado" wire:model.defer="niveles_educacion_emprendedor"
-                                    type="checkbox"
+                                <input id="doctorado" value="Doctorado"
+                                    wire:model.defer="niveles_educacion_emprendedor" type="checkbox"
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
@@ -305,8 +306,8 @@
                                 Universitario</label>
                         </div>
                         <div class="flex items-center gap-x-3">
-                            <input id="instructor_sena" value="Instructor SENA" wire:model.defer="ocupacion_emprendedor"
-                                name="ocupacion_emprendedor" type="radio"
+                            <input id="instructor_sena" value="Instructor SENA"
+                                wire:model.defer="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_sena"
                                 class="block text-sm font-medium leading-6 text-gray-900">Instructor Sena</label>
@@ -332,8 +333,8 @@
                         @enderror
 
                         <div class="flex items-center gap-x-3">
-                            <input id="otro_ocupacion_emprendedor" value="otro" wire:model.defer="ocupacion_emprendedor"
-                                name="ocupacion_emprendedor" type="radio"
+                            <input id="otro_ocupacion_emprendedor" value="otro"
+                                wire:model.defer="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_ocupacion_emprendedor"
                                 class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
@@ -418,22 +419,19 @@
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
                             <input id="tipo_usuario_emprendedor" value="Emprendedor" wire:model.defer="tipo_usuario"
-                                type="radio" name="tipo_usuario"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                type="radio" name="tipo_usuario" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="tipo_usuario_emprendedor"
                                 class="block text-sm font-medium leading-6 text-gray-900">Emprendedor</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="tipo_usuario_empresa" value="Empresa" wire:model.defer="tipo_usuario"
-                                type="radio" name="tipo_usuario"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                type="radio" name="tipo_usuario" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="tipo_usuario_empresa"
                                 class="block text-sm font-medium leading-6 text-gray-900">Empresa</label>
                         </div>
                         <div class="flex items-center gap-x-3">
-                            <input id="otro_tipo_usuario" value="otro" wire:model.defer="tipo_usuario" type="radio"
-                                name="tipo_usuario"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                            <input id="otro_tipo_usuario" value="otro" wire:model.defer="tipo_usuario"
+                                type="radio" name="tipo_usuario" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_tipo_usuario"
                                 class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
                             <input type="text" wire:model.defer="otro_tipo_usuario" autocomplete=""
@@ -470,8 +468,8 @@
                                 class="block text-sm font-medium leading-6 text-gray-900">Persona Natural</label>
                         </div>
                         <div class="flex items-center gap-x-3">
-                            <input id="tipo_empresa_juridica" value="Persona Juridica" wire:model.defer="tipo_empresa"
-                                type="radio" name="tipo_empresa"
+                            <input id="tipo_empresa_juridica" value="Persona Juridica"
+                                wire:model.defer="tipo_empresa" type="radio" name="tipo_empresa"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="tipo_empresa_juridica"
                                 class="block text-sm font-medium leading-6 text-gray-900">Persona
@@ -572,8 +570,8 @@
                         2022 y responda en que tamaño de empresa se encuentra.</p>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
-                            <input id="microempresa" value="Microempresa" wire:model.defer="empresa_tamaño" type="radio"
-                                name="empresa_tamaño"
+                            <input id="microempresa" value="Microempresa" wire:model.defer="empresa_tamaño"
+                                type="radio" name="empresa_tamaño"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="microempresa"
                                 class="block text-sm font-medium leading-6 text-gray-900">Microempresa</label>
@@ -644,16 +642,18 @@
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
                             <input id="empresa_proyecto_desarrollo_avances_requiere_prototipos_si"
-                                wire:model.defer="empresa_proyecto_desarrollo_avances_requiere_prototipos" value="si"
-                                type="radio" name="empresa_proyecto_desarrollo_avances_requiere_prototipos"
+                                wire:model.defer="empresa_proyecto_desarrollo_avances_requiere_prototipos"
+                                value="si" type="radio"
+                                name="empresa_proyecto_desarrollo_avances_requiere_prototipos"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="empresa_proyecto_desarrollo_avances_requiere_prototipos_si"
                                 class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="empresa_proyecto_desarrollo_avances_requiere_prototipos_no"
-                                wire:model.defer="empresa_proyecto_desarrollo_avances_requiere_prototipos" value="no"
-                                type="radio" name="empresa_proyecto_desarrollo_avances_requiere_prototipos"
+                                wire:model.defer="empresa_proyecto_desarrollo_avances_requiere_prototipos"
+                                value="no" type="radio"
+                                name="empresa_proyecto_desarrollo_avances_requiere_prototipos"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="empresa_proyecto_desarrollo_avances_requiere_prototipos_no"
                                 class="block text-sm font-medium leading-6 text-gray-900">No</label>
@@ -690,8 +690,8 @@
 
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
-                            <input id="asesoria_networking" wire:model.defer="necesidad_asesoria_sena" value="Networking"
-                                type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                            <input id="asesoria_networking" wire:model.defer="necesidad_asesoria_sena"
+                                value="Networking" type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoria_networking"
                                 class="block text-sm font-medium leading-6 text-gray-900">Networking (generar
                                 redes)</label>
@@ -751,8 +751,9 @@
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="asesoria_formacion_temas_especializados"
-                                value="asesoria_formacion_temas_especializados" wire:model.defer="necesidad_asesoria_sena"
-                                type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                value="asesoria_formacion_temas_especializados"
+                                wire:model.defer="necesidad_asesoria_sena" type="checkbox"
+                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoria_formacion_temas_especializados"
                                 class="block text-sm font-medium leading-6 text-gray-900">Formación en temas
                                 especializados
@@ -795,8 +796,8 @@
                         <div class="flex items-center gap-x-3">
                             <input id="no_idea_innovacion"
                                 value="Aun no tengo una idea de negocio o proyecto de innovacion concreto"
-                                wire:model.defer="emprendedores_nivel_idea" type="radio" name="emprendedores_nivel_idea"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                wire:model.defer="emprendedores_nivel_idea" type="radio"
+                                name="emprendedores_nivel_idea" class="h-4 w-4 border-gray-300 text-indigo-600 ">
 
                             <label for="no_idea_innovacion"
                                 class="block text-sm font-medium leading-6 text-gray-900">Aún
@@ -806,8 +807,8 @@
                         <div class="flex items-center gap-x-3">
                             <input id="idea_sin_prototipo"
                                 value="Solo tengo una idea/proyecto pero nunca he realizado un prototipo"
-                                wire:model.defer="emprendedores_nivel_idea" type="radio" name="emprendedores_nivel_idea"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                wire:model.defer="emprendedores_nivel_idea" type="radio"
+                                name="emprendedores_nivel_idea" class="h-4 w-4 border-gray-300 text-indigo-600 ">
 
                             <label for="idea_sin_prototipo"
                                 class="block text-sm font-medium leading-6 text-gray-900">Solo
@@ -816,8 +817,8 @@
                         <div class="flex items-center gap-x-3">
                             <input id="idea_prototipo_funcional"
                                 value="Tengo una idea de la cual ya he realizado un prototipo funcional pero sin ventas"
-                                wire:model.defer="emprendedores_nivel_idea" type="radio" name="emprendedores_nivel_idea"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                wire:model.defer="emprendedores_nivel_idea" type="radio"
+                                name="emprendedores_nivel_idea" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="idea_prototipo_funcional"
                                 class="block text-sm font-medium leading-6 text-gray-900">Tengo una idea de la cual ya
                                 he
@@ -826,8 +827,8 @@
 
                         <div class="flex items-center gap-x-3">
                             <input id="proyecto_empresa_empleadora" value="Es un proyecto para la empresa empleadora"
-                                wire:model.defer="emprendedores_nivel_idea" type="radio" name="emprendedores_nivel_idea"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                wire:model.defer="emprendedores_nivel_idea" type="radio"
+                                name="emprendedores_nivel_idea" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="proyecto_empresa_empleadora"
                                 class="block text-sm font-medium leading-6 text-gray-900">Es un proyecto para la
                                 empresa
@@ -837,8 +838,8 @@
                         <div class="flex items-center gap-x-3">
                             <input id="producto_elaborado_funcional"
                                 value="Tengo un producto elaborado con el que he realizado ventas efectivas (unidad productiva)"
-                                wire:model.defer="emprendedores_nivel_idea" type="radio" name="emprendedores_nivel_idea"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                wire:model.defer="emprendedores_nivel_idea" type="radio"
+                                name="emprendedores_nivel_idea" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="producto_elaborado_funcional"
                                 class="block text-sm font-medium leading-6 text-gray-900">Tengo un producto elaborado
                                 con
@@ -1124,7 +1125,8 @@
                             <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                                 <div class="flex items-center pl-3">
                                     <input id="validacion_producto_compra_firmadas" type="checkbox"
-                                        value="Tengo intenciones de compra firmadas" wire:model.defer="validacion_producto"
+                                        value="Tengo intenciones de compra firmadas"
+                                        wire:model.defer="validacion_producto"
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                     <label for="validacion_producto_compra_firmadas"
                                         class="w-full py-3 ml-2 text-sm font-medium text-black">Tengo intenciones de
@@ -1135,7 +1137,8 @@
                             <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                                 <div class="flex items-center pl-3">
                                     <input id="validacion_producto_estudios_mercado" type="checkbox"
-                                        value="He desarrollado estudios de mercado" wire:model.defer="validacion_producto"
+                                        value="He desarrollado estudios de mercado"
+                                        wire:model.defer="validacion_producto"
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                     <label for="validacion_producto_estudios_mercado"
                                         class="w-full py-3 ml-2 text-sm font-medium text-black">He desarrollado
@@ -1146,7 +1149,8 @@
                             <li class="w-full border-b border-gray-600 sm:border-b-0 sm:border-r">
                                 <div class="flex items-center pl-3">
                                     <input id="validacion_producto_ventas_efectivas" type="checkbox"
-                                        value="He desarrollado ventas efectivas" wire:model.defer="validacion_producto"
+                                        value="He desarrollado ventas efectivas"
+                                        wire:model.defer="validacion_producto"
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                     <label for="validacion_producto_ventas_efectivas"
                                         class="w-full py-3 ml-2 text-sm font-medium text-black">He desarrollado ventas
@@ -1209,7 +1213,8 @@
                     </p>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
-                            <input type="text" wire:model.defer="ventas_promedio_mes" id="" autocomplete=""
+                            <input type="text" wire:model.defer="ventas_promedio_mes" id=""
+                                autocomplete=""
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
 
                         </div>
@@ -1323,8 +1328,8 @@
 
                         <div class="flex items-center gap-x-3">
                             <input id="otro_tecnoparque_postulado" value="otro"
-                                wire:model.defer="tecnoparque_postulado" type="radio" name="tecnoparque_postulado"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                wire:model.defer="tecnoparque_postulado" type="radio"
+                                name="tecnoparque_postulado" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_tecnoparque_postulado"
                                 class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
                             <input type="text" wire:model.defer="otro_tecnoparque_postulado"
@@ -1502,8 +1507,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="creacion_empresa_fondo_emprender" value="Creación de empresa Fondo Emprender"
                                 wire:model.defer="emprendimiento_servicios" type="radio"
-                                name="emprendimiento_servicios"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="emprendimiento_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="creacion_empresa_fondo_emprender"
                                 class="block text-sm font-medium leading-6 text-gray-900">Creación de empresa Fondo
                                 Emprender
@@ -1513,8 +1517,7 @@
                             <input id="creacion_empresa_otras_fuentes"
                                 value="Creación de empresa otras fuentes de financiación"
                                 wire:model.defer="emprendimiento_servicios" type="radio"
-                                name="emprendimiento_servicios"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="emprendimiento_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="creacion_empresa_otras_fuentes"
                                 class="block text-sm font-medium leading-6 text-gray-900">Creación de empresa otras
                                 fuentes de financiación
@@ -1523,8 +1526,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="fortalecimiento_empresarial" value="Fortalecimiento empresarial"
                                 wire:model.defer="emprendimiento_servicios" type="radio"
-                                name="emprendimiento_servicios"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="emprendimiento_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="fortalecimiento_empresarial"
                                 class="block text-sm font-medium leading-6 text-gray-900">Fortalecimiento empresarial
                             </label>
@@ -1567,8 +1569,7 @@
                             <input id="certificado_competencias_laborales"
                                 value="Certificación de competencias laborales"
                                 wire:model.defer="centro_formacion_servicios" type="radio"
-                                name="centro_formacion_servicios"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="centro_formacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="certificado_competencias_laborales"
                                 class="block text-sm font-medium leading-6 text-gray-900">Certificación de
                                 competencias
@@ -1586,8 +1587,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="investigacion" value="Investigación"
                                 wire:model.defer="centro_formacion_servicios" type="radio"
-                                name="centro_formacion_servicios"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="centro_formacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="investigacion"
                                 class="block text-sm font-medium leading-6 text-gray-900">Investigación
                             </label>
@@ -1595,8 +1595,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="servicios_tecnologicos" value="Servicios Tecnológicos"
                                 wire:model.defer="centro_formacion_servicios" type="radio"
-                                name="centro_formacion_servicios"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="centro_formacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="servicios_tecnologicos"
                                 class="block text-sm font-medium leading-6 text-gray-900">Servicios Tecnológicos
                             </label>
@@ -1604,8 +1603,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="otro_centro_formacion_servicios" value="otro"
                                 wire:model.defer="centro_formacion_servicios" type="radio"
-                                name="centro_formacion_servicios"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="centro_formacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_centro_formacion_servicios"
                                 class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
                             <input type="text" wire:model.defer="otro_centro_formacion_servicios"
@@ -1645,8 +1643,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="fortalecimiento_capacidades" wire:model.defer="hub_innovacion_servicios"
                                 value="Fortalecimiento de Capacidades" type="radio"
-                                name="hub_innovacion_servicios"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="hub_innovacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="fortalecimiento_capacidades"
                                 class="block text-sm font-medium leading-6 text-gray-900">Fortalecimiento de
                                 Capacidades</label>
@@ -1654,8 +1651,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="desarrollo_soluciones" value="Desarrollo de Soluciones"
                                 wire:model.defer="hub_innovacion_servicios" type="radio"
-                                name="hub_innovacion_servicios"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="hub_innovacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="desarrollo_soluciones"
                                 class="block text-sm font-medium leading-6 text-gray-900">Desarrollo de Soluciones
                             </label>
@@ -1663,8 +1659,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="relacionamiento" value="Relacionamiento"
                                 wire:model.defer="hub_innovacion_servicios" type="radio"
-                                name="hub_innovacion_servicios"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="hub_innovacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="relacionamiento"
                                 class="block text-sm font-medium leading-6 text-gray-900">Relacionamiento
                             </label>
@@ -1672,8 +1667,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="otro_hub_innovacion_servicios" value="otro"
                                 wire:model.defer="hub_innovacion_servicios" type="radio"
-                                name="hub_innovacion_servicios"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="hub_innovacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_hub_innovacion_servicios"
                                 class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
                             <input type="text" wire:model.defer="otro_hub_innovacion_servicios"
@@ -1696,8 +1690,7 @@
 
                         <div class="flex items-center gap-x-3">
                             <input id="linea_iot" wire:model.defer="linea_tecnologica_hub" value="IoT"
-                                type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_iot" class="block text-sm font-medium leading-6 text-gray-900">IoT
                                 (internet de las cosas)</label>
                         </div>
@@ -1759,8 +1752,7 @@
 
                         <div class="flex items-center gap-x-3">
                             <input id="linea_big_data" value="linea_big_data" wire:model.defer="Big Data"
-                                type="checkbox"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_big_data"
                                 class="block text-sm font-medium leading-6 text-gray-900">Big
                                 Data
@@ -1790,8 +1782,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="otro_linea_tecnologica_hub" value="otro"
                                 wire:model.defer="otro_linea_tecnologica_hub" type="radio"
-                                name="otro_linea_tecnologica_hub"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="otro_linea_tecnologica_hub" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_linea_tecnologica_hub"
                                 class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
                             <input type="text" wire:model.defer="otro_linea_tecnologica_hub"
@@ -1880,8 +1871,8 @@
                     </h2>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
-                            <input type="text" wire:model.defer="cuenta_equipo_trabajo" id="cuenta_equipo_trabajo"
-                                autocomplete=""
+                            <input type="text" wire:model.defer="cuenta_equipo_trabajo"
+                                id="cuenta_equipo_trabajo" autocomplete=""
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
                         </div>
                         @error('cuenta_equipo_trabajo')
@@ -2347,8 +2338,7 @@
                                 wire:model.defer="centro_formacion_actual_instructor"
                                 name="centro_formacion_actual_instructor"
                                 value="COMPLEJO TECNOLÓGICO TURÍSTICO Y AGROINDUSTRIAL DEL OCCIDENTE ANTIOQUEÑO​​"
-                                type="radio"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_complejo_tecnologico_turistico_agroindustrial_occidente_antioqueño"
                                 class="block text-sm font-medium leading-6 text-gray-900">
                                 COMPLEJO TECNOLÓGICO TURÍSTICO Y AGROINDUSTRIAL DEL OCCIDENTE ANTIOQUEÑO​​</label>
@@ -2593,7 +2583,8 @@
                                 class="block text-sm font-medium leading-6 text-gray-900">Grupo de
                                 Investigación</label>
                             <div class="mt-2">
-                                <input type="text" wire:model.defer="investigador_universidad_grupo_investigacion"
+                                <input type="text"
+                                    wire:model.defer="investigador_universidad_grupo_investigacion"
                                     id="investigador_universidad_grupo_investigacion"
                                     autocomplete="investigador_universidad_grupo_investigacion"
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
@@ -2654,8 +2645,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="proyecto_investigacion" wire:model.defer="nivel_proyecto_empresa"
                                 value="Idea que está a nivel de articulo de investigación" type="radio"
-                                name="nivel_proyecto_empresa"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="proyecto_investigacion"
                                 class="block text-sm font-medium leading-6 text-gray-900">Es una idea que está a nivel
                                 de
@@ -2674,8 +2664,8 @@
                         <div class="flex items-center gap-x-3">
                             <input id="proyecto_prototipos_basicos"
                                 value="Proyecto del cual ya se tienen prototipos básicos"
-                                wire:model.defer="nivel_proyecto_empresa" type="radio" name="nivel_proyecto_empresa"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                wire:model.defer="nivel_proyecto_empresa" type="radio"
+                                name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="proyecto_prototipos_basicos"
                                 class="block text-sm font-medium leading-6 text-gray-900">Es un proyecto del cual ya
                                 se
@@ -2684,8 +2674,8 @@
                         <div class="flex items-center gap-x-3">
                             <input id="proyecto_prototipos_funcionales"
                                 value="Proyecto del cual ya se tienen prototipos funcionales a escala real"
-                                wire:model.defer="nivel_proyecto_empresa" type="radio" name="nivel_proyecto_empresa"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                wire:model.defer="nivel_proyecto_empresa" type="radio"
+                                name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="proyecto_prototipos_funcionales"
                                 class="block text-sm font-medium leading-6 text-gray-900">Es un proyecto del cual ya
                                 se
@@ -2694,16 +2684,16 @@
                         <div class="flex items-center gap-x-3">
                             <input id="producto_mercado_mejorable"
                                 value="Producto en el mercado pero susceptible de mejoras"
-                                wire:model.defer="nivel_proyecto_empresa" type="radio" name="nivel_proyecto_empresa"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                wire:model.defer="nivel_proyecto_empresa" type="radio"
+                                name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="producto_mercado_mejorable"
                                 class="block text-sm font-medium leading-6 text-gray-900">Es un producto en el mercado
                                 pero susceptible de mejoras</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="otro_nivel_proyecto_empresa" value="otro"
-                                wire:model.defer="nivel_proyecto_empresa" type="radio" name="nivel_proyecto_empresa"
-                                class="h-4 w-4 border-gray-300 text-indigo-600 ">
+                                wire:model.defer="nivel_proyecto_empresa" type="radio"
+                                name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_nivel_proyecto_empresa"
                                 class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
                             <input type="text" wire:model.defer="otro_nivel_proyecto_empresa"
@@ -2728,34 +2718,354 @@
         {{-- Final --}}
         <div class=" {{ $currentStep != 24 ? 'displayNone' : '' }}" id="step-24">
             <section class="flex items-center h-full  font-poppins  ">
-                <div class="justify-center flex-1 mx-auto max-w-7xl ">
-                    <div class="px-4 py-4 mx-4 bg-white rounded-md shadow md:p-10 ">
-                        <div class="flex flex-wrap items-center ">
-                            <div class="w-full px-4 mb-8 lg:w-1/2 lg:mb-0">
-                                <h2 class="mb-4 text-3xl font-bold text-center lg:text-left ">Enviar Formulario
-                                </h2>
-                                <p class="text-base leading-loose text-center text-gray-500 lg:text-left lg:max-w-lg">
-                                    Haz llenado todos los campos con exito
-                                </p>
-                                <p class="text-base leading-loose text-center text-gray-500 lg:text-left lg:max-w-lg">
-                                    ¿Estas seguro de querer enviar este formulario?
-                                </p>
+                <div class="justify-center flex-1 mx-auto max-w-full ">
+                    <div class="px-4 py-4 mx-4 bg-white   md:p-10 ">
+                        <div class="items-center ">
+
+                            <div class="bg-white">
+                                <div class="">
+                                    <div class=" mx-auto sm:px-2 lg:px-4">
+                                        <div class="max-w-2xl mx-auto px-4 lg:max-w-full lg:px-0">
+                                            <h1 class="text-xl font-bold  text-gray-900 sm:text-2xl">
+                                                Tu información Ingresada</h1>
+                                            <p class="mt-2 text-sm text-gray-500">A continuacion podras ver aquellos datos que rellenaste, en dado caso de equivocación puedes volver y cambiarlos.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-12">
+                                        <h2 class="sr-only">Recent orders</h2>
+                                        <div class="max-w-7xl mx-auto sm:px-2 lg:px-8">
+                                            <div class="max-w-2xl mx-auto space-y-8 sm:px-4 lg:max-w-full lg:px-0">
+                                                <div
+                                                    class="bg-white border-t border-b border-gray-200 shadow-sm sm:rounded-lg sm:border">
+                                                    <h3 class="sr-only">Order placed on <time
+                                                            datetime="2021-07-06">Jul 6, 2021</time></h3>
+
+                                                    <!-- Products -->
+                                                    <h4 class="sr-only">Items</h4>
+                                                    <ul  role="list" class="divide-y divide-gray-200">
+                                                        {{-- Informacion de Emprendedor --}}
+                                                        <li class="p-4 sm:p-6">
+                                                            <div class="flex items-center sm:items-start">
+                                                                <div class="flex-1 ml-2 text-sm">
+                                                                    <div class="">
+                                                                        <div class="font-medium text-gray-900 sm:flex ">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
+                                                                            <h5>Informacion personal:</h5>
+                                                                          </div>
+                                                                        <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                            <p><strong>Nombre:</strong> {{$nombre_emprendedor}}</p>
+                                                                            <p><strong>Numero:</strong> {{$numero_contacto_emprendedor}}</p>
+                                                                            <p><strong>Correo:</strong> {{$correo_emprendedor}}</p>
+                                                                            <p><strong>Tipo de Identificacion:</strong> {{$tipo_identificacion_emprendedor}}</p>
+                                                                            <p><strong>Numero de Identificacion:</strong> {{$identificacion_emprendedor}}</p>
+                                                                            <p><strong>Ciudad o Municipio:</strong> {{$ciudad_municipio_emprendedor}}</p>
+                                                                            <p><strong>Ocupacion:</strong> {{$ocupacion_emprendedor}}</p>
+                                                                            <p><strong>Educacion:</strong> {{implode(', ', $niveles_educacion_emprendedor);}}</p>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        {{-- Informacion de Emprendedor --}}
+
+
+                                                        {{-- Informacion de Ocupacion --}}
+                                                        <li class="p-4 sm:p-6">
+                                                            <div class="flex items-center sm:items-start">
+                                                                <div class="flex-1 ml-2 text-sm">
+                                                                    <div class="">
+                                                                        <div class="font-medium text-gray-900 sm:flex ">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
+                                                                            <h5><strong>Informacion Ocupacion: </strong> {{$ocupacion_emprendedor}}</h5>
+                                                                          </div>
+
+                                                                        @if(isset($pasosCompletados['pasoSiOcupacionEmpleado']) && $pasosCompletados['pasoSiOcupacionEmpleado'])
+                                                                            <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                                <p><strong>Idea de Negocio: </strong> {{$empleado_idea_negocio}}</p>
+                                                                            </span>
+                                                                        @endif
+
+                                                                        @if(isset($pasosCompletados['pasoSiAprendizEgresadoSENA']) && $pasosCompletados['pasoSiAprendizEgresadoSENA'])
+                                                                        <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                            <p><strong>Centro de Formacion:</strong> {{$centro_formacion_actual_aprendiz}}</p>
+                                                                            <p><strong>Programa de Formacion Adscrito:</strong>{{ $programa_formacion_adscrito }}</p>
+                                                                            <p><strong>Interes Emprendedor:</strong> {{ $interes_emprendedor_es }}</p>
+                                                                        </span>
+                                                                        @endif
+
+
+                                                                        @if(isset($pasosCompletados['pasoSiInstructorSENA']) && $pasosCompletados['pasoSiInstructorSENA'])
+                                                                        <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                            <p><strong>Centro de Formacion:</strong> {{$centro_formacion_actual_instructor}}</p>
+                                                                            <p><strong>¿Hace parte de SENNOVA?:</strong>{{ $parte_sennova }}</p>
+                                                                                @if(isset($pasosCompletados['pasoSiInstructorSENNOVA']) && $pasosCompletados['pasoSiInstructorSENNOVA'])
+                                                                                    <p><strong>Participacion en SENNOVA: </strong>{{ implode(', ', $participacion_sennova); }}</p>
+                                                                                    <p><strong>El grupo cuenta con un Semillero de Investigación?</strong>{{$sennova_semillero_investigacion }}</p>
+                                                                                @endif
+                                                                                @if(isset($pasosCompletados['pasoSiSennovaSemillero']) && $pasosCompletados['pasoSiSennovaSemillero'])
+                                                                                    <p><strong>Cantidad de Integrantes del Semillero</strong>{{ $semillero_cantidad_integrantes }}</p>
+                                                                                    <p><strong>Temas de Trabajo</strong> {{ $semillero_tema_trabajo }}</p>
+                                                                                @endif
+                                                                        </span>
+                                                                        @endif
+
+
+                                                                        @if(isset($pasosCompletados['pasoSiInvestigadorUniversidad']) && $pasosCompletados['pasoSiInvestigadorUniversidad'])
+                                                                        <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                            <p><strong>Nombre de la Universidad:</strong>
+                                                                                {{ $investigador_universidad_nombre }}</p>
+                                                                            <p><strong>Nombre del Grupo de Investigación:</strong>
+                                                                                {{ $investigador_universidad_grupo_investigacion }}</p>
+                                                                            <p><strong>¿Tiene una idea con capacidad de convertirse en un producto o un prototipo? </strong>
+                                                                                {{ $investigador_idea_capacidad_producto }}</p></span>
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        {{-- Informacion de Ocupacion --}}
+
+                                                        {{-- Tipo de Usuario --}}
+                                                        @if(isset($pasosCompletados['pasoTipoUsuario']) && $pasosCompletados['pasoTipoUsuario'])
+                                                            <li class="p-4 sm:p-6">
+                                                            <div class="flex items-center sm:items-start">
+                                                                <div class="flex-1 ml-2 text-sm">
+                                                                    <div class="">
+                                                                        <div class="font-medium text-gray-900 sm:flex ">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
+                                                                            <h5>Tipo de Usuario</h5>
+                                                                          </div>
+
+                                                                        <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                            <p><strong>Tipo de Usuario:</strong> {{$tipo_usuario}}</p>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        @endif
+                                                        {{-- Tipo de Usuario --}}
+
+
+                                                        {{-- Tipo usuario Empresa  --}}
+                                                        @if(isset($pasosCompletados['pasoSiTipoUsuarioEmpresa']) && $pasosCompletados['pasoSiTipoUsuarioEmpresa'])
+                                                            <li class="p-4 sm:p-6">
+                                                                <div class="flex items-center sm:items-start">
+                                                                    <div class="flex-1 ml-2 text-sm">
+                                                                        <div class="">
+                                                                            <div class="font-medium text-gray-900 sm:flex ">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
+                                                                                <h5>Tipo de Empresa</h5>
+                                                                            </div>
+
+                                                                            <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                                <p><strong>Tipo de Empresa:</strong> {{$tipo_empresa}}</p>
+                                                                                @if(isset($pasosCompletados['pasoSiTipoEmpresaJuridica']) && $pasosCompletados['pasoSiTipoEmpresaJuridica'])<p><strong>Tipo persona juridica:</strong> {{ $tipo_persona_juridica }}</p>@endif
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        @endif
+                                                        {{-- Tipo usuario Empresa  --}}
+
+
+                                                        {{-- Asesoria SENA --}}
+                                                        @if(isset($pasosCompletados['pasoUsuariosSinProyectoConcreto']) && $pasosCompletados['pasoUsuariosSinProyectoConcreto'])
+                                                            <li class="p-4 sm:p-6">
+                                                            <div class="flex items-center sm:items-start">
+                                                                <div class="flex-1 ml-2 text-sm">
+                                                                    <div class="">
+                                                                        <div class="font-medium text-gray-900 sm:flex ">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
+                                                                            <h5>Asesoria Por Parte del SENA</h5>
+                                                                          </div>
+
+                                                                        <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                            <p><strong>Asesoria Necesitada:</strong> {{implode(', ', $necesidad_asesoria_sena);}}</p>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            </li>
+                                                        @endif
+                                                        {{-- Asesoria SENA --}}
+
+                                                        {{-- Idea --}}
+                                                        @if(isset($pasosCompletados['pasoFormularioIdeaProyecto']) && $pasosCompletados['pasoFormularioIdeaProyecto'])
+                                                            <li class="p-4 sm:p-6">
+                                                            <div class="flex items-center sm:items-start">
+                                                                <div class="flex-1 ml-2 text-sm">
+                                                                    <div class="">
+                                                                        <div class="font-medium text-gray-900 sm:flex ">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
+                                                                            <h5>Informacion de la Idea: {{$nombre_idea}}</h5>
+                                                                          </div>
+
+                                                                        <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                            <p><strong>Nombre de la Idea:</strong> {{ $nombre_idea }}</p>
+                                                                            <p><strong>Descripción de la Idea:</strong> {{ $descripcion_idea }}</p>
+                                                                            <p><strong>Modelo de Negocio:</strong> {{ $modelo_negocio }}</p>
+                                                                            <p><strong>Producto o Servicio:</strong> {{ $producto_servicio }}</p>
+                                                                            <p><strong>Validación del Producto:</strong> {{implode(', ', $validacion_producto);}}</p>
+                                                                            <p><strong>¿La Idea Genera Ventas?</strong> {{ $idea_genera_ventas }}</p>
+                                                                            @if(isset($pasosCompletados['pasoVentasPorMesIdea']) && $pasosCompletados['pasoVentasPorMesIdea'])<p><strong>Ventas Promedio por Mes:</strong> {{ $ventas_promedio_mes }}</p>@endif
+                                                                            @if(isset($pasosCompletados['pasoEmpleadosGenera']) && $pasosCompletados['pasoEmpleadosGenera'])<p><strong>Cantidad de Empleados que Genera:</strong>{{ $idea_cantidad_empleados_genera }}</p>@endif
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            </li>
+                                                        @endif
+                                                        {{-- Idea --}}
+
+                                                        {{-- Nivel Idea Emprendedor --}}
+                                                            @if(isset($pasosCompletados['pasoFormularioEmprendedores']) && $pasosCompletados['pasoFormularioEmprendedores'])
+                                                                <li class="p-4 sm:p-6">
+                                                                <div class="flex items-center sm:items-start">
+                                                                    <div class="flex-1 ml-2 text-sm">
+                                                                        <div class="">
+                                                                            <div class="font-medium text-gray-900 sm:flex ">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
+                                                                                <h5>Nivel de la Idea del Emprendedor</h5>
+                                                                            </div>
+
+                                                                            <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                                <p><strong>Nivel de la Idea del Emprendedor:</strong>{{ $emprendedores_nivel_idea }}</p>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                </li>
+                                                            @endif
+                                                        {{-- Nivel Idea Emprendedor --}}
+
+                                                        {{--  Detalles de la Empresa --}}
+                                                            @if(isset($pasosCompletados['pasoDatosEmpresa']) && $pasosCompletados['pasoDatosEmpresa'])
+                                                                <li class="p-4 sm:p-6">
+                                                                <div class="flex items-center sm:items-start">
+                                                                    <div class="flex-1 ml-2 text-sm">
+                                                                        <div class="">
+                                                                            <div class="font-medium text-gray-900 sm:flex ">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
+                                                                                <h5>Informacion de la Empresa: </h5>
+                                                                            </div>
+
+                                                                            <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                                <p><strong>NIT de la Empresa:</strong>{{ $empresa_nit }}</p>
+                                                                                <p><strong>Tamaño de la Empresa:</strong>{{ $empresa_tamaño }}</p>
+                                                                                <p><strong>¿La empresa cuenta con una unidad de innovación o desarrollo de producto?:</strong>{{ $empresa_innovacion_desarrollo_producto }}</p>
+                                                                                <p><strong>¿Cuenta con un proyecto de desarrollo de producto o servicios del cual ya tiene avances y requiere desarrollar prototipos? :</strong>{{ $empresa_proyecto_desarrollo_avances_requiere_prototipos }}</p>
+                                                                            </span>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                </li>
+                                                            @endif
+                                                        {{--  Detalles de la Empresa --}}
+
+                                                        {{-- Nivel Idea Proyecto Empresa --}}
+                                                        @if(isset($pasosCompletados['pasoNivelProyecto']) && $pasosCompletados['pasoNivelProyecto'])
+                                                            <li class="p-4 sm:p-6">
+                                                                <div class="flex items-center sm:items-start">
+                                                                    <div class="flex-1 ml-2 text-sm">
+                                                                        <div class="">
+                                                                            <div class="font-medium text-gray-900 sm:flex ">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
+                                                                                <h5>Nivel de la Idea de la Empresa</h5>
+                                                                            </div>
+
+                                                                            <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                                <p><strong>Nivel de la Idea de la Empresa:</strong>{{ $nivel_proyecto_empresa }}</p>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        @endif
+                                                        {{-- Nivel Idea Empresa --}}
+
+                                                    {{-- Servicio SENA Ingresado  --}}
+                                                    @if(isset($pasosCompletados['pasoProgramaIngreso']) && $pasosCompletados['pasoProgramaIngreso'])
+                                                    <li class="p-4 sm:p-6">
+                                                        <div class="flex items-center sm:items-start">
+                                                            <div class="flex-1 ml-2 text-sm">
+                                                                <div class="">
+                                                                    <div class="font-medium text-gray-900 sm:flex ">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
+                                                                        <h5>Servicio SENA Ingresado : {{$programa_sena_ingreso}}</h5>
+                                                                    </div>
+
+                                                                    <span class=" ml-6 text-gray-700 sm:block sm:mt-1 ">
+                                                                        @switch(True)
+                                                                            @case(isset($pasosCompletados['pasoServicioTecnoparque']) && $pasosCompletados['pasoServicioTecnoparque'])
+                                                                            <p><strong>TecnoParque Postulado:</strong> {{$tecnoparque_postulado }}</p>
+                                                                            <p><strong>Servicios Accedidos en TecnoParque:</strong>
+                                                                                {{$servicios_accedidos_tecnoparque }}</p>
+                                                                            <p><strong>Línea Técnica a la que Adscribe TecnoParque:</strong>
+                                                                                {{implode(', ', $linea_tecnica_adscribe_tecnoparque); }}</p>
+                                                                            <p><strong>Condiciones Cumplidas para la Idea:</strong>
+                                                                                {{implode(', ', $condiciones_cumplidas_idea);  }}</p>
+                                                                                @break
+
+                                                                            @case(isset($pasosCompletados['pasoServicioEmprendimiento']) && $pasosCompletados['pasoServicioEmprendimiento'])
+                                                                                <p><strong>Servicios de Emprendimiento:</strong>{{ $emprendimiento_servicios }}</p>
+                                                                                @break
+
+                                                                            @case(isset($pasosCompletados['pasoServicioCentrosFormacion']) && $pasosCompletados['pasoServicioCentrosFormacion'])
+                                                                                <p><strong>Servicios del Centro de Formación:</strong>{{ $centro_formacion_servicios }}</p>
+                                                                                @break
+
+                                                                            @case(isset($pasosCompletados['pasoServicioEmprendimiento']) && $pasosCompletados['pasoServicioEmprendimiento'])
+                                                                            <p><strong>Servicios de Emprendimiento:</strong>{{ $emprendimiento_servicios }}</p>
+                                                                                @break
+
+                                                                            @case(isset($pasosCompletados['pasoServicioHubInnovacion']) && $pasosCompletados['pasoServicioHubInnovacion'])
+                                                                                <p><strong>Servicios del Hub de Innovación:</strong>
+                                                                                    {{ $hub_innovacion_servicios }}</p>
+                                                                                <p><strong>Línea Tecnológica del Hub:</strong> {{ implode(', ', $linea_tecnologica_hub); }}</p>
+                                                                                <p><strong>Conocimientos en Líneas Seleccionadas:</strong>
+                                                                                    {{ $conocimientos_lineas_seleccionada }}</p>
+                                                                                <p><strong>Necesidad Puntual del Proyecto:</strong>
+                                                                                    {{ $necesidad_puntual_proyecto }}</p>
+                                                                                <p><strong>Cuenta con Equipo de Trabajo:</strong> {{ $cuenta_equipo_trabajo }}
+                                                                                </p>
+                                                                            @break
+
+                                                                            @default
+                                                                            <p><strong>Servicio Accedido:</strong>{{ $programa_sena_ingreso }}</p>
+                                                                                @break
+
+                                                                        @endswitch
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                @endif
+                                                {{-- Servicio SENA Ingresado  --}}
+                                                        <!-- More products... -->
+                                                    </ul>
+                                                </div>
+
+                                                <!-- More orders... -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
-                            <div class="w-full px-4 lg:w-1/2">
+
+                            <div class="w-full px-4 mt-4">
                                 <div class="flex items-center justify-center lg:justify-end">
                                     <div class="flex flex-wrap items-center lg:justify-end">
+                                        <button type="button" wire:click="back(1)" class="inline-flex items-center justify-center w-full py-2 mb-4 text-lg font-medium leading-7 text-gray-500 border border-gray-500 rounded-md shadow-sm xl:w-auto hover:text-gray-100 px-7 h-14 hover:bg-gray-700 hover:border-gray-700 lg:mb-4 md:mr-4 dark:border-gray-300 dark:hover:text-gray-100 dark:hover:bg-gray-400 dark:hover:border-gray-400 dark:text-gray-200">Volver</button>
 
+                                        <button type="submit" class="inline-flex items-center justify-center w-full py-2 mb-4 text-lg font-medium leading-7 text-gray-100 bg-blue-500 border border-transparent rounded-md shadow-sm xl:w-auto hover:bg-blue-700 px-7 h-14 lg:mb-4 md:mr-4 dark:bg-blue-500 dark:hover:text-gray-100 dark:hover:bg-blue-400">Enviar</button>
 
-                                        <button type="submit"
-                                            class="inline-flex items-center justify-center w-full py-2 mb-4 text-lg font-medium leading-7 text-gray-100 bg-blue-500 border border-transparent rounded-md shadow-sm xl:w-auto hover:bg-blue-700 px-7 h-14 lg:mb-4 md:mr-4 dark:bg-blue-500 dark:hover:text-gray-100 dark:hover:bg-blue-400">
-                                            Enviar</button>
-
-
-
-
-                                        <button type="button" wire:click="back(1)"
-                                            class="inline-flex items-center justify-center w-full py-2 mb-4 text-lg font-medium leading-7 text-indigo-500 border border-indigo-500 rounded-md shadow-sm xl:w-auto hover:text-gray-100 px-7 h-14 hover:bg-indigo-700 hover:border-indigo-700 lg:mb-4 md:mr-4 dark:border-indigo-300 dark:hover:text-gray-100 dark:hover:bg-indigo-400 dark:hover:border-indigo-400 dark:text-indigo-200">
-                                            Volver</button>
                                     </div>
                                 </div>
                             </div>
@@ -2763,7 +3073,6 @@
                     </div>
                 </div>
             </section>
-
         </div>
 
 
