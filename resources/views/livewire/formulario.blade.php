@@ -751,7 +751,7 @@
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="asesoria_formacion_temas_especializados"
-                                value="asesoria_formacion_temas_especializados"
+                                value="Formación en temas especializados"
                                 wire:model.defer="necesidad_asesoria_sena" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoria_formacion_temas_especializados"
@@ -760,7 +760,7 @@
                             </label>
                         </div>
                         <div class="flex items-center gap-x-3">
-                            <input id="asesoria_oferta_sena" value="asesoria_oferta_sena"
+                            <input id="asesoria_oferta_sena" value="Conocer la oferta SENA"
                                 wire:model.defer="necesidad_asesoria_sena" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoria_oferta_sena"
@@ -1751,7 +1751,7 @@
                         </div>
 
                         <div class="flex items-center gap-x-3">
-                            <input id="linea_big_data" value="linea_big_data" wire:model.defer="Big Data"
+                            <input id="linea_big_data" value="BigData" wire:model.defer="linea_tecnologica_hub"
                                 type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_big_data"
                                 class="block text-sm font-medium leading-6 text-gray-900">Big

@@ -617,7 +617,6 @@ class Formulario extends Component
     public function submit(Request $request)
     {
 
-        dd($this->pasosCompletados);
 
 
         $informacionUsuario = new  Emprendedor();
@@ -633,15 +632,6 @@ class Formulario extends Component
         $infoProgramaHubInnovacion = new Programa_Sena_HubInnovacion();
         $infoProgramaCentroFormacion = new Programa_Sena_CentroFormacion();
 
-
-       /*  if ($this->pasosCompletados['pasoPrimeroInformacionUsuario']) {
-            Emprendedor::create([
-                'nombre_emprendedor' => $this->nombre_emprendedor,
-
-            ]);
-
-        } */
-
         //Info persona
         $informacionUsuario->nombre_emprendedor = $this->nombre_emprendedor;
         $informacionUsuario->numero_contacto_emprendedor = $this->numero_contacto_emprendedor;
@@ -650,157 +640,174 @@ class Formulario extends Component
         $informacionUsuario->tipo_identificacion_emprendedor = $this->tipo_identificacion_emprendedor;
         $informacionUsuario->ciudad_municipio_emprendedor = $this->ciudad_municipio_emprendedor;
         $informacionUsuario->tipo_usuario = $this->tipo_usuario;
-        $informacionUsuario->programa_sena_ingreso = $this->programa_sena_ingreso;
+
+        if (isset($this->pasosCompletados['pasoProgramaIngreso']) && $this->pasosCompletados['pasoProgramaIngreso']) {
+            $informacionUsuario->programa_sena_ingreso = $this->programa_sena_ingreso;
+        }
         $informacionUsuario->ocupacion_emprendedor = $this->ocupacion_emprendedor;
         $informacionUsuario->niveles_educacion_emprendedor = implode(', ', $this->niveles_educacion_emprendedor);
-
-        if (empty($this->necesidad_asesoria_sena)) {
-            $informacionUsuario->necesidad_asesoria_sena = "Ninguna";
-        } else {
-            $informacionUsuario->necesidad_asesoria_sena = implode(', ', $this->necesidad_asesoria_sena) ?? "Ninguna";
+        if (isset($this->pasosCompletados['pasoUsuariosSinProyectoConcreto']) && $this->pasosCompletados['pasoUsuariosSinProyectoConcreto']) {
+            if (empty($this->necesidad_asesoria_sena)) {
+                $informacionUsuario->necesidad_asesoria_sena = "Ninguna";
+            } else {
+                $informacionUsuario->necesidad_asesoria_sena = implode(', ', $this->necesidad_asesoria_sena);
+            }
         }
-
         $informacionUsuario->save();
+
         $user_id = $informacionUsuario->id;
 
-        //Si es Empleado
-        $infoEmpleado->empleado_idea_negocio = $this->empleado_idea_negocio;
-        $infoEmpleado->emprendedor_id = $user_id;
-        if ($this->empleado_idea_negocio) {
-            $infoEmpleado->save();
+        if (isset($this->pasosCompletados['pasoSiOcupacionEmpleado']) && $this->pasosCompletados['pasoSiOcupacionEmpleado'] ) {
+            $infoEmpleado->empleado_idea_negocio = $this->empleado_idea_negocio;
+            $infoEmpleado->emprendedor_id = $user_id;
+            if ($this->empleado_idea_negocio) {
+                $infoEmpleado->save();
+            }
+        }
+        if (isset($this->pasosCompletados['pasoFormularioEmprendedores']) && $this->pasosCompletados['pasoFormularioEmprendedores']) {
+            $infoEmprendedorIdea->emprendedores_nivel_idea = $this->emprendedores_nivel_idea;
+            $infoEmprendedorIdea->emprendedor_id = $user_id;
+            if ($this->emprendedores_nivel_idea) {
+                $infoEmprendedorIdea->save();
+            }
+
+        }
+        if (isset($this->pasosCompletados['pasoSiTipoUsuarioEmpresa']) && $this->pasosCompletados['pasoSiTipoUsuarioEmpresa']) {
+            $infoEmpresa->tipo_empresa = $this->tipo_empresa;
+            if (isset($this->pasosCompletados['pasoSiTipoEmpresaJuridica']) && $this->pasosCompletados['pasoSiTipoEmpresaJuridica']) {
+                $infoEmpresa->tipo_persona_juridica = $this->tipo_persona_juridica;
+            }
+            if (isset($this->pasosCompletados['pasoDatosEmpresa']) && $this->pasosCompletados['pasoDatosEmpresa']) {
+                $infoEmpresa->empresa_nit = $this->empresa_nit;
+                $infoEmpresa->empresa_tamaño = $this->empresa_tamaño;
+                $infoEmpresa->empresa_innovacion_desarrollo_producto = $this->empresa_innovacion_desarrollo_producto;
+                $infoEmpresa->empresa_proyecto_desarrollo_avances_requiere_prototipos = $this->empresa_proyecto_desarrollo_avances_requiere_prototipos;
+            }
+            if (isset($this->pasosCompletados['pasoNivelProyecto']) && $this->pasosCompletados['pasoNivelProyecto']) {
+                $infoEmpresa->nivel_proyecto_empresa = $this->nivel_proyecto_empresa;
+            }
+            if ($this->empresa_nit && $this->tipo_empresa) {
+                $infoEmpresa->emprendedor_id = $user_id;
+                $infoEmpresa->save();
+            }
         }
 
+        if (isset($this->pasosCompletados['pasoFormularioIdeaProyecto']) && $this->pasosCompletados['pasoFormularioIdeaProyecto']) {
+            $infoIdea->nombre_idea = $this->nombre_idea;
+            $infoIdea->descripcion_idea = $this->descripcion_idea;
+            $infoIdea->producto_servicio = $this->producto_servicio;
+            $infoIdea->validacion_producto = implode(', ', $this->validacion_producto);
+            $infoIdea->modelo_negocio = $this->modelo_negocio;
+            $infoIdea->idea_genera_ventas = $this->idea_genera_ventas;
+            if (isset($this->pasosCompletados['pasoVentasPorMesIdea']) && $this->pasosCompletados['pasoVentasPorMesIdea']) {
+                $infoIdea->ventas_promedio_mes = $this->ventas_promedio_mes;
+            }
+            if (isset($this->pasosCompletados['pasoEmpleadosGenera']) && $this->pasosCompletados['pasoEmpleadosGenera']) {
+                $infoIdea->idea_cantidad_empleados_genera = $this->idea_cantidad_empleados_genera;
+            }
+            $infoIdea->emprendedor_id = $user_id;
 
-        //Info Empresa
-        $infoEmpresa->tipo_empresa = $this->tipo_empresa;
-        $infoEmpresa->tipo_persona_juridica = $this->tipo_persona_juridica;
-        $infoEmpresa->empresa_nit = $this->empresa_nit;
-        $infoEmpresa->empresa_tamaño = $this->empresa_tamaño;
-        $infoEmpresa->empresa_innovacion_desarrollo_producto = $this->empresa_innovacion_desarrollo_producto;
-        $infoEmpresa->empresa_proyecto_desarrollo_avances_requiere_prototipos = $this->empresa_proyecto_desarrollo_avances_requiere_prototipos;
-        $infoEmpresa->nivel_proyecto_empresa = $this->nivel_proyecto_empresa;
-        if ($this->empresa_nit && $this->tipo_empresa) {
-            $infoEmpresa->emprendedor_id = $user_id;
-            $infoEmpresa->save();
-        }
-
-        //Info idea
-        $infoIdea->nombre_idea = $this->nombre_idea;
-        $infoIdea->descripcion_idea = $this->descripcion_idea;
-        $infoIdea->producto_servicio = $this->producto_servicio;
-        $infoIdea->validacion_producto = implode(', ', $this->validacion_producto);
-        $infoIdea->modelo_negocio = $this->modelo_negocio;
-        $infoIdea->idea_genera_ventas = $this->idea_genera_ventas;
-        $infoIdea->ventas_promedio_mes = $this->ventas_promedio_mes;
-        $infoIdea->idea_cantidad_empleados_genera = $this->idea_cantidad_empleados_genera;
-        $infoIdea->emprendedor_id = $user_id;
-        if (
-            $this->nombre_idea &&
-            $this->descripcion_idea &&
-            $this->producto_servicio &&
-            $this->validacion_producto &&
-            $this->modelo_negocio &&
-            $this->idea_genera_ventas &&
-            $this->idea_cantidad_empleados_genera
-        ) {
             $infoIdea->save();
         }
 
-        //Nivel de idea y Info de idea
-        $infoEmprendedorIdea->emprendedores_nivel_idea = $this->emprendedores_nivel_idea;
-        $infoEmprendedorIdea->emprendedor_id = $user_id;
-        if ($this->emprendedores_nivel_idea) {
-            $infoEmprendedorIdea->save();
+        if (isset($this->pasosCompletados['pasoServicioTecnoparque']) && $this->pasosCompletados['pasoServicioTecnoparque']) {
+            $infoProgramaTecnoparque->tecnoparque_postulado = $this->tecnoparque_postulado;
+            $infoProgramaTecnoparque->servicios_accedidos_tecnoparque = $this->servicios_accedidos_tecnoparque;
+            $infoProgramaTecnoparque->linea_tecnica_adscribe_tecnoparque = implode(', ', $this->linea_tecnica_adscribe_tecnoparque);
+            $infoProgramaTecnoparque->condiciones_cumplidas_idea = implode(', ', $this->condiciones_cumplidas_idea);
+            $infoProgramaTecnoparque->emprendedor_id = $user_id;
+            if (
+                $this->tecnoparque_postulado &&
+                $this->servicios_accedidos_tecnoparque &&
+                $this->linea_tecnica_adscribe_tecnoparque &&
+                $this->condiciones_cumplidas_idea
+            ) {
+                $infoProgramaTecnoparque->save();
+            }
+
+        }
+        if (isset($this->pasosCompletados['pasoServicioEmprendimiento']) && $this->pasosCompletados['pasoServicioEmprendimiento']) {
+            $infoProgramaEmprendimiento->emprendimiento_servicios = $this->emprendimiento_servicios;
+            $infoProgramaEmprendimiento->emprendedor_id = $user_id;
+            if ($this->emprendimiento_servicios) {
+                $infoProgramaEmprendimiento->save();
+            }
         }
 
-        //Info aprendiz
-        $infoAprendiz->centro_formacion_actual_aprendiz = $this->centro_formacion_actual_aprendiz;
-        $infoAprendiz->programa_formacion_adscrito = $this->programa_formacion_adscrito;
-        $infoAprendiz->interes_emprendedor_es = $this->interes_emprendedor_es;
-        $infoAprendiz->emprendedor_id = $user_id;
-        if (
-            $this->centro_formacion_actual_aprendiz &&
-            $this->programa_formacion_adscrito &&
-            $this->interes_emprendedor_es
-        ) {
-            $infoAprendiz->save();
-        }
-        //Info instructor
-        $infoInstructor->centro_formacion_actual_instructor = $this->centro_formacion_actual_instructor;
-        $infoInstructor->parte_sennova = $this->parte_sennova;
-        $infoInstructor->participacion_sennova = implode(', ', $this->participacion_sennova);
-
-        $infoInstructor->sennova_semillero_investigacion = $this->sennova_semillero_investigacion;
-        $infoInstructor->nombre_semillero = $this->nombre_semillero;
-        $infoInstructor->semillero_cantidad_integrantes = $this->semillero_cantidad_integrantes;
-        $infoInstructor->semillero_tema_trabajo = $this->semillero_tema_trabajo;
-        $infoInstructor->emprendedor_id = $user_id;
-        if (
-            $this->centro_formacion_actual_instructor &&
-            $this->parte_sennova
-        ) {
-            $infoInstructor->save();
+        if (isset($this->pasosCompletados['pasoServicioCentrosFormacion']) && $this->pasosCompletados['pasoServicioCentrosFormacion']) {
+            $infoProgramaCentroFormacion->centro_formacion_servicios = $this->centro_formacion_servicios;
+            $infoProgramaCentroFormacion->emprendedor_id = $user_id;
+            if ($this->centro_formacion_servicios) {
+                $infoProgramaCentroFormacion->save();
+            }
         }
 
+        if (isset($this->pasosCompletados['pasoServicioHubInnovacion']) && $this->pasosCompletados['pasoServicioHubInnovacion']) {
+            $infoProgramaHubInnovacion->hub_innovacion_servicios = $this->hub_innovacion_servicios;
+            $infoProgramaHubInnovacion->linea_tecnologica_hub = implode(', ', $this->linea_tecnologica_hub);
+            $infoProgramaHubInnovacion->conocimientos_lineas_seleccionada = $this->conocimientos_lineas_seleccionada;
+            $infoProgramaHubInnovacion->necesidad_puntual_proyecto = $this->necesidad_puntual_proyecto;
+            $infoProgramaHubInnovacion->cuenta_equipo_trabajo = $this->cuenta_equipo_trabajo;
+            $infoProgramaHubInnovacion->emprendedor_id = $user_id;
+            if (
+                $this->hub_innovacion_servicios &&
+                $this->linea_tecnologica_hub &&
+                $this->conocimientos_lineas_seleccionada &&
+                $this->necesidad_puntual_proyecto &&
+                $this->cuenta_equipo_trabajo
+            ) {
+                $infoProgramaHubInnovacion->save();
+            }
+        }
+        if (isset($this->pasosCompletados['pasoSiAprendizEgresadoSENA']) && $this->pasosCompletados['pasoSiAprendizEgresadoSENA']) {
+            $infoAprendiz->centro_formacion_actual_aprendiz = $this->centro_formacion_actual_aprendiz;
+            $infoAprendiz->programa_formacion_adscrito = $this->programa_formacion_adscrito;
+            $infoAprendiz->interes_emprendedor_es = $this->interes_emprendedor_es;
+            $infoAprendiz->emprendedor_id = $user_id;
+            if (
+                $this->centro_formacion_actual_aprendiz &&
+                $this->programa_formacion_adscrito &&
+                $this->interes_emprendedor_es
+            ) {
+                $infoAprendiz->save();
+            }
+        }
 
-        //Info investigador
-        $infoInvestigador->investigador_universidad_nombre = $this->investigador_universidad_nombre;
-        $infoInvestigador->investigador_universidad_grupo_investigacion = $this->investigador_universidad_grupo_investigacion;
-        $infoInvestigador->investigador_idea_capacidad_producto = $this->investigador_idea_capacidad_producto;
-        $infoInvestigador->emprendedor_id = $user_id;
-        if (
-            $this->investigador_universidad_nombre &&
-            $this->investigador_universidad_grupo_investigacion &&
-            $this->investigador_idea_capacidad_producto
-        ) {
-            $infoInvestigador->save();
+        if(isset($this->pasosCompletados['pasoSiInstructorSENA']) && $this->pasosCompletados['pasoSiInstructorSENA']){
+            $infoInstructor->centro_formacion_actual_instructor = $this->centro_formacion_actual_instructor;
+            $infoInstructor->parte_sennova = $this->parte_sennova;
+
+            if ( isset($this->pasosCompletados['pasoSiInstructorSENNOVA']) && $this->pasosCompletados['pasoSiInstructorSENNOVA']) {
+                $infoInstructor->participacion_sennova = implode(', ', $this->participacion_sennova);
+                $infoInstructor->sennova_semillero_investigacion = $this->sennova_semillero_investigacion;
+            }
+            if ( isset($this->pasosCompletados['pasoSiSennovaSemillero']) && $this->pasosCompletados['pasoSiSennovaSemillero']) {
+                $infoInstructor->nombre_semillero = $this->nombre_semillero;
+                $infoInstructor->semillero_cantidad_integrantes = $this->semillero_cantidad_integrantes;
+                $infoInstructor->semillero_tema_trabajo = $this->semillero_tema_trabajo;
+            }
+            $infoInstructor->emprendedor_id = $user_id;
+            if ($this->centro_formacion_actual_instructor && $this->parte_sennova) {
+                $infoInstructor->save();
+            }
+        }
+        if (isset($this->pasosCompletados['pasoSiInvestigadorUniversidad']) && $this->pasosCompletados['pasoSiInvestigadorUniversidad']) {
+            $infoInvestigador->investigador_universidad_nombre = $this->investigador_universidad_nombre;
+            $infoInvestigador->investigador_universidad_grupo_investigacion = $this->investigador_universidad_grupo_investigacion;
+            $infoInvestigador->investigador_idea_capacidad_producto = $this->investigador_idea_capacidad_producto;
+            $infoInvestigador->emprendedor_id = $user_id;
+            if (
+                $this->investigador_universidad_nombre &&
+                $this->investigador_universidad_grupo_investigacion &&
+                $this->investigador_idea_capacidad_producto
+            ) {
+                $infoInvestigador->save();
+            }
         }
 
 
-        //Hub emprendimiento
-        $infoProgramaEmprendimiento->emprendimiento_servicios = $this->emprendimiento_servicios;
-        $infoProgramaEmprendimiento->emprendedor_id = $user_id;
-        if ($this->emprendimiento_servicios) {
-            $infoProgramaEmprendimiento->save();
-        }
+        dd($this->pasosCompletados);
 
-        //Programa hub innovacion
-        $infoProgramaHubInnovacion->hub_innovacion_servicios = $this->hub_innovacion_servicios;
-        $infoProgramaHubInnovacion->linea_tecnologica_hub = implode(', ', $this->linea_tecnologica_hub);
-        $infoProgramaHubInnovacion->conocimientos_lineas_seleccionada = $this->conocimientos_lineas_seleccionada;
-        $infoProgramaHubInnovacion->necesidad_puntual_proyecto = $this->necesidad_puntual_proyecto;
-        $infoProgramaHubInnovacion->cuenta_equipo_trabajo = $this->cuenta_equipo_trabajo;
-        $infoProgramaHubInnovacion->emprendedor_id = $user_id;
-        if (
-            $this->hub_innovacion_servicios &&
-            $this->linea_tecnologica_hub &&
-            $this->conocimientos_lineas_seleccionada &&
-            $this->necesidad_puntual_proyecto &&
-            $this->cuenta_equipo_trabajo
-        ) {
-            $infoProgramaHubInnovacion->save();
-        }
-
-        //Tecnoparque
-        $infoProgramaTecnoparque->tecnoparque_postulado = $this->tecnoparque_postulado;
-        $infoProgramaTecnoparque->servicios_accedidos_tecnoparque = $this->servicios_accedidos_tecnoparque;
-        $infoProgramaTecnoparque->linea_tecnica_adscribe_tecnoparque = implode(', ', $this->linea_tecnica_adscribe_tecnoparque);
-        $infoProgramaTecnoparque->condiciones_cumplidas_idea = implode(', ', $this->condiciones_cumplidas_idea);
-        $infoProgramaTecnoparque->emprendedor_id = $user_id;
-        if (
-            $this->tecnoparque_postulado &&
-            $this->servicios_accedidos_tecnoparque &&
-            $this->linea_tecnica_adscribe_tecnoparque &&
-            $this->condiciones_cumplidas_idea
-        ) {
-            $infoProgramaTecnoparque->save();
-        }
-        //Centro Formacion Servicios
-        $infoProgramaCentroFormacion->centro_formacion_servicios = $this->centro_formacion_servicios;
-        $infoProgramaCentroFormacion->emprendedor_id = $user_id;
-        if ($this->centro_formacion_servicios) {
-            $infoProgramaCentroFormacion->save();
-        }
 
         $this->clearForm();
 

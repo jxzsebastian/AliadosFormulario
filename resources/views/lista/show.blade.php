@@ -146,9 +146,7 @@
                                 !empty($idea->descripcion_idea) &&
                                 !empty($idea->modelo_negocio) &&
                                 !empty($idea->producto_servicio) &&
-                                !empty($idea->validacion_producto) &&
-                                !empty($idea->idea_genera_ventas) &&
-                                !empty($idea->idea_cantidad_empleados_genera))
+                                !empty($idea->validacion_producto))
                             <span>
                                 <p><strong>Nombre de la Idea:</strong> {{ $idea->nombre_idea }}</p>
                                 <p><strong>Descripción de la Idea:</strong> {{ $idea->descripcion_idea }}</p>
@@ -218,8 +216,9 @@
                                     {{ $empresa->empresa_innovacion_desarrollo_producto }}</p>
                                 <p><strong>Avances y Prototipos:</strong>
                                     {{ $empresa->empresa_proyecto_desarrollo_avances_requiere_prototipos }}</p>
-                                <p><strong>Nivel del Proyecto en la Empresa:</strong> {{ $empresa->nivel_proyecto_empresa }}
-                                </p>
+                                @if ($empresa->nivel_proyecto_empresa)
+                                <p><strong>Nivel del Proyecto en la Empresa:</strong> {{ $empresa->nivel_proyecto_empresa }}</p>
+                                @endif
                             </span>
                         @endif
                     @endforeach
@@ -237,7 +236,7 @@
 
             <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
                 <p class="text-gray-600 font-medium">
-                    Servicio del SENA ingresado
+                    Servicio del SENA ingresado:
                 </p>
                 <p>
                     {{ $emprendedor->programa_sena_ingreso }}
@@ -246,7 +245,7 @@
 
             <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
                 <p class="text-gray-600 font-medium">
-                    Servicios accedidos en {{ $emprendedor->programa_sena_ingreso }}
+                    Servicios accedidos en: <strong>{{ $emprendedor->programa_sena_ingreso }}</strong>
                 </p>
 
                 @foreach ($emprendedor->programaSenaTecnoparque as $tecnoparque)
@@ -295,7 +294,7 @@
                 @foreach ($emprendedor->programaSenaEmprendimiento as $emprendimiento)
                     @if (!empty($emprendimiento->emprendimiento_servicios))
                         <span>
-                            <p><strong>Servicios de Emprendimiento:</strong>
+                            <p>
                                 {{ $emprendimiento->emprendimiento_servicios }}</p>
                         </span>
                     @else

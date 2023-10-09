@@ -26,7 +26,7 @@ return new class extends Migration
         $table->string('ocupacion_emprendedor')->nullable();
         $table->string('tipo_usuario')->nullable();
         $table->string('programa_sena_ingreso')->nullable();
-        $table->longText('necesidad_asesoria_sena')->nullable();
+        $table->longText('necesidad_asesoria_sena')->nullable()->default('Ninguna');
         $table->timestamps();
         });
 
