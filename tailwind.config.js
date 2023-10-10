@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
 export default {
     darkMode: 'class',
 
@@ -8,7 +9,11 @@ export default {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+        colors: {
+            rose: colors.rose,
+          },
+    },
   },
   plugins: [],
 }

@@ -1,41 +1,49 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormularioController;
 use App\Http\Controllers\LoginController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     return view('default');
 });
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
 Route::get('formulario', function () {
     return view('default');
 })->name('formulario');
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
 
 
-Route::get('login/',[LoginController::class,'login'])->name('login');
-Route::get('register/',[LoginController::class,'register'])->name('register');
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
+Route::get('/login', [AuthController::class, 'index'])
+    ->name('login.index');
 
-Route::get('listado/',[FormularioController::class,'listado'])->name('listado');
-Route::get('listado/{id}/remision',[FormularioController::class,'remision'])->name('usuario.remision');
+Route::post('/login', [AuthController::class, 'authenticate'])
+    ->name('login.store');
 
-Route::get('listado/{id}',[FormularioController::class,'mostrarEmprendedor'])->name('lista.show');
+Route::get('/registrar', [AuthController::class, 'register'])
+    ->name('register.index');
 
-Route::get('default/', function () {
-    return view('home');
-});
-Route::controller(FormularioController::class)->group(function () {
-    Route::post('/default', 'store')->name('formulario-store');
-});
+Route::post('/registrar', [AuthController::class, 'store'])
+    ->name('register.store');
 
-Route::get('lista',[FormularioController::class,'index'])->name('lista.index');;
+Route::get('/logout', [AuthController::class, 'logout'])
+    ->middleware('auth')
+    ->name('logout');
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
+Route::get('listado/',[FormularioController::class,'listado']) ->middleware('auth')->name('listado');
+Route::get('listado/{id}/remitir',[FormularioController::class,'remision'])->middleware('auth')->name('usuario.remision');
+Route::get('listado/{id}',[FormularioController::class,'mostrarEmprendedor'])->middleware('auth')->name('lista.show');
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
+
+Route::get('remitidos/',[FormularioController::class,'listado_remitidos'])->middleware('auth')->name('usuario.remitidos');
+Route::post('remitidos/',[FormularioController::class,'remitir_usuario'])->middleware('auth')->name('usuario.remitir');
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
+

@@ -5,12 +5,28 @@
     <!-- component -->
     <!-- source:https://codepen.io/owaiswiz/pen/jOPvEPB -->
     <div class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
-        <div class="max-w-screen-2xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+        <div class="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
             <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12 grid place-content-center">
                 <div class="mt-12 flex flex-col items-center">
                     <h1 class="text-2xl xl:text-3xl font-extrabold">
                         Registrarse
                     </h1>
+                    @if ($errors->any())
+                        <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                            <svg class="flex-shrink-0 inline w-4 h-4 mr-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                            </svg>
+                            <span class="sr-only">Danger</span>
+                            <div>
+                            <span class="font-medium">Se han encontrado algunos errores:</span>
+                                <ul class="mt-1.5 ml-4 list-disc list-inside">
+                                @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+                            </div>
+                        </div>
+                    @endif
                     <div class="w-full  flex-1 mt-8">
                         {{--                    <div class="flex flex-col items-center">
                         <button
@@ -44,35 +60,50 @@
                         </div>
                     </div> --}}
 
-                        <div class="my-12 border-b text-center">
+                        <div class="my-4 border-b text-center">
                             <div
                                 class="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
                                 Ingresa los datos que se pediran a continuación
                             </div>
                         </div>
-                        <div class="mx-auto max-w-xs ">
+                        <form action="{{ route('register.store') }}" method="POST" class="mx-auto max-w-xs ">
+                            @csrf
                             <div>
+                                <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Nombre</label>
+                                <input name="name" :value="old('name')" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                                    type="name" placeholder="Nombre de Usuario" />
+                                @if ($errors->has('name'))
+                                <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('name') }}</span>
+                                @endif
+                            </div>
+                            <div class="relative mt-6">
                                 <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Correo Electronico</label>
-                                <input
-                                    class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                                <input name="email" :value="old('email')" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                                     type="email" placeholder="Correo" />
+                                @if ($errors->has('email'))
+                                <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('email') }}</span>
+                                @endif
                             </div>
 
                             <div class="relative mt-6">
                                 <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Contraseña</label>
 
-                                <input placeholder="Contraseña" class="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white">
-                                <div class="flex items-center absolute inset-y-12 right-0 mr-3  text-sm leading-5">
-
+                                <input id="password" type="password" placeholder="Contraseña" :value="old('password')" name="password" class="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white">
+                                @if ($errors->has('password'))
+                                <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('password') }}</span>
+                                @endif
+                                <div class="flex items-center absolute inset-y-12 right-0 mr-3  text-sm leading-5" onclick="showPasword()">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="cursor-pointer" onclick="" style="fill: rgb(110, 110, 110);transform: ;msFilter:;"><path d="M12 9a3.02 3.02 0 0 0-3 3c0 1.642 1.358 3 3 3 1.641 0 3-1.358 3-3 0-1.641-1.359-3-3-3z"></path><path d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316-.105-.316C21.927 11.617 19.633 5 12 5zm0 12c-5.351 0-7.424-3.846-7.926-5C4.578 10.842 6.652 7 12 7c5.351 0 7.424 3.846 7.926 5-.504 1.158-2.578 5-7.926 5z"></path></svg>
-
                                 </div>
                             </div>
 
                             <div class="relative mt-6">
                                 <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Confirmar Contraseña</label>
 
-                                <input placeholder="Confirmar Contraseña" class="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white">
+                                <input placeholder="Confirmar Contraseña" name="password_confirmation" class="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white">
+                                @if ($errors->has('password_confirmation'))
+                                <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('password_confirmation') }}</span>
+                                @endif
                                 <div class="flex items-center absolute inset-y-12 right-0 mr-3  text-sm leading-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="cursor-pointer" onclick=""  style="fill: rgb(110, 110, 110);transform: ;msFilter:;"><path d="M12 9a3.02 3.02 0 0 0-3 3c0 1.642 1.358 3 3 3 1.641 0 3-1.358 3-3 0-1.641-1.359-3-3-3z"></path><path d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316-.105-.316C21.927 11.617 19.633 5 12 5zm0 12c-5.351 0-7.424-3.846-7.926-5C4.578 10.842 6.652 7 12 7c5.351 0 7.424 3.846 7.926 5-.504 1.158-2.578 5-7.926 5z"></path></svg>
                                 </div>
@@ -81,18 +112,19 @@
                                 <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide "> Seleccionar su
                                     Programa
                                     SENA</label>
-                                <select
-                                    class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white "
+                                <select name="programa_sena" :value="old('programa_sena')" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white "
                                     type="password" placeholder="Confirmar Contraseña">
                                     <option value="" disabled selected>Programa SENA</option>
-                                    <option value="">HUB Innovación</option>
-                                    <option value="">Emprendimiento</option>
-                                    <option value="">Tecnoparque</option>
-                                    <option value="">Extensionismo</option>
+                                    <option value="HUBInnovación">HUB Innovación</option>
+                                    <option value="Emprendimiento">Emprendimiento</option>
+                                    <option value="Tecnoparque">Tecnoparque</option>
+                                    <option value="Extensionismo">Extensionismo</option>
                                 </select>
+                                @if ($errors->has('programa_sena'))
+                                <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('programa_sena') }}</span>
+                                @endif
                             </div>
-                            <button
-                                class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                            <button type="submit" class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                                 <svg class="w-6 h-6 -ml-2" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
@@ -100,11 +132,14 @@
                                     <path d="M20 8v6M23 11h-6" />
                                 </svg>
                                 <span class="ml-3">
-                                    Iniciar Sesión
+                                    Registrarse
                                 </span>
                             </button>
-
-                        </div>
+                            <p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
+                                <span>¿Ya tienes una cuenta?</span>
+                                <a href="{{ route('login.index') }}" class="text-indigo-500 hover:text-indigo-500no-underline hover:underline cursor-pointer transition ease-in duration-300">Inicia Sesión</a>
+                            </p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -115,4 +150,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function showPasword() {
+            var contraseñaInput = document.getElementById("password");
+            if (contraseñaInput.type === "password") {
+                contraseñaInput.type = "text";
+            } else {
+                contraseñaInput.type = "password";
+            }
+        }
+    </script>
 @endsection

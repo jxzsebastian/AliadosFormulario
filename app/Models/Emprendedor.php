@@ -11,6 +11,7 @@ class Emprendedor extends Model
     protected $table = 'emprendedor';
     protected $fillable = [
         'nombre_emprendedor',
+        'estado',
         'numero_contacto_emprendedor',
         'correo_emprendedor',
         'tipo_identificacion_emprendedor',
@@ -22,6 +23,12 @@ class Emprendedor extends Model
         'necesidad_asesoria_sena',
         'ciudad_municipio_emprendedor',
     ];
+
+    public function remisiones()
+    {
+        return $this->hasMany(Remision::class);
+    }
+
     public function emprendedor_aprendiz(){
         return $this->hasMany(Emprendedor_AprendizEgresado::class);
     }

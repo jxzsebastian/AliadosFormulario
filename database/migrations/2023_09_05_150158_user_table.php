@@ -23,6 +23,7 @@ return new class extends Migration
         $table->longText('niveles_educacion_emprendedor')->nullable();
         $table->string('ocupacion_emprendedor')->nullable();
         $table->string('tipo_usuario')->nullable();
+        $table->string('estado')->nullable()->default('Caracterizacion');
         $table->string('programa_sena_ingreso')->nullable();
         $table->longText('necesidad_asesoria_sena')->nullable()->default('Ninguna');
         $table->timestamps();

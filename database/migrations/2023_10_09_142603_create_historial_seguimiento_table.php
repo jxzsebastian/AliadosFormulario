@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('historial_seguimiento', function (Blueprint $table) {
+        Schema::create('historiales_seguimientos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('remision_id');
-            $table->foreign('remision_id')->references('id')->on('remision');
+            $table->foreign('remision_id')->references('id')->on('remisiones');
             $table->longText('notas')->nullable();
             $table->longText('seguimiento')->nullable();
+            $table->string('estado')->nullable()->default('Remitido');
             $table->timestamps();
 
         });

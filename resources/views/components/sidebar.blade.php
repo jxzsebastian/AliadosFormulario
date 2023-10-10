@@ -58,19 +58,20 @@
                         Formulario Caracterización
                     </a>
                     <a
-                    href="#"
-                    role="menuitem"
-                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700 hover:bg-gray-200"
-                  >
-                      Formulario Remisión
-                  </a>
-                    <a
                       href="{{route('listado')}}"
                       role="menuitem"
                       class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700 hover:bg-gray-200"
                     >
-                      Listado
+                    Usuarios Caracterizados
                     </a>
+                    <a
+                    href="{{route('usuario.remitidos')}}"
+                    role="menuitem"
+                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700 hover:bg-gray-200"
+                  >
+                      Usuarios en Remisión
+                  </a>
+
 
                   </div>
                 </div>

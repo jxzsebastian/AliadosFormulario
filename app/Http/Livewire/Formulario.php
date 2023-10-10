@@ -806,9 +806,6 @@ class Formulario extends Component
         }
 
 
-        dd($this->pasosCompletados);
-
-
         $this->clearForm();
 
         return redirect()->to('/formulario')->with('success', 'success');

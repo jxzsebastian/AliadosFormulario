@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('remision', function (Blueprint $table) {
+        Schema::create('remisiones', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('emprendedor_id');

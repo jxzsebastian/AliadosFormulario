@@ -169,7 +169,7 @@
               Settings
             </a>
             <a
-              href="#"
+              href="{{route('logout')}}"
               role="menuitem"
               class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-blue-600"
             >
@@ -308,7 +308,7 @@
               Settings
             </a>
             <a
-              href="#"
+              href="{{route('logout')}}"
               role="menuitem"
               class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-blue-600"
             >
@@ -379,15 +379,22 @@
               role="menuitem"
               class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
             >
-              Formulario
+              Formulario Caracterización
             </a>
             <a
               href="{{route('listado')}}"
               role="menuitem"
               class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
             >
-              Listado
+              Usuarios Caracterizados
             </a>
+            <a
+            href="{{route('usuario.remitidos')}}"
+            role="menuitem"
+            class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+          >
+            Usuarios en Remisión
+          </a>
           </div>
 
 
