@@ -70,7 +70,7 @@
                             @csrf
                             <div>
                                 <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Nombre</label>
-                                <input name="name" :value="old('name')" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                                <input id="name" autocomplete="name" name="name" :value="old('name')" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                                     type="name" placeholder="Nombre de Usuario" />
                                 @if ($errors->has('name'))
                                 <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('name') }}</span>

@@ -9,11 +9,13 @@
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-2">
                     <div class="overflow-hidden md:rounded-lg">
 
-                        <div class="flex flex-wrap w-full mb-10">
-                            <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-                                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 dark:text-white">Usuarios
-                                    Caracterizados</h1>
-                                <div class="h-1 w-20 bg-blue-500 rounded"></div>
+                        <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6 mb-4">
+                            <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+                                <div class="ml-4 mt-2">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">Usuarios Caracterizados</h3>
+                                    <p class="mt-1 text-sm text-gray-500">A continuación podras ver los emprendedores que han hecho la caracterización.</p>
+                                </div>
+
                             </div>
                         </div>
 
