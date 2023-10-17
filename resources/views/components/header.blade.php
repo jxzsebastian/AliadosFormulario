@@ -35,27 +35,27 @@
            <!-- Desktop Right buttons -->
 
 
-           <nav aria-label="Secondary" class="hidden space-x-2 md:flex md:items-center">
-            <button aria-hidden="true" class="relative focus:outline-none" x-cloak @click="toggleTheme">
-                <div class="w-12 h-6 transition bg-blue-100 rounded-full outline-none dark:bg-blue-400"></div>
-                <div class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-150 transform scale-110 rounded-full shadow-sm"
-                    :class="{
-                        'translate-x-0 -translate-y-px  bg-white text-blue-700': !
-                            isDark,
-                        'translate-x-6 text-blue-100 bg-blue-800': isDark
-                    }">
-                    <svg x-show="!isDark" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                    <svg x-show="isDark" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                    </svg>
-                </div>
-            </button>
+           <nav aria-label="Secondary" class="hidden space-x-4 md:flex md:items-center">
+                <button aria-hidden="true" class=" relative focus:outline-none" x-cloak @click="toggleTheme">
+                    <div class="w-12 h-6 transition bg-blue-100 rounded-full outline-none dark:bg-blue-400"></div>
+                    <div class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-150 transform scale-110 rounded-full shadow-sm"
+                        :class="{
+                            'translate-x-0 -translate-y-px  bg-white text-blue-700': !
+                                isDark,
+                            'translate-x-6 text-blue-100 bg-blue-800': isDark
+                        }">
+                        <svg x-show="!isDark" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <svg x-show="isDark" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                        </svg>
+                    </div>
+                </button>
 
                 @if (Auth::user())
                    <!-- Notification button -->
@@ -119,15 +119,11 @@
 
                    </div>
                 @else
-                   <a href="{{ route('login.index') }}" type="button"
-                   class="mr-3 dark:bg-slate-800 dark:border-gray-700 dark:text-white inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Ingresar</a>
+                   <a type="button" href="{{ route('login.index') }}" type="button"
+                   class=" mr-4 dark:bg-slate-800 dark:border-gray-700 dark:text-white inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Ingresar</a>
                 @endif
 
-
-
-
-
-           </nav>
+            </nav>
 
            <!-- Mobile sub menu -->
            <nav x-transition:enter="transition duration-200 ease-in-out transform sm:duration-500"
@@ -178,8 +174,9 @@
                </div>
 
                <!-- User avatar button -->
-                @if (auth()->user())
                 <div class="relative ml-auto" x-data="{ open: false }">
+                    @if (auth()->user())
+
                    <button @click="open = !open; $nextTick(() => { if(open){ $refs.userMenu.focus() } })"
                        type="button" aria-haspopup="true" :aria-expanded="open ? 'true' : 'false'"
                        class="p-2 text-blue-400 transition-colors duration-200 rounded-full bg-blue-50 hover:text-blue-600 hover:bg-blue-100 dark:hover:text-light dark:hover:bg-blue-700 dark:bg-dark focus:outline-none focus:bg-blue-100 dark:focus:bg-blue-700 focus:ring-blue-800">
@@ -218,12 +215,10 @@
                            Cerrar Sesión
                        </a>
                    </div>
-                </div>
-                @else
-                <a href="{{ route('login.index') }}" type="button"
-                class="absolute right-0 mr-3 origin-top-right dark:bg-slate-800 dark:border-gray-700 dark:text-white inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Ingresar</a>
-
+                    @else
+                    <a href="{{ route('login.index') }}" type="button" class="absolute right-0  origin-top-right dark:bg-slate-800 dark:border-gray-700 dark:text-white inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Ingresar</a>
                 @endif
+            </div>
 
            </nav>
        </div>

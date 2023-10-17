@@ -41,9 +41,11 @@ class FormularioController extends Controller
     }
 
     public function listado (){
-        $emprendedores = Emprendedor::with([
-            'ideas'
-        ])->orderByDesc('created_at')->get();
+
+        $emprendedores = Emprendedor::where('estado', 'Caracterizacion')
+        ->whereDate('created_at', '>', now()->subDays(8))
+        ->first();
+        dd($emprendedores);
 
         return view('usuarios-caracterizacion/listado', compact('emprendedores'));
     }

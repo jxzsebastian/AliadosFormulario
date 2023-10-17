@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Events\CaracterizacionEvent;
 use Livewire\Component;
 use App\Models\Emprendedor;
 use App\Models\Emprendedor_AprendizEgresado;
@@ -16,6 +17,8 @@ use App\Models\Programa_Sena_CentroFormacion;
 use App\Models\Programa_Sena_Emprendimiento;
 use App\Models\Programa_Sena_HubInnovacion;
 use App\Models\Programa_Sena_Tecnoparque;
+use App\Models\User;
+use App\Notifications\CaracterizacionNotification;
 use Illuminate\Http\Request;
 use Livewire\Wizard;
 
@@ -616,9 +619,6 @@ class Formulario extends Component
 
     public function submit(Request $request)
     {
-
-
-
         $informacionUsuario = new  Emprendedor();
         $infoEmpleado = new  Emprendedor_Empleado();
         $infoEmpresa = new Empresa();
@@ -805,10 +805,27 @@ class Formulario extends Component
             }
         }
 
+        self::ordenMakeNotification($informacionUsuario);
+
         $this->clearForm();
 
         return redirect()->to('/formulario')->with('success', 'success');
     }
+
+
+    public static function ordenMakeNotification($informacionUsuario)
+    {
+
+        event(new CaracterizacionEvent($informacionUsuario, 'nuevo_emprendedor'));
+
+  /*       //Ejemplo para conocer si las notificaciones llegan a bd o no
+        User::where('programa_sena', $informacionUsuario->programa_sena_ingreso)
+        ->each(function(User $user) use ($informacionUsuario){
+            $user->notify(new CaracterizacionNotification($informacionUsuario));
+        }); */
+        dd($informacionUsuario);
+    }
+
 
     private function obtenerValorCampo($campo, $campoPrincipal, $campoOtro)
     {

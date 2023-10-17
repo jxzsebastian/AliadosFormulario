@@ -21,7 +21,8 @@ class Emprendedor extends Model
         'tipo_usuario',
         'programa_sena_ingreso',
         'necesidad_asesoria_sena',
-        'ciudad_municipio_emprendedor',
+        'ciudad_municipi    o_emprendedor',
+        'created_at',
     ];
 
     public function remisiones()
