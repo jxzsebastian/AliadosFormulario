@@ -21,7 +21,7 @@ class Emprendedor extends Model
         'tipo_usuario',
         'programa_sena_ingreso',
         'necesidad_asesoria_sena',
-        'ciudad_municipi    o_emprendedor',
+        'ciudad_municipio_emprendedor',
         'created_at',
     ];
 

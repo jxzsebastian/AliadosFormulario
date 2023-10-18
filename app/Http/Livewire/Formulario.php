@@ -823,7 +823,6 @@ class Formulario extends Component
         ->each(function(User $user) use ($informacionUsuario){
             $user->notify(new CaracterizacionNotification($informacionUsuario));
         }); */
-        dd($informacionUsuario);
     }
 
 

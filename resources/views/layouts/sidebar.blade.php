@@ -33,8 +33,9 @@
             Cargando.....
           </div>
 
-
+          @if (Auth::user())
           <x-sidebar/>
+          @endif
 
 
 
@@ -67,8 +68,9 @@
           <!-- Backdrop -->
 
           <!-- Panel Notificaciones -->
-
-        <x-notifications/>
+          @if (Auth::user())
+            <x-notifications/>
+          @endif
 
         </div>
       </div>

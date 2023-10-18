@@ -8,6 +8,7 @@ use App\Models\Formulario;
 use App\Models\Emprendedor;
 use App\Models\HistorialSeguimiento;
 use App\Models\Remision;
+use Carbon\Carbon;
 
 class FormularioController extends Controller
 {
@@ -41,11 +42,8 @@ class FormularioController extends Controller
     }
 
     public function listado (){
-
         $emprendedores = Emprendedor::where('estado', 'Caracterizacion')
-        ->whereDate('created_at', '>', now()->subDays(8))
-        ->first();
-        dd($emprendedores);
+        ->get();
 
         return view('usuarios-caracterizacion/listado', compact('emprendedores'));
     }

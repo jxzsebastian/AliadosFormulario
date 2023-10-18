@@ -58,6 +58,7 @@ class CaracterizacionNotification extends Notification
             'correo_emprendedor' =>  $this->emprendedor->correo_emprendedor,
             'programa_sena_ingreso' =>  $this->emprendedor->programa_sena_ingreso,
             'ciudad_municipio_emprendedor' =>  $this->emprendedor->ciudad_municipio_emprendedor,
+            'created_at' => $this->emprendedor->created_at,
         ];
     }
 }

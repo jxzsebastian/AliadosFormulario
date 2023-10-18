@@ -53,7 +53,7 @@
                                 @foreach ($emprendedores as $emprendedor)
                                     <tr>
                                         <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                            {{ $emprendedor->created_at->isoFormat('MMMM Do YYYY, h:mm:ss a') }}</td>
+                                            {{ $emprendedor->created_at/* ->isoFormat('MMMM Do YYYY, h:mm:ss a') */ }}</td>
                                         <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                                             <div class="flex items-center gap-x-2">
                                                 <div>

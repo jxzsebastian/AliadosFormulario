@@ -61,10 +61,9 @@
                    <!-- Notification button -->
                    <button @click="openNotificationsPanel"
                        class="relative p-2 text-blue-400 transition-colors duration-200 rounded-full bg-blue-50 hover:text-blue-600 hover:bg-blue-100 dark:hover:text-light dark:hover:bg-blue-700 dark:bg-dark focus:outline-none focus:bg-blue-100 dark:focus:bg-blue-700 focus:ring-blue-800">
-
-                       <span
-                           class="absolute -top-2 left-6 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50">1</span>
-
+                        @if (auth()->user()->unreadNotifications->count() > 0)
+                           <span class="absolute -top-2 left-6 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50">{{ auth()->user()->unreadNotifications->count() }}</span>
+                        @endif
                        <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                            stroke="currentColor" aria-hidden="true">
                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -159,10 +158,13 @@
                    </button>
                        <!-- Notification button -->
                     @if (auth()->user())
+
                        <button @click="openNotificationsPanel(); $nextTick(() => { isMobileSubMenuOpen = false })"
                            class="relative p-2 text-blue-400 transition-colors duration-200 rounded-full bg-blue-50 hover:text-blue-600 hover:bg-blue-100 dark:hover:text-light dark:hover:bg-blue-700 dark:bg-dark focus:outline-none focus:bg-blue-100 dark:focus:bg-blue-700 focus:ring-blue-800">
-                           <span
-                               class="absolute -top-2 left-6 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50">1</span>
+                            @if (auth()->user()->unreadNotifications->count() > 0)
+                            <span class="absolute -top-2 left-6 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50">{{ auth()->user()->unreadNotifications->count() }}</span>
+                            @endif
+
                            <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none"
                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
 
@@ -170,6 +172,7 @@
                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                            </svg>
                        </button>
+
                     @endif
                </div>
 

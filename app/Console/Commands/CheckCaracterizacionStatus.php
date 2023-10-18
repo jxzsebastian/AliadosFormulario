@@ -28,9 +28,6 @@ class CheckCaracterizacionStatus extends Command
         $emprendedores = Emprendedor::where('estado', 'Caracterizacion')
             ->where('created_at', '<=', $eightDaysAgo)
             ->get();
-        // Agregar una salida de depuración
-        \Illuminate\Support\Facades\DB::enableQueryLog();
-        dd($emprendedores);
 
         foreach ($emprendedores as $emprendedor) {
             User::where('programa_sena', $emprendedor->programa_sena_ingreso)

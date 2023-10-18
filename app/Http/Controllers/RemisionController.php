@@ -7,6 +7,8 @@ use App\Models\Emprendedor;
 use App\Models\HistorialSeguimiento;
 use App\Models\Remision;
 
+use function Laravel\Prompts\error;
+
 class RemisionController extends Controller
 {
     //
@@ -21,15 +23,17 @@ class RemisionController extends Controller
 
     public function listado_remitidos(Request $request){
 
-        $estado = $request->input('estado');
+        $estado = $request->input('estado', 'Todos');
         $filtro = $request->input('filtro');
 
         $query = Emprendedor::query();
 
-        if ($estado === 'Remitido') {
+        if($estado === 'Remitido') {
             $query->where('estado', 'Remitido');
-        } elseif ($estado === 'Finalizado') {
+        }elseif ($estado === 'Finalizado') {
             $query->where('estado', 'Finalizado');
+        }else{
+            $query->whereNotIn('estado', ['Caracterizacion']);
         }
 
         if ($filtro) {

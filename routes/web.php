@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormularioController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\RemisionController;
 
 Route::get('/', function () {
@@ -49,3 +50,7 @@ Route::post('remitidos/update/{id}',[RemisionController::class,'update_remision'
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
 
+Route::get('/marcar_notificaciones', [NotificationController::class, 'markAllNotifications'])->name('marcar.notificaciones');
+Route::get('/marcar_notificacion/{notification_id}', [NotificationController::class, 'markOneNotification'])->name('marcar.notificacion');
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
