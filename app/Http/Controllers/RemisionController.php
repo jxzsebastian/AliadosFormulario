@@ -43,7 +43,7 @@ class RemisionController extends Controller
             });
         }
 
-        $emprendedores = $query->with(['ideas', 'remisiones.historialSeguimiento.usuario'])->get();
+        $emprendedores = $query->with(['ideas', 'remisiones.historialSeguimiento.usuario'])->paginate(2);
 
         return view('usuarios-remision/remitidos', compact('emprendedores'));
 

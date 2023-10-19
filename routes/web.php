@@ -6,13 +6,14 @@ use App\Http\Controllers\FormularioController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\RemisionController;
+use App\Http\Controllers\UsuarioController;
 
 Route::get('/', function () {
     return view('default');
 });
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
-Route::get('formulario', function () {
+Route::get('/formulario', function () {
     return view('default');
 })->name('formulario');
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
@@ -52,5 +53,12 @@ Route::post('remitidos/update/{id}',[RemisionController::class,'update_remision'
 
 Route::get('/marcar_notificaciones', [NotificationController::class, 'markAllNotifications'])->name('marcar.notificaciones');
 Route::get('/marcar_notificacion/{notification_id}', [NotificationController::class, 'markOneNotification'])->name('marcar.notificacion');
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
+
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
+Route::get('/configuracion/perfil/{id}', [UsuarioController::class, 'index'])->name('usuario.configuracion');
+
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //

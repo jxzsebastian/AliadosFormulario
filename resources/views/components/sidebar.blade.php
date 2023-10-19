@@ -1,81 +1,61 @@
 
           <!-- Sidebar -->
           <aside class="flex-shrink-0 hidden w-64 bg-white border-r dark:border-blue-800 dark:bg-darker md:block">
-            <div class="flex flex-col h-full">
+            <div class="flex flex-col h-full ">
               <!-- Sidebar links -->
-              <nav aria-label="Main" class="flex-1 px-2 py-4 space-y-2 overflow-y-hidden hover:overflow-y-auto">
-                <!-- Dashboards links -->
-                <div x-data="{ isActive: false, open: false}">
-                  <!-- active & hover classes 'bg-blue-100 dark:bg-blue-600' -->
-                  <a
-                    href="#"
-                    @click="$event.preventDefault(); open = !open"
-                    class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-blue-100 dark:hover:bg-blue-600"
-                    :class="{'bg-blue-100 dark:bg-blue-600': isActive || open}"
-                    role="button"
-                    aria-haspopup="true"
-                    :aria-expanded="(open || isActive) ? 'true' : 'false'"
-                  >
-                    <span aria-hidden="true">
-                      <svg
-                        class="w-5 h-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                        />
-                      </svg>
-                    </span>
-                    <span class="ml-2 text-sm"> Dashboards </span>
-                    <span class="ml-auto" aria-hidden="true">
-                      <!-- active class 'rotate-180' -->
-                      <svg
-                        class="w-4 h-4 transition-transform transform"
-                        :class="{ 'rotate-180': open }"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </a>
-                  <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" aria-label="Dashboards">
-                    <!-- active & hover classes 'text-gray-700 dark:text-light' -->
-                    <!-- inActive classes 'text-gray-400 dark:text-gray-400' -->
-                    <a
-                      href="{{route('formulario')}}"
-                      role="menuitem"
-                      class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700 hover:bg-gray-200"
-                    >
-                        Formulario Caracterización
-                    </a>
-                    <a
-                      href="{{route('listado')}}"
-                      role="menuitem"
-                      class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700 hover:bg-gray-200"
-                    >
-                    Usuarios Caracterizados
-                    </a>
-                    <a
-                    href="{{route('usuario.remitidos')}}"
-                    role="menuitem"
-                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700 hover:bg-gray-200"
-                  >
-                      Usuarios en Remisión
-                  </a>
+              <nav class="px-2 space-y-1 mt-5">
+                <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+                <a href="{{ route('formulario') }}" class="text-gray-600 dark:hover:bg-blue-800 dark:hover:text-gray-100 @if(in_array(Request::segment(1), ['formulario'])){{'bg-gray-100 dark:bg-blue-900 dark:text-gray-100 text-gray-900'}}@endif group rounded-md py-2 px-2 flex items-center text-base font-medium">
+                  <!--
+                    Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
+                  -->
+                  <svg class="text-gray-500 dark:text-gray-100 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                  Formulario Caracterización
+                </a>
 
 
-                  </div>
-                </div>
 
+                <a href="{{ route('listado') }}" class="@if(in_array(Request::segment(1), ['listado'])){{'bg-gray-100 dark:bg-blue-900 dark:text-gray-100 text-gray-900'}}@endif dark:hover:bg-blue-800 dark:hover:text-gray-100 text-gray-600 hover:bg-gray-50 hover:text-gray-900 group rounded-md py-2 px-2 flex items-center text-base font-medium">
+                  <!-- Heroicon name: outline/folder -->
+                  <svg class=" text-gray-400 dark:text-gray-100 dark:group-hover:text-gray-200 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                  </svg>
+                  Usuarios Caracterizados
+                </a>
+
+                <a href="{{ route('usuario.remitidos') }}" class="@if(in_array(Request::segment(1), ['remitidos'])){{'bg-gray-100 dark:bg-blue-900 dark:text-gray-100 text-gray-900'}}@endif dark:hover:bg-blue-800 dark:hover:text-gray-100 text-gray-600 hover:bg-gray-50 hover:text-gray-900 group rounded-md py-2 px-2 flex items-center text-base font-medium">
+                    <!-- Heroicon name: outline/users -->
+                    <svg class="text-gray-400 dark:text-gray-100 dark:group-hover:text-gray-200 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    Usuarios Remitidos
+                </a>
+
+                <a href="#" class="@if(in_array(Request::segment(1), ['dashboard'])){{'bg-gray-100 dark:bg-blue-900 dark:text-gray-100 text-gray-900'}}@endif dark:hover:bg-blue-800 dark:hover:text-gray-100 text-gray-600 hover:bg-gray-50 hover:text-gray-900 group rounded-md py-2 px-2 flex items-center text-base font-medium">
+                  <!-- Heroicon name: outline/calendar -->
+                  <svg class="text-gray-400 dark:text-gray-100 dark:group-hover:text-gray-200 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  Calendar
+                </a>
+
+                <a href="#" class="@if(in_array(Request::segment(1), ['dashboard'])){{'bg-gray-100 dark:bg-blue-900 dark:text-gray-100 text-gray-900'}}@endif dark:hover:bg-blue-800 dark:hover:text-gray-100 text-gray-600 hover:bg-gray-50 hover:text-gray-900 group rounded-md py-2 px-2 flex items-center text-base font-medium">
+                  <!-- Heroicon name: outline/inbox -->
+                  <svg class="text-gray-400 dark:text-gray-100 dark:group-hover:text-gray-200 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                  </svg>
+                  Documents
+                </a>
+
+                <a href="#" class="@if(in_array(Request::segment(1), ['dashboard'])){{'bg-gray-100 dark:bg-blue-900 dark:text-gray-100 text-gray-900'}}@endif dark:hover:bg-blue-800 dark:hover:text-gray-100 text-gray-600 hover:bg-gray-50 hover:text-gray-900 group rounded-md py-2 px-2 flex items-center text-base font-medium">
+                  <!-- Heroicon name: outline/chart-bar -->
+                  <svg class="text-gray-400 dark:text-gray-100 dark:group-hover:text-gray-200 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                  Reports
+                </a>
               </nav>
 
             </div>

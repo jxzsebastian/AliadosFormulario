@@ -105,7 +105,7 @@
                                Bienvenido, {{Auth::user()->name}}
                            </p>
 
-                           <a href="#" role="menuitem"
+                           <a href="{{route('usuario.configuracion', Auth::user()->id)}}" role="menuitem"
                                class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-blue-600">
                                Configurar
                            </a>
@@ -209,7 +209,7 @@
                            class="block px-4 py-2 text-sm text-gray-700 transition-colors border border-b-gray-300 dark:text-light dark:hover:bg-blue-600">
                            Bienvenido, {{Auth::user()->name}}
                        </p>
-                       <a href="#" role="menuitem"
+                       <a href="{{route('usuario.configuracion', Auth::user()->id)}}" role="menuitem"
                            class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-blue-600">
                            Configuraciones
                        </a>

@@ -399,6 +399,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            {{ $emprendedores->links() }}
                         </div>
                     </div>
                 </div>

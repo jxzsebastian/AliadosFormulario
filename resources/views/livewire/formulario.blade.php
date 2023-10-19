@@ -3,7 +3,7 @@
     <div class="space-y-12 mx-auto">
         <div class="flex flex-wrap w-full mb-10">
             <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">RIIES- CARACTERIZACIÓN DE
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 ">RIIES- CARACTERIZACIÓN DE
                     USUARIOS</h1>
                 <div class="h-1 w-20 bg-blue-500 rounded"></div>
             </div>
@@ -24,18 +24,18 @@
 
         {{-- Informacion de Persona --}}
         <div class="border-b border-gray-900/10 pb-12  {{ $currentStep != 1 ? 'hidden' : '' }}" id="step-1">
-            <h2 class="text-base font-semibold leading-7 text-gray-900">Informacion </h2>
-            <p class="mt-1 text-sm leading-6 text-gray-600">Ingresar los datos.</p>
+            <h2 class="text-base font-semibold leading-7    ">Información </h2>
+            <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-300">Ingresar los datos requeridos.</p>
 
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 setup-content">
                 <div class="sm:col-span-3">
-                    <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Nombre del
+                    <label for="first-name" class="block text-sm font-medium leading-6 ">Nombre del
                         emprendedor(a)
                     </label>
                     <div class="mt-2">
                         <input type="text" wire:model.defer="nombre_emprendedor" id="first-name"
                             autocomplete="given-name"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                            class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         @error('nombre_emprendedor')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                         @enderror
@@ -44,11 +44,11 @@
 
                 <div class="sm:col-span-3">
                     <label for="numero_contacto_emprendedor"
-                        class="block text-sm font-medium leading-6 text-gray-900">Teléfono de contacto</label>
+                        class="block text-sm font-medium leading-6 ">Teléfono de contacto</label>
                     <div class="mt-2">
                         <input type="text" wire:model.defer="numero_contacto_emprendedor"
                             id="numero_contacto_emprendedor" autocomplete="family-name"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                            class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         @error('numero_contacto_emprendedor')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                         @enderror
@@ -57,12 +57,12 @@
                 </div>
 
                 <div class="sm:col-span-3">
-                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Correo Electrónico
+                    <label for="email" class="block text-sm font-medium leading-6 ">Correo Electrónico
                         de
                         Contacto</label>
                     <div class="mt-2">
                         <input id="email" wire:model.defer="correo_emprendedor" type="email" autocomplete="email"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                            class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         @error('correo_emprendedor')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                         @enderror
@@ -72,12 +72,12 @@
 
                 <div class="sm:col-span-3">
                     <label for="ciudad_municipio_emprendedor"
-                        class="block text-sm font-medium leading-6 text-gray-900">Ciudad o Municipio donde esta
+                        class="block text-sm font-medium leading-6 ">Ciudad o Municipio donde esta
                         ubicado</label>
                     <div class="mt-2">
                         <input id="ciudad_municipio_emprendedor" type="text"
                             wire:model.defer="ciudad_municipio_emprendedor" autocomplete="ciudad_municipio_emprendedor"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                            class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         @error('ciudad_municipio_emprendedor')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                         @enderror
@@ -86,11 +86,11 @@
                 </div>
 
                 <div class="sm:col-span-1">
-                    <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Tipo de
+                    <label for="country" class="block text-sm font-medium leading-6 ">Tipo de
                         identificacion</label>
                     <div class="mt-2">
                         <select id="" wire:model.defer="tipo_identificacion_emprendedor" autocomplete="-name"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset  sm:max-w-xs sm:text-sm sm:leading-6">
+                            class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:max-w-xs sm:text-sm sm:leading-6">
                             <option value="" selected> Seleccione una opcion</option>
                             <option value="Cedula de Ciudadania">Cédula de Ciudadanía</option>
                             <option value="Registro Civil de Nacimiento">Registro Civil de Nacimiento</option>
@@ -108,13 +108,13 @@
 
                 <div class="sm:col-span-5">
                     <label for="identificacion_emprendedor"
-                        class="block text-sm font-medium leading-6 text-gray-900">Numero
+                        class="block text-sm font-medium leading-6 ">Numero
                         de Identificacion</label>
 
                     <div class="mt-2">
                         <input type="text" wire:model.defer="identificacion_emprendedor"
                             id="identificacion_emprendedor" autocomplete="address-level1"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                            class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         @error('identificacion_emprendedor')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                         @enderror
@@ -132,7 +132,7 @@
         {{-- Informacion de Ocupacion y Escolaridad --}}
 
         <div class="border-b border-gray-900/10 pb-12   {{ $currentStep != 2 ? 'hidden' : '' }}" id="step-2">
-            <h2 class="text-base font-semibold leading-7 text-gray-900">Ocupacion y Escolaridad</h2>
+            <h2 class="text-base font-semibold leading-7 ">Ocupacion y Escolaridad</h2>
             <p class="mt-1 text-sm leading-6 text-gray-600">Escoja los niveles de educacion que ha cursado.</p>
 
             <div class="mt-10 space-y-10">
@@ -145,7 +145,7 @@
                                     type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="ninguno" class="font-medium text-gray-900">Ninguno</label>
+                                <label for="ninguno" class="font-medium ">Ninguno</label>
                             </div>
                         </div>
 
@@ -156,7 +156,7 @@
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="bachiller" class="font-medium text-gray-900">Bachiller</label>
+                                <label for="bachiller" class="font-medium ">Bachiller</label>
                             </div>
                         </div>
 
@@ -167,7 +167,7 @@
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="tecnico" class="font-medium text-gray-900">Técnico</label>
+                                <label for="tecnico" class="font-medium ">Técnico</label>
                             </div>
                         </div>
 
@@ -178,7 +178,7 @@
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="tecnologo" class="font-medium text-gray-900">Tecnólogo</label>
+                                <label for="tecnologo" class="font-medium ">Tecnólogo</label>
                             </div>
                         </div>
 
@@ -189,7 +189,7 @@
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="profesional" class="font-medium text-gray-900">Profesional</label>
+                                <label for="profesional" class="font-medium ">Profesional</label>
                             </div>
                         </div>
 
@@ -202,7 +202,7 @@
                             </div>
                             <div class="text-sm leading-6">
                                 <label for="especializacion_tecnica_profesional"
-                                    class="font-medium text-gray-900">Especialización Técnica Profesional</label>
+                                    class="font-medium ">Especialización Técnica Profesional</label>
                             </div>
                         </div>
 
@@ -214,7 +214,7 @@
                             </div>
                             <div class="text-sm leading-6">
                                 <label for="especializacion_tecnologica"
-                                    class="font-medium text-gray-900">Especialización
+                                    class="font-medium ">Especialización
                                     Tecnológica</label>
                             </div>
                         </div>
@@ -227,7 +227,7 @@
                             </div>
                             <div class="text-sm leading-6">
                                 <label for="especializacion_profesional"
-                                    class="font-medium text-gray-900">Especializaciones Profesionales</label>
+                                    class="font-medium ">Especializaciones Profesionales</label>
                             </div>
                         </div>
 
@@ -238,7 +238,7 @@
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="maestria" class="font-medium text-gray-900">Maestría</label>
+                                <label for="maestria" class="font-medium ">Maestría</label>
                             </div>
                         </div>
 
@@ -249,7 +249,7 @@
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="doctorado" class="font-medium text-gray-900">Doctorado</label>
+                                <label for="doctorado" class="font-medium ">Doctorado</label>
                             </div>
                         </div>
 
@@ -260,7 +260,7 @@
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="posdoctorado" class="font-medium text-gray-900">Posdoctorado</label>
+                                <label for="posdoctorado" class="font-medium ">Posdoctorado</label>
                             </div>
                         </div>
                     </div>
@@ -271,7 +271,7 @@
                 </fieldset>
 
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">Ocupacion: </legend>
+                    <legend class="text-sm font-semibold leading-6 ">Ocupacion: </legend>
                     <p class="mt-1 text-sm leading-6 text-gray-600">¿Cuál es su ocupación?</p>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
@@ -279,14 +279,14 @@
                                 name="ocupacion_emprendedor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="empleado"
-                                class="block text-sm font-medium leading-6 text-gray-900">Empleado</label>
+                                class="block text-sm font-medium leading-6 ">Empleado</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="trabajador_independiente" value="Trabajador Independiente"
                                 wire:model.defer="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="trabajador_independiente"
-                                class="block text-sm font-medium leading-6 text-gray-900">Trabajador
+                                class="block text-sm font-medium leading-6 ">Trabajador
                                 Independiente</label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -294,7 +294,7 @@
                                 name="ocupacion_emprendedor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="egresado_sena"
-                                class="block text-sm font-medium leading-6 text-gray-900">Egresado
+                                class="block text-sm font-medium leading-6 ">Egresado
                                 SENA</label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -302,7 +302,7 @@
                                 wire:model.defer="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="estudiante_universitario"
-                                class="block text-sm font-medium leading-6 text-gray-900">Estudiante
+                                class="block text-sm font-medium leading-6 ">Estudiante
                                 Universitario</label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -310,14 +310,14 @@
                                 wire:model.defer="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_sena"
-                                class="block text-sm font-medium leading-6 text-gray-900">Instructor Sena</label>
+                                class="block text-sm font-medium leading-6 ">Instructor Sena</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="aprendiz_sena" value="Aprendiz SENA" wire:model.defer="ocupacion_emprendedor"
                                 name="ocupacion_emprendedor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="aprendiz_sena"
-                                class="block text-sm font-medium leading-6 text-gray-900">Aprendiz
+                                class="block text-sm font-medium leading-6 ">Aprendiz
                                 Sena</label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -325,7 +325,7 @@
                                 wire:model.defer="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="investigador_universidad"
-                                class="block text-sm font-medium leading-6 text-gray-900">Investigador
+                                class="block text-sm font-medium leading-6 ">Investigador
                                 Universidad</label>
                         </div>
                         @error('ocupacion_emprendedor')
@@ -337,16 +337,16 @@
                                 wire:model.defer="ocupacion_emprendedor" name="ocupacion_emprendedor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_ocupacion_emprendedor"
-                                class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
+                                class="block text-sm font-medium leading-6 ">Otro</label>
                             <input type="text" wire:model.defer="otra_ocupacion_emprendedor"
                                 id="input-otro-ocupacion_emprendedor" autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         </div>
 
                     </div>
                 </fieldset>
 
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(1)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -363,7 +363,7 @@
         <div class="border-b border-gray-900/10 pb-12  {{ $currentStep != 3 ? 'hidden' : '' }}" id="step-3">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Empleado </h2>
+                    <h2 class="text-base font-semibold leading-7 ">Empleado </h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Su idea de negocio es...</p>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
@@ -372,7 +372,7 @@
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
 
                             <label for="proyecto_propio_idea"
-                                class="block text-sm font-medium leading-6 text-gray-900">Un
+                                class="block text-sm font-medium leading-6 ">Un
                                 proyecto a nombre propio</label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -382,7 +382,7 @@
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
 
                             <label for="proyecto_empresa_empleado"
-                                class="block text-sm font-medium leading-6 text-gray-900">Una idea
+                                class="block text-sm font-medium leading-6 ">Una idea
                                 de proyecto de la empresa para la cual es empleado</label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -390,9 +390,9 @@
                                 type="radio" name="empleado_idea_negocio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_idea_negocio"
-                                class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
+                                class="block text-sm font-medium leading-6 ">Otro</label>
                             <input type="text" wire:model.defer="otro_idea_negocio" autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         </div>
                         @error('empleado_idea_negocio')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -400,7 +400,7 @@
 
                     </div>
                 </fieldset>
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back()">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -414,28 +414,28 @@
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 4 ? 'hidden' : '' }}" id="step-4">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Tipo de Usuario </h2>
+                    <h2 class="text-base font-semibold leading-7 ">Tipo de Usuario </h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">En la actualidad que opción te define mejor.</p>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
                             <input id="tipo_usuario_emprendedor" value="Emprendedor" wire:model.defer="tipo_usuario"
                                 type="radio" name="tipo_usuario" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="tipo_usuario_emprendedor"
-                                class="block text-sm font-medium leading-6 text-gray-900">Emprendedor</label>
+                                class="block text-sm font-medium leading-6 ">Emprendedor</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="tipo_usuario_empresa" value="Empresa" wire:model.defer="tipo_usuario"
                                 type="radio" name="tipo_usuario" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="tipo_usuario_empresa"
-                                class="block text-sm font-medium leading-6 text-gray-900">Empresa</label>
+                                class="block text-sm font-medium leading-6 ">Empresa</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="otro_tipo_usuario" value="otro" wire:model.defer="tipo_usuario"
                                 type="radio" name="tipo_usuario" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_tipo_usuario"
-                                class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
+                                class="block text-sm font-medium leading-6 ">Otro</label>
                             <input type="text" wire:model.defer="otro_tipo_usuario" autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         </div>
                     </div>
                     @error('tipo_usuario')
@@ -443,7 +443,7 @@
                     @enderror
 
                 </fieldset>
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(3)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -457,7 +457,7 @@
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 5 ? 'hidden' : '' }}" id="step-4">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Tipo de Empresa </h2>
+                    <h2 class="text-base font-semibold leading-7 ">Tipo de Empresa </h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">¿Cuál es su tipo de empresa?</p>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
@@ -465,14 +465,14 @@
                                 wire:model.defer="tipo_empresa" type="radio" name="tipo_empresa"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="tipo_empresa_persona_natural"
-                                class="block text-sm font-medium leading-6 text-gray-900">Persona Natural</label>
+                                class="block text-sm font-medium leading-6 ">Persona Natural</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="tipo_empresa_juridica" value="Persona Juridica"
                                 wire:model.defer="tipo_empresa" type="radio" name="tipo_empresa"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="tipo_empresa_juridica"
-                                class="block text-sm font-medium leading-6 text-gray-900">Persona
+                                class="block text-sm font-medium leading-6 ">Persona
                                 Juridica</label>
                         </div>
                     </div>
@@ -482,7 +482,7 @@
 
                 </fieldset>
 
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(1)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -494,11 +494,11 @@
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 6 ? 'hidden' : '' }}" id="step-6">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Tipo de persona jurídica</h2>
+                    <h2 class="text-base font-semibold leading-7 ">Tipo de persona jurídica</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Seleccione su tipo de persona jurídica.</p>
                     <div class="mt-6 space-y-6">
                         <select id="" wire:model.defer="tipo_persona_juridica" autocomplete=""
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset  sm:max-w-xs sm:text-sm sm:leading-6">
+                            class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:max-w-xs sm:text-sm sm:leading-6">
                             <option value="">Seleccione una Opción</option>
                             <option value="Sociedad Anónima">Sociedad Anónima</option>
                             <option value="Sociedad por acciones simplificadas SAS">Sociedad por acciones simplificadas
@@ -524,7 +524,7 @@
                     @enderror
 
                 </fieldset>
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(1)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -540,17 +540,17 @@
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 7 ? 'hidden' : '' }}" id="step-7">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Datos Empresa </h2>
+                    <h2 class="text-base font-semibold leading-7 ">Datos Empresa </h2>
                     <div class="mt-6 space-y-6">
 
                         <div class="col-span-full">
-                            <label for="empresa_nit" class="block text-sm font-medium leading-6 text-gray-900">Escriba
+                            <label for="empresa_nit" class="block text-sm font-medium leading-6 ">Escriba
                                 el
                                 número del Número de Identificación Tributaria de la empresa</label>
                             <div class="mt-2">
                                 <input type="text" wire:model.defer="empresa_nit" id="empresa_nit"
                                     autocomplete="empresa_nit"
-                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                    class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
 
                                 @error('empresa_nit')
                                     <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -564,7 +564,7 @@
                 </fieldset>
 
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Tamaño de la empresa</h2>
+                    <h2 class="text-base font-semibold leading-7 ">Tamaño de la empresa</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Revise la tabla los valores de ventas por sector
                         para
                         2022 y responda en que tamaño de empresa se encuentra.</p>
@@ -574,14 +574,14 @@
                                 type="radio" name="empresa_tamaño"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="microempresa"
-                                class="block text-sm font-medium leading-6 text-gray-900">Microempresa</label>
+                                class="block text-sm font-medium leading-6 ">Microempresa</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="empresa_pequeña" value="Pequeña Empresa" wire:model.defer="empresa_tamaño"
                                 type="radio" name="empresa_tamaño"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="empresa_pequeña"
-                                class="block text-sm font-medium leading-6 text-gray-900">Pequeña
+                                class="block text-sm font-medium leading-6 ">Pequeña
                                 Empresa</label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -589,14 +589,14 @@
                                 type="radio" name="empresa_tamaño"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="empresa_mediana"
-                                class="block text-sm font-medium leading-6 text-gray-900">Mediana
+                                class="block text-sm font-medium leading-6 ">Mediana
                                 empresa</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="empresa_grande" value="Gran empresa" wire:model.defer="empresa_tamaño"
                                 type="radio" name="empresa_tamaño"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
-                            <label for="empresa_grande" class="block text-sm font-medium leading-6 text-gray-900">Gran
+                            <label for="empresa_grande" class="block text-sm font-medium leading-6 ">Gran
                                 empresa</label>
                         </div>
                         @error('empresa_tamaño')
@@ -607,7 +607,7 @@
                 </fieldset>
 
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Su empresa cuenta con una unidad de
+                    <h2 class="text-base font-semibold leading-7 ">Su empresa cuenta con una unidad de
                         innovación o desarrollo de producto
                     </h2>
                     <div class="mt-6 space-y-6">
@@ -617,7 +617,7 @@
                                 name="empresa_innovacion_desarrollo_producto"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="empresa_innovacion_desarrollo_producto_si"
-                                class="block text-sm font-medium leading-6 text-gray-900">Si</label>
+                                class="block text-sm font-medium leading-6 ">Si</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="empresa_innovacion_desarrollo_producto_no" value="no"
@@ -625,7 +625,7 @@
                                 name="empresa_innovacion_desarrollo_producto"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="empresa_innovacion_desarrollo_producto_no"
-                                class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                                class="block text-sm font-medium leading-6 ">No</label>
                         </div>
                         @error('empresa_innovacion_desarrollo_producto')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -635,7 +635,7 @@
                 </fieldset>
 
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">En la actualidad cuenta con un proyecto
+                    <h2 class="text-base font-semibold leading-7 ">En la actualidad cuenta con un proyecto
                         de
                         desarrollo de producto o servicios del cual ya tiene avances y requiere desarrollar prototipos
                     </h2>
@@ -647,7 +647,7 @@
                                 name="empresa_proyecto_desarrollo_avances_requiere_prototipos"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="empresa_proyecto_desarrollo_avances_requiere_prototipos_si"
-                                class="block text-sm font-medium leading-6 text-gray-900">Si</label>
+                                class="block text-sm font-medium leading-6 ">Si</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="empresa_proyecto_desarrollo_avances_requiere_prototipos_no"
@@ -656,7 +656,7 @@
                                 name="empresa_proyecto_desarrollo_avances_requiere_prototipos"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="empresa_proyecto_desarrollo_avances_requiere_prototipos_no"
-                                class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                                class="block text-sm font-medium leading-6 ">No</label>
                         </div>
                         @error('empresa_proyecto_desarrollo_avances_requiere_prototipos')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -665,7 +665,7 @@
                     </div>
                 </fieldset>
 
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(1)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -681,7 +681,7 @@
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 8 ? 'hidden' : '' }}" id="step-8">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Necesidades de Usuarios sin Proyecto
+                    <h2 class="text-base font-semibold leading-7 ">Necesidades de Usuarios sin Proyecto
                         concreto
                     </h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">¿Cuál es la necesidad de asesoría por la cuál se
@@ -693,7 +693,7 @@
                             <input id="asesoria_networking" wire:model.defer="necesidad_asesoria_sena"
                                 value="Networking" type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoria_networking"
-                                class="block text-sm font-medium leading-6 text-gray-900">Networking (generar
+                                class="block text-sm font-medium leading-6 ">Networking (generar
                                 redes)</label>
                         </div>
 
@@ -703,7 +703,7 @@
                                 wire:model.defer="necesidad_asesoria_sena" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoria_mejorar_modelo_negocio"
-                                class="block text-sm font-medium leading-6 text-gray-900">Hacer cambios o mejoras al
+                                class="block text-sm font-medium leading-6 ">Hacer cambios o mejoras al
                                 modelo
                                 de negocio
                             </label>
@@ -714,7 +714,7 @@
                                 wire:model.defer="necesidad_asesoria_sena" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoria_desarrollo_nuevos_productos"
-                                class="block text-sm font-medium leading-6 text-gray-900">Desarrollo de nuevos
+                                class="block text-sm font-medium leading-6 ">Desarrollo de nuevos
                                 productos o
                                 servicios
                             </label>
@@ -725,7 +725,7 @@
                                 wire:model.defer="necesidad_asesoria_sena" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoria_fuentes_financiacion_convocatorias"
-                                class="block text-sm font-medium leading-6 text-gray-900">Conocer posibles fuentes de
+                                class="block text-sm font-medium leading-6 ">Conocer posibles fuentes de
                                 financiación o convocatorias del sistema CT+i
                             </label>
                         </div>
@@ -735,7 +735,7 @@
                                 wire:model.defer="necesidad_asesoria_sena" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoia_fortalecer_empresa"
-                                class="block text-sm font-medium leading-6 text-gray-900">Fortalecimiento de mi empresa
+                                class="block text-sm font-medium leading-6 ">Fortalecimiento de mi empresa
                                 en
                                 temas empresariales (Gerenciales, financieros, de mercados, etc)
                             </label>
@@ -745,7 +745,7 @@
                                 wire:model.defer="necesidad_asesoria_sena" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoria_aprender_tecnologias"
-                                class="block text-sm font-medium leading-6 text-gray-900">Conocer o aprender sobre
+                                class="block text-sm font-medium leading-6 ">Conocer o aprender sobre
                                 tecnologías 4.0
                             </label>
                         </div>
@@ -755,7 +755,7 @@
                                 wire:model.defer="necesidad_asesoria_sena" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoria_formacion_temas_especializados"
-                                class="block text-sm font-medium leading-6 text-gray-900">Formación en temas
+                                class="block text-sm font-medium leading-6 ">Formación en temas
                                 especializados
                             </label>
                         </div>
@@ -764,7 +764,7 @@
                                 wire:model.defer="necesidad_asesoria_sena" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="asesoria_oferta_sena"
-                                class="block text-sm font-medium leading-6 text-gray-900">Conocer la oferta SENA
+                                class="block text-sm font-medium leading-6 ">Conocer la oferta SENA
                             </label>
                         </div>
                         @error('necesidad_asesoria_sena')
@@ -772,7 +772,7 @@
                         @enderror
                     </div>
                 </fieldset>
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(1)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -788,7 +788,7 @@
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 10 ? 'hidden' : '' }}" id="step-10">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Emprendedores </h2>
+                    <h2 class="text-base font-semibold leading-7 ">Emprendedores </h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">En que nivel clasificaría su idea de emprendimiento
                         o
                         idea de proyecto</p>
@@ -800,7 +800,7 @@
                                 name="emprendedores_nivel_idea" class="h-4 w-4 border-gray-300 text-indigo-600 ">
 
                             <label for="no_idea_innovacion"
-                                class="block text-sm font-medium leading-6 text-gray-900">Aún
+                                class="block text-sm font-medium leading-6 ">Aún
                                 no tengo una idea de negocio o proyecto de innovación concreto
                             </label>
                         </div>
@@ -811,7 +811,7 @@
                                 name="emprendedores_nivel_idea" class="h-4 w-4 border-gray-300 text-indigo-600 ">
 
                             <label for="idea_sin_prototipo"
-                                class="block text-sm font-medium leading-6 text-gray-900">Solo
+                                class="block text-sm font-medium leading-6 ">Solo
                                 tengo una idea/proyecto pero nunca he realizado un prototipo</label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -820,7 +820,7 @@
                                 wire:model.defer="emprendedores_nivel_idea" type="radio"
                                 name="emprendedores_nivel_idea" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="idea_prototipo_funcional"
-                                class="block text-sm font-medium leading-6 text-gray-900">Tengo una idea de la cual ya
+                                class="block text-sm font-medium leading-6 ">Tengo una idea de la cual ya
                                 he
                                 realizado un prototipo funcional pero sin ventas</label>
                         </div>
@@ -830,7 +830,7 @@
                                 wire:model.defer="emprendedores_nivel_idea" type="radio"
                                 name="emprendedores_nivel_idea" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="proyecto_empresa_empleadora"
-                                class="block text-sm font-medium leading-6 text-gray-900">Es un proyecto para la
+                                class="block text-sm font-medium leading-6 ">Es un proyecto para la
                                 empresa
                                 empleadora</label>
                         </div>
@@ -841,7 +841,7 @@
                                 wire:model.defer="emprendedores_nivel_idea" type="radio"
                                 name="emprendedores_nivel_idea" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="producto_elaborado_funcional"
-                                class="block text-sm font-medium leading-6 text-gray-900">Tengo un producto elaborado
+                                class="block text-sm font-medium leading-6 ">Tengo un producto elaborado
                                 con
                                 el que he realizado ventas efectivas (unidad productiva)</label>
                         </div>
@@ -850,7 +850,7 @@
                         @enderror
                     </div>
                 </fieldset>
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(1)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -863,16 +863,16 @@
         {{-- Elementos de la Idea/proyecto --}}
         <div class="border-b border-gray-900/10 pb-12  {{ $currentStep != 11 ? 'hidden' : '' }}" id="step-11">
             <div class="mt-10 space-y-10">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Elementos de la Idea/proyecto </h2>
+                <h2 class="text-base font-semibold leading-7 ">Elementos de la Idea/proyecto </h2>
                 <p class="mt-1 text-sm leading-6 text-gray-600">En la actualidad que opción te define mejor.</p>
                 <div class="mt-6 space-y-6">
                     <div class="col-span-full">
                         <label for="nombre_emprendimiento"
-                            class="block text-sm font-medium leading-6 text-gray-900">Nombre de la Idea</label>
+                            class="block text-sm font-medium leading-6 ">Nombre de la Idea</label>
                         <div class="mt-2">
                             <input type="text" wire:model.defer="nombre_idea" id="nombre_idea"
                                 autocomplete="nombre_idea"
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                             @error('nombre_idea')
                                 <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                             @enderror
@@ -880,12 +880,12 @@
 
                         <div class="sm:col-span-3 mt-4">
                             <label for="descripcion_idea"
-                                class="block text-sm font-medium leading-6 text-gray-900">Describa brevemente en que
+                                class="block text-sm font-medium leading-6 ">Describa brevemente en que
                                 consiste la idea</label>
                             <div class="mt-2">
                                 <input id="descripcion_idea" wire:model.defer="descripcion_idea"
                                     autocomplete="descripcion_idea"
-                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                    class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                                 @error('descripcion_idea')
                                     <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                                 @enderror
@@ -897,13 +897,10 @@
 
                 <fieldset>
                     <div class="col-span-full mt-5">
-                        <label for="" class="mb-4 block text-sm font-medium leading-6 text-gray-900">Califique
+                        <label for="" class="mb-4 block text-sm font-medium leading-6 ">Califique
                             en
                             que nivel valora actualmente el siguiente elemento</label>
-
-
-                        <ul
-                            class="items-center w-full text-sm font-medium text-black bg-white border border-gray-400 rounded-lg sm:flex">
+                        <ul class="items-center w-full text-sm font-medium text-black bg-white border border-gray-400 rounded-lg sm:flex">
 
                             <li class="w-full">
                                 <div class="flex items-center pl-3">
@@ -970,7 +967,7 @@
 
                 <fieldset>
                     <div class="col-span-full mt-5">
-                        <label for="" class="mb-4 block text-sm font-medium leading-6 text-gray-900">Califique
+                        <label for="" class="mb-4 block text-sm font-medium leading-6 ">Califique
                             en
                             que nivel valora actualmente el siguiente elemento</label>
 
@@ -1069,7 +1066,7 @@
 
                 <fieldset>
                     <div class="col-span-full mt-5">
-                        <label for="" class="mb-4 block text-sm font-medium leading-6 text-gray-900">Califique
+                        <label for="" class="mb-4 block text-sm font-medium leading-6 ">Califique
                             en
                             que nivel valora actualmente el siguiente elemento</label>
 
@@ -1167,7 +1164,7 @@
 
                 <fieldset>
                     <div class="col-span-full mt-5">
-                        <label for="idea_genera_ventas" class="block text-sm font-medium leading-6 text-gray-900">Su
+                        <label for="idea_genera_ventas" class="block text-sm font-medium leading-6 ">Su
                             idea
                             de negocios o proyecto de innovación actualmente genera ventas permanentes</label>
                         <div class="mt-6 space-y-6">
@@ -1177,7 +1174,7 @@
                                     wire:model.defer="idea_genera_ventas" type="radio" name="idea_genera_ventas"
                                     class="h-4 w-4 border-gray-300 text-indigo-600 ">
                                 <label for="idea_genera_ventas_permanentes_si"
-                                    class="block text-sm font-medium leading-6 text-gray-900">Si</label>
+                                    class="block text-sm font-medium leading-6 ">Si</label>
                             </div>
 
                             <div class="flex items-center gap-x-3">
@@ -1185,7 +1182,7 @@
                                     wire:model.defer="idea_genera_ventas" type="radio" name="idea_genera_ventas"
                                     class="h-4 w-4 border-gray-300 text-indigo-600 ">
                                 <label for="idea_genera_ventas_permanentes_no"
-                                    class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                                    class="block text-sm font-medium leading-6 ">No</label>
                             </div>
                             @error('idea_genera_ventas')
                                 <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -1194,7 +1191,7 @@
                     </div>
                 </fieldset>
 
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(1)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -1208,14 +1205,14 @@
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 12 ? 'hidden' : '' }}" id="step-12">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Ingresos o ventas promedio mes</h2>
+                    <h2 class="text-base font-semibold leading-7 ">Ingresos o ventas promedio mes</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Ingresar el promedio de ventas que tiene por mes.
                     </p>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
                             <input type="text" wire:model.defer="ventas_promedio_mes" id=""
                                 autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
 
                         </div>
                         @error('ventas_promedio_mes')
@@ -1223,7 +1220,7 @@
                         @enderror
                     </div>
                 </fieldset>
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(11)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -1237,14 +1234,14 @@
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 13 ? 'hidden' : '' }}" id="step-13">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Su idea que Cantidad de empleos genera
+                    <h2 class="text-base font-semibold leading-7 ">Su idea que Cantidad de empleos genera
                         actualmente</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Ingresar la cantidad de empleos que genera.</p>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
                             <input type="text" wire:model.defer="idea_cantidad_empleados_genera" id=""
                                 autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
 
                         </div>
                         @error('idea_cantidad_empleados_genera')
@@ -1252,7 +1249,7 @@
                         @enderror
                     </div>
                 </fieldset>
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(11)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -1265,14 +1262,14 @@
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 9 ? 'hidden' : '' }}" id="step-9">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Programa o servicio por el que ingresa
+                    <h2 class="text-base font-semibold leading-7 ">Programa o servicio por el que ingresa
                     </h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">A Cuál de las unidades SENA ingresó como proyecto.
                     </p>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center">
                             <select id="" wire:model.defer="programa_sena_ingreso" autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset  sm:max-w-xs sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:max-w-xs sm:text-sm sm:leading-6">
                                 <option value="">Seleccione una Opcion</option>
                                 <option value="Centros de Formacion">Centros de Formacion</option>
                                 <option value="Emprendimiento">Emprendimiento</option>
@@ -1287,7 +1284,7 @@
                         @enderror
                     </div>
                 </fieldset>
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(1)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -1299,12 +1296,12 @@
 
         {{-- Seleccion:Tecnoparque --}}
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 14 ? 'hidden' : '' }}" id="step-14">
-            <h2 class="text-base font-semibold leading-7 text-gray-900">Tecnoparque Servicios</h2>
+            <h2 class="text-base font-semibold leading-7 ">Tecnoparque Servicios</h2>
             <div class="mt-10 space-y-10">
 
                 {{-- Tecnoparque Postulado --}}
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">A que Tecnoparque postuló su idea
+                    <legend class="text-sm font-semibold leading-6 ">A que Tecnoparque postuló su idea
                         inicialmente
                     </legend>
                     <div class="mt-6 space-y-6">
@@ -1313,7 +1310,7 @@
                                 value="Tecnoparque Medellin" type="radio" name="tecnoparque_postulado"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="tecnoparque_medellin"
-                                class="block text-sm font-medium leading-6 text-gray-900">Tecnoparque Nodo
+                                class="block text-sm font-medium leading-6 ">Tecnoparque Nodo
                                 Medellín</label>
                         </div>
 
@@ -1322,7 +1319,7 @@
                                 wire:model.defer="tecnoparque_postulado" type="radio" name="tecnoparque_postulado"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="tecnoparque_rionegro"
-                                class="block text-sm font-medium leading-6 text-gray-900">Tecnoparque Nodo Rionegro
+                                class="block text-sm font-medium leading-6 ">Tecnoparque Nodo Rionegro
                             </label>
                         </div>
 
@@ -1331,10 +1328,10 @@
                                 wire:model.defer="tecnoparque_postulado" type="radio"
                                 name="tecnoparque_postulado" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_tecnoparque_postulado"
-                                class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
+                                class="block text-sm font-medium leading-6 ">Otro</label>
                             <input type="text" wire:model.defer="otro_tecnoparque_postulado"
                                 id="input-otro-tecnoparque_postulado" autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         </div>
                         @error('tecnoparque_postulado')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -1345,7 +1342,7 @@
 
                 {{-- Servicios accedidos inicialmente en tecnoparque --}}
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">Indique a que servicios accedió el
+                    <legend class="text-sm font-semibold leading-6 ">Indique a que servicios accedió el
                         usuario inicialmente en el Tecnoparque
                     </legend>
                     <div class="mt-6 space-y-6">
@@ -1355,7 +1352,7 @@
                                 type="radio" name="servicios_accedidos_tecnoparque"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="fortalecimiento_servicio_tecnoparque"
-                                class="block text-sm font-medium leading-6 text-gray-900">Fortalecimiento</label>
+                                class="block text-sm font-medium leading-6 ">Fortalecimiento</label>
                         </div>
 
                         <div class="flex items-center gap-x-3">
@@ -1365,7 +1362,7 @@
                                 name="servicios_accedidos_tecnoparque"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="desarrollo_tecnologico_servicio_tecnoparque"
-                                class="block text-sm font-medium leading-6 text-gray-900">Proyecto para desarrollo
+                                class="block text-sm font-medium leading-6 ">Proyecto para desarrollo
                                 tecnológico
                             </label>
                         </div>
@@ -1375,7 +1372,7 @@
                                 name="servicios_accedidos_tecnoparque"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="proyecto_articulacion_servicio"
-                                class="block text-sm font-medium leading-6 text-gray-900">Proyecto en proceso de
+                                class="block text-sm font-medium leading-6 ">Proyecto en proceso de
                                 articulación
                             </label>
                         </div>
@@ -1388,7 +1385,7 @@
 
                 {{-- línea técnica o líneas técnicas se adscribe la idea --}}
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">A que línea técnica o líneas
+                    <legend class="text-sm font-semibold leading-6 ">A que línea técnica o líneas
                         técnicas se
                         adscribe la idea
                     </legend>
@@ -1398,7 +1395,7 @@
                                 value="Biotecnología" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_biotecnologia"
-                                class="block text-sm font-medium leading-6 text-gray-900">Biotecnología</label>
+                                class="block text-sm font-medium leading-6 ">Biotecnología</label>
                         </div>
 
                         <div class="flex items-center gap-x-3">
@@ -1406,7 +1403,7 @@
                                 wire:model.defer="linea_tecnica_adscribe_tecnoparque" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_ingenieria_diseño"
-                                class="block text-sm font-medium leading-6 text-gray-900">Ingeniería y Diseño
+                                class="block text-sm font-medium leading-6 ">Ingeniería y Diseño
                             </label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -1415,7 +1412,7 @@
                                 wire:model.defer="linea_tecnica_adscribe_tecnoparque" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_electronica_telecomunicaciones"
-                                class="block text-sm font-medium leading-6 text-gray-900">Electrónica y
+                                class="block text-sm font-medium leading-6 ">Electrónica y
                                 telecomunicaciones
                             </label>
                         </div>
@@ -1424,7 +1421,7 @@
                                 wire:model.defer="linea_tecnica_adscribe_tecnoparque" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_tecnologia_virtuales"
-                                class="block text-sm font-medium leading-6 text-gray-900">Tecnologías virtuales
+                                class="block text-sm font-medium leading-6 ">Tecnologías virtuales
                             </label>
                         </div>
                         @error('linea_tecnica_adscribe_tecnoparque')
@@ -1436,7 +1433,7 @@
 
                 {{-- Cuales condiciones cumple la idea --}}
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">Señale cuáles condiciones cumple la
+                    <legend class="text-sm font-semibold leading-6 ">Señale cuáles condiciones cumple la
                         idea
                         que llega al Tecnoparque
                     </legend>
@@ -1446,7 +1443,7 @@
                                 value="Cuenta con un modelo de comprobación" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="condicion_modelo_comprobacion"
-                                class="block text-sm font-medium leading-6 text-gray-900">Cuenta con un modelo de
+                                class="block text-sm font-medium leading-6 ">Cuenta con un modelo de
                                 comprobación (trl 4 o trl 5)</label>
                         </div>
 
@@ -1456,7 +1453,7 @@
                                 wire:model.defer="condiciones_cumplidas_idea" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="condicion_idea_postulada_tecnoparque"
-                                class="block text-sm font-medium leading-6 text-gray-900">Ya postuló la idea en la
+                                class="block text-sm font-medium leading-6 ">Ya postuló la idea en la
                                 plataforma tecnoparque
                             </label>
                         </div>
@@ -1466,7 +1463,7 @@
                                 wire:model.defer="condiciones_cumplidas_idea" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="condicion_usuario_demostro_capacidades"
-                                class="block text-sm font-medium leading-6 text-gray-900">El usuario demostró tener
+                                class="block text-sm font-medium leading-6 ">El usuario demostró tener
                                 capacidades técnicas de cocreación
                             </label>
                         </div>
@@ -1477,7 +1474,7 @@
                 </fieldset>
                 {{-- Cuales condiciones cumple la idea --}}
 
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(9)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -1491,7 +1488,7 @@
             <div class="mt-10 space-y-10">
 
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">Emprendimiento Servicios
+                    <legend class="text-sm font-semibold leading-6 ">Emprendimiento Servicios
                     </legend>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Indique a que servicios accedió el usuario
                         inicialmente en el Centro de Desarrollo Empresarial o Programa de Emprendimiento
@@ -1502,14 +1499,14 @@
                                 type="radio" name="emprendimiento_servicios"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="fomento"
-                                class="block text-sm font-medium leading-6 text-gray-900">Fomento</label>
+                                class="block text-sm font-medium leading-6 ">Fomento</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="creacion_empresa_fondo_emprender" value="Creación de empresa Fondo Emprender"
                                 wire:model.defer="emprendimiento_servicios" type="radio"
                                 name="emprendimiento_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="creacion_empresa_fondo_emprender"
-                                class="block text-sm font-medium leading-6 text-gray-900">Creación de empresa Fondo
+                                class="block text-sm font-medium leading-6 ">Creación de empresa Fondo
                                 Emprender
                             </label>
                         </div>
@@ -1519,7 +1516,7 @@
                                 wire:model.defer="emprendimiento_servicios" type="radio"
                                 name="emprendimiento_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="creacion_empresa_otras_fuentes"
-                                class="block text-sm font-medium leading-6 text-gray-900">Creación de empresa otras
+                                class="block text-sm font-medium leading-6 ">Creación de empresa otras
                                 fuentes de financiación
                             </label>
                         </div>
@@ -1528,14 +1525,14 @@
                                 wire:model.defer="emprendimiento_servicios" type="radio"
                                 name="emprendimiento_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="fortalecimiento_empresarial"
-                                class="block text-sm font-medium leading-6 text-gray-900">Fortalecimiento empresarial
+                                class="block text-sm font-medium leading-6 ">Fortalecimiento empresarial
                             </label>
                         </div>
                         @error('emprendimiento_servicios')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                         @enderror
 
-                        <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                        <button type="button" class="text-base mr-2 font-semibold leading-6 "
                             wire:click="back(9)">Volver</button>
                         <button type="button"
                             class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -1551,7 +1548,7 @@
             <div class="mt-10 space-y-10">
 
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">Centro de Formación Servicios
+                    <legend class="text-sm font-semibold leading-6 ">Centro de Formación Servicios
                     </legend>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Indique a que servicios accedió el usuario
                         inicialmente en el centro de formación
@@ -1562,7 +1559,7 @@
                                 value="Agencia Publica de Empleo" type="radio" name="centro_formacion_servicios"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="agencia_publica_empleo"
-                                class="block text-sm font-medium leading-6 text-gray-900">Agencia Publica de
+                                class="block text-sm font-medium leading-6 ">Agencia Publica de
                                 Empleo</label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -1571,7 +1568,7 @@
                                 wire:model.defer="centro_formacion_servicios" type="radio"
                                 name="centro_formacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="certificado_competencias_laborales"
-                                class="block text-sm font-medium leading-6 text-gray-900">Certificación de
+                                class="block text-sm font-medium leading-6 ">Certificación de
                                 competencias
                                 laborales
                             </label>
@@ -1581,7 +1578,7 @@
                                 type="radio" name="centro_formacion_servicios"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="formacion"
-                                class="block text-sm font-medium leading-6 text-gray-900">Formación
+                                class="block text-sm font-medium leading-6 ">Formación
                             </label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -1589,7 +1586,7 @@
                                 wire:model.defer="centro_formacion_servicios" type="radio"
                                 name="centro_formacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="investigacion"
-                                class="block text-sm font-medium leading-6 text-gray-900">Investigación
+                                class="block text-sm font-medium leading-6 ">Investigación
                             </label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -1597,7 +1594,7 @@
                                 wire:model.defer="centro_formacion_servicios" type="radio"
                                 name="centro_formacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="servicios_tecnologicos"
-                                class="block text-sm font-medium leading-6 text-gray-900">Servicios Tecnológicos
+                                class="block text-sm font-medium leading-6 ">Servicios Tecnológicos
                             </label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -1605,10 +1602,10 @@
                                 wire:model.defer="centro_formacion_servicios" type="radio"
                                 name="centro_formacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_centro_formacion_servicios"
-                                class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
+                                class="block text-sm font-medium leading-6 ">Otro</label>
                             <input type="text" wire:model.defer="otro_centro_formacion_servicios"
                                 id="input-otro-centro_formacion_servicios" autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         </div>
                         @error('centro_formacion_servicios')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -1616,7 +1613,7 @@
                     </div>
                 </fieldset>
 
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(9)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -1628,12 +1625,12 @@
 
         {{-- Seleccion: Hub de Innovación Servicios --}}
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 17 ? 'hidden' : '' }}" id="step-17">
-            <h2 class="text-base font-semibold leading-7 text-gray-900">Hub de Innovación Servicios</h2>
+            <h2 class="text-base font-semibold leading-7 ">Hub de Innovación Servicios</h2>
             <div class="mt-10 space-y-10">
 
                 {{-- Indicar que servicios solicita en el Hub de Innovación --}}
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">Hub de Innovación Servicios
+                    <legend class="text-sm font-semibold leading-6 ">Hub de Innovación Servicios
 
                     </legend>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Indique a que servicios solicita acceso en el Hub
@@ -1645,7 +1642,7 @@
                                 value="Fortalecimiento de Capacidades" type="radio"
                                 name="hub_innovacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="fortalecimiento_capacidades"
-                                class="block text-sm font-medium leading-6 text-gray-900">Fortalecimiento de
+                                class="block text-sm font-medium leading-6 ">Fortalecimiento de
                                 Capacidades</label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -1653,7 +1650,7 @@
                                 wire:model.defer="hub_innovacion_servicios" type="radio"
                                 name="hub_innovacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="desarrollo_soluciones"
-                                class="block text-sm font-medium leading-6 text-gray-900">Desarrollo de Soluciones
+                                class="block text-sm font-medium leading-6 ">Desarrollo de Soluciones
                             </label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -1661,7 +1658,7 @@
                                 wire:model.defer="hub_innovacion_servicios" type="radio"
                                 name="hub_innovacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="relacionamiento"
-                                class="block text-sm font-medium leading-6 text-gray-900">Relacionamiento
+                                class="block text-sm font-medium leading-6 ">Relacionamiento
                             </label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -1669,10 +1666,10 @@
                                 wire:model.defer="hub_innovacion_servicios" type="radio"
                                 name="hub_innovacion_servicios" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_hub_innovacion_servicios"
-                                class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
+                                class="block text-sm font-medium leading-6 ">Otro</label>
                             <input type="text" wire:model.defer="otro_hub_innovacion_servicios"
                                 id="input-otro-hub_innovacion_servicios" autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         </div>
                         @error('hub_innovacion_servicios')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -1683,7 +1680,7 @@
 
                 {{-- Indicar que línea tecnológicas esta suscrita la idea --}}
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">En que línea o líneas tecnológicas
+                    <legend class="text-sm font-semibold leading-6 ">En que línea o líneas tecnológicas
                         esta
                         suscrita la idea</legend>
                     <div class="mt-6 space-y-6">
@@ -1691,7 +1688,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="linea_iot" wire:model.defer="linea_tecnologica_hub" value="IoT"
                                 type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 ">
-                            <label for="linea_iot" class="block text-sm font-medium leading-6 text-gray-900">IoT
+                            <label for="linea_iot" class="block text-sm font-medium leading-6 ">IoT
                                 (internet de las cosas)</label>
                         </div>
 
@@ -1700,7 +1697,7 @@
                                 wire:model.defer="linea_tecnologica_hub" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_diseño_prototipado"
-                                class="block text-sm font-medium leading-6 text-gray-900">Diseño & Prototipado
+                                class="block text-sm font-medium leading-6 ">Diseño & Prototipado
 
                             </label>
                         </div>
@@ -1710,7 +1707,7 @@
                                 wire:model.defer="linea_tecnologica_hub" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_desarrollo_software_web"
-                                class="block text-sm font-medium leading-6 text-gray-900">Desarrollo de software
+                                class="block text-sm font-medium leading-6 ">Desarrollo de software
                                 (Web-App)
                             </label>
                         </div>
@@ -1720,7 +1717,7 @@
                                 wire:model.defer="linea_tecnologica_hub" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_realidades_extendidas"
-                                class="block text-sm font-medium leading-6 text-gray-900">Realidades Extendidas
+                                class="block text-sm font-medium leading-6 ">Realidades Extendidas
                                 (Realidad
                                 Virtual/Realidad Aumentada)
 
@@ -1732,7 +1729,7 @@
                                 wire:model.defer="linea_tecnologica_hub" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_inteligencia_artifical"
-                                class="block text-sm font-medium leading-6 text-gray-900">Inteligencia Artificial
+                                class="block text-sm font-medium leading-6 ">Inteligencia Artificial
                                 (Machine
                                 Learning/Deep Learning)
 
@@ -1744,7 +1741,7 @@
                                 wire:model.defer="linea_tecnologica_hub" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_marketing_digital"
-                                class="block text-sm font-medium leading-6 text-gray-900">Marketing digital
+                                class="block text-sm font-medium leading-6 ">Marketing digital
                                 (fortalecimiento de Marca)
 
                             </label>
@@ -1754,7 +1751,7 @@
                             <input id="linea_big_data" value="BigData" wire:model.defer="linea_tecnologica_hub"
                                 type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_big_data"
-                                class="block text-sm font-medium leading-6 text-gray-900">Big
+                                class="block text-sm font-medium leading-6 ">Big
                                 Data
 
                             </label>
@@ -1765,7 +1762,7 @@
                                 wire:model.defer="linea_tecnologica_hub" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_manufactura"
-                                class="block text-sm font-medium leading-6 text-gray-900">Manufactura Aditiva
+                                class="block text-sm font-medium leading-6 ">Manufactura Aditiva
                             </label>
                         </div>
 
@@ -1774,7 +1771,7 @@
                                 wire:model.defer="linea_tecnologica_hub" type="checkbox"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="linea_nula"
-                                class="block text-sm font-medium leading-6 text-gray-900">Ninguna
+                                class="block text-sm font-medium leading-6 ">Ninguna
                                 Tecnología 4.0
                             </label>
                         </div>
@@ -1784,10 +1781,10 @@
                                 wire:model.defer="otro_linea_tecnologica_hub" type="radio"
                                 name="otro_linea_tecnologica_hub" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_linea_tecnologica_hub"
-                                class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
+                                class="block text-sm font-medium leading-6 ">Otro</label>
                             <input type="text" wire:model.defer="otro_linea_tecnologica_hub"
                                 id="input-otro-linea_tecnologica_hub" autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         </div>
                         @error('linea_tecnologica_hub')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -1798,7 +1795,7 @@
 
                 {{-- Indicar conocimientos tecnicos en la linea seleccionada --}}
                 <fieldset>
-                    <legend class="text-sm font-semibold leading-6 text-gray-900">Cuentas con conocimientos técnicos
+                    <legend class="text-sm font-semibold leading-6 ">Cuentas con conocimientos técnicos
                         en
                         las líneas seleccionadas (punto anterior)
                     </legend>
@@ -1809,7 +1806,7 @@
                                 name="conocimientos_lineas_seleccionada"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="conocimientos_lineas_seleccionada_no"
-                                class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                                class="block text-sm font-medium leading-6 ">No</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="conocimientos_lineas_seleccionada_basico" value="Basico"
@@ -1817,7 +1814,7 @@
                                 name="conocimientos_lineas_seleccionada"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="conocimientos_lineas_seleccionada_basico"
-                                class="block text-sm font-medium leading-6 text-gray-900">Basico
+                                class="block text-sm font-medium leading-6 ">Basico
                             </label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -1826,7 +1823,7 @@
                                 name="conocimientos_lineas_seleccionada"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="conocimientos_lineas_seleccionada_medio"
-                                class="block text-sm font-medium leading-6 text-gray-900">Medio
+                                class="block text-sm font-medium leading-6 ">Medio
                             </label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -1835,7 +1832,7 @@
                                 name="conocimientos_lineas_seleccionada"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="conocimientos_lineas_seleccionada_avanzado"
-                                class="block text-sm font-medium leading-6 text-gray-900">Avanzados
+                                class="block text-sm font-medium leading-6 ">Avanzados
                             </label>
                         </div>
                         @error('conocimientos_lineas_seleccionada')
@@ -1847,7 +1844,7 @@
 
                 {{-- Indicar Puntualmente cual es tu necesidad de apoyo para el proyecto --}}
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Puntualmente cual es tu necesidad de
+                    <h2 class="text-base font-semibold leading-7 ">Puntualmente cual es tu necesidad de
                         apoyo
                         para el proyecto
                     </h2>
@@ -1855,7 +1852,7 @@
                         <div class="flex items-center gap-x-3">
                             <input type="text" wire:model.defer="necesidad_puntual_proyecto"
                                 id="necesidad_puntual_proyecto" autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         </div>
                         @error('necesidad_puntual_proyecto')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -1866,14 +1863,14 @@
 
                 {{-- Indicar si se cuenta con equipo de trabajo --}}
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Cuentas con equipo de trabajo (otras
+                    <h2 class="text-base font-semibold leading-7 ">Cuentas con equipo de trabajo (otras
                         personas vinculadas con el desarrollo de la idea)
                     </h2>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
                             <input type="text" wire:model.defer="cuenta_equipo_trabajo"
                                 id="cuenta_equipo_trabajo" autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         </div>
                         @error('cuenta_equipo_trabajo')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -1883,7 +1880,7 @@
                 {{-- Indicar si se cuenta con equipo de trabajo --}}
 
 
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(9)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -1901,7 +1898,7 @@
 
                 {{-- Opcion centro de formación es aprendiz o fue --}}
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Aprendiz en formación y egresado</h2>
+                    <h2 class="text-base font-semibold leading-7 ">Aprendiz en formación y egresado</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">En que centro de formación es aprendiz actualmente
                         o
                         fue egresado</p>
@@ -1914,7 +1911,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="centro_recursos_naturales_renovables"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE LOS RECURSOS NATURALES RENOVABLES LA SALADA</label>
                         </div>
 
@@ -1925,7 +1922,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="centro_diseño_manufactura_cuero"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE DISEÑO Y MANUFACTURA DEL CUERO</label>
                         </div>
 
@@ -1935,7 +1932,7 @@
                                 wire:model.defer="centro_formacion_actual_aprendiz"
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
-                            <label for="centro_comercio" class="block text-sm font-medium leading-6 text-gray-900">
+                            <label for="centro_comercio" class="block text-sm font-medium leading-6 ">
                                 CENTRO DE COMERCIO</label>
                         </div>
 
@@ -1947,7 +1944,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="centro_formacion_diseño_confeccion_moda"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE FORMACIÓN EN DISEÑO, CONFECCIÓN Y MODA</label>
                         </div>
 
@@ -1959,7 +1956,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="centro_innovacion_agroindustria_aviacion"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE LA INNOVACIÓN, LA AGROINDUSTRIA Y LA AVIACIÓN​</label>
                         </div>
 
@@ -1969,7 +1966,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="centro_servicios_salud"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE SERVICIOS DE SALUD</label>
                         </div>
 
@@ -1981,7 +1978,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="centro_servicios_gestion_empresarial"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE SERVICIOS Y GESTIÓN EMPRESARIAL</label>
                         </div>
 
@@ -1993,7 +1990,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="centro_tecnologia_manufactura_avanzada"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE TECNOLOGÍA DE LA MANUFACTURA AVANZADA</label>
                         </div>
 
@@ -2005,7 +2002,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="centro_desarrollo_habitat_construccion"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO PARA EL DESARROLLO DEL HÁBITAT Y LA CONSTRUCCIÓN</label>
                         </div>
 
@@ -2016,7 +2013,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="centro_tecnologico_mobiliario"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO TECNOLÓGICO DEL MOBILIARIO</label>
                         </div>
 
@@ -2028,7 +2025,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="complejo_tecnologico_agroindustrial"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 COMPLEJO TECNOLÓGICO AGROINDUSTRIAL, PECUARIO Y TURÍSTICO</label>
                         </div>
 
@@ -2040,7 +2037,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="complejo_tecnoogico_minero_agroempresarial"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 COMPLEJO TECNOLÓGICO MINERO AGROEMPRESARIAL</label>
                         </div>
 
@@ -2051,7 +2048,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="centro_textil_gestion_industrial"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO TEXTIL Y DE GESTIÓN INDUSTRIAL​</label>
                         </div>
 
@@ -2062,7 +2059,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="complejo_tecnologico_turistico_agroindustrial_occidente_antioqueño"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 COMPLEJO TECNOLÓGICO TURÍSTICO Y AGROINDUSTRIAL DEL OCCIDENTE ANTIOQUEÑO​​</label>
                         </div>
 
@@ -2073,7 +2070,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="centro_formacion_minero_ambiental_bagre"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE FORMACIÓN MINERO AMBIENTAL EL BAGRE​​</label>
                         </div>
 
@@ -2084,7 +2081,7 @@
                                 name="centro_formacion_actual_aprendiz" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="complejo_tecnologico_gestion_agroempresarial"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 COMPLEJO TECNOLÓGICO PARA LA GESTIÓN AGROEMPRESARIAL​​</label>
                         </div>
 
@@ -2099,14 +2096,14 @@
 
                 {{-- Programa de formación está adscrito o estuvo --}}
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">A que programa de formación está
+                    <h2 class="text-base font-semibold leading-7 ">A que programa de formación está
                         adscrito
                         o estuvo adscrito</h2>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
                             <input type="text" wire:model.defer="programa_formacion_adscrito" id=""
                                 autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         </div>
                         @error('programa_formacion_adscrito')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -2117,14 +2114,14 @@
 
                 {{-- interés emprendedor se da por --}}
                 <fieldset class="mt-6 space-y-6">
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Su interés emprendedor se da por..
+                    <h2 class="text-base font-semibold leading-7 ">Su interés emprendedor se da por..
                     </h2>
                     <div class="flex items-center gap-x-3">
                         <input id="proyecto_aula" wire:model.defer="interes_emprendedor_es" type="radio"
                             name="interes_emprendedor_es"
                             value="Proyecto de aula que me lleva a querer participar en programas de emprendimiento"
                             class="h-4 w-4 border-gray-300 text-indigo-600 ">
-                        <label for="proyecto_aula" class="block text-sm font-medium leading-6 text-gray-900">
+                        <label for="proyecto_aula" class="block text-sm font-medium leading-6 ">
                             Proyecto de aula que me lleva a querer participar en programas de emprendimiento</label>
                     </div>
 
@@ -2134,7 +2131,7 @@
                             wire:model.defer="interes_emprendedor_es" type="radio" name="interes_emprendedor_es"
                             class="h-4 w-4 border-gray-300 text-indigo-600 ">
                         <label for="idea_no_surgida_proyectos"
-                            class="block text-sm font-medium leading-6 text-gray-900">
+                            class="block text-sm font-medium leading-6 ">
                             Tengo una idea pero no surgió en los proyectos de clase</label>
                     </div>
 
@@ -2145,7 +2142,7 @@
                             wire:model.defer="interes_emprendedor_es" type="radio" name="interes_emprendedor_es"
                             class="h-4 w-4 border-gray-300 text-indigo-600 ">
                         <label for="asistencia_charla_interesado"
-                            class="block text-sm font-medium leading-6 text-gray-900">
+                            class="block text-sm font-medium leading-6 ">
                             Asistí a una charla y me interesé por los programas de emprendimiento pero aun no tengo
                             idea</label>
                     </div>
@@ -2155,7 +2152,7 @@
                             wire:model.defer="interes_emprendedor_es" type="radio" name="interes_emprendedor_es"
                             class="h-4 w-4 border-gray-300 text-indigo-600 ">
                         <label for="idea_aprendiz_formacion"
-                            class="block text-sm font-medium leading-6 text-gray-900">
+                            class="block text-sm font-medium leading-6 ">
                             Fue una idea que surgió cuando era aprendiz en formación</label>
                     </div>
                     @error('interes_emprendedor_es')
@@ -2163,7 +2160,7 @@
                     @enderror
                 </fieldset>
                 {{-- interés emprendedor se da por --}}
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back()">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -2179,7 +2176,7 @@
 
                 {{-- Opcion centro de formación es aprendiz o fue --}}
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Instructor Sena</h2>
+                    <h2 class="text-base font-semibold leading-7 ">Instructor Sena</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">A que centro pertenece</p>
                     <div class="mt-6 space-y-6">
 
@@ -2190,7 +2187,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_recursos_naturales_renovables"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE LOS RECURSOS NATURALES RENOVABLES LA SALADA</label>
                         </div>
 
@@ -2201,7 +2198,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_diseño_manufactura_cuero"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE DISEÑO Y MANUFACTURA DEL CUERO</label>
                         </div>
 
@@ -2212,7 +2209,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_comercio"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE COMERCIO</label>
                         </div>
 
@@ -2224,7 +2221,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_formacion_diseño_confeccion_moda"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE FORMACIÓN EN DISEÑO, CONFECCIÓN Y MODA</label>
                         </div>
 
@@ -2236,7 +2233,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_innovacion_agroindustria_aviacion"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE LA INNOVACIÓN, LA AGROINDUSTRIA Y LA AVIACIÓN​</label>
                         </div>
 
@@ -2246,7 +2243,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_servicios_salud"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE SERVICIOS DE SALUD</label>
                         </div>
 
@@ -2258,7 +2255,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_servicios_gestion_empresarial"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE SERVICIOS Y GESTIÓN EMPRESARIAL</label>
                         </div>
 
@@ -2270,7 +2267,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_tecnologia_manufactura_avanzada"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE TECNOLOGÍA DE LA MANUFACTURA AVANZADA</label>
                         </div>
 
@@ -2282,7 +2279,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_desarrollo_habitat_construccion"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO PARA EL DESARROLLO DEL HÁBITAT Y LA CONSTRUCCIÓN</label>
                         </div>
 
@@ -2294,7 +2291,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_tecnologico_mobiliario"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO TECNOLÓGICO DEL MOBILIARIO</label>
                         </div>
 
@@ -2306,7 +2303,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_complejo_tecnologico_agroindustrial"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 COMPLEJO TECNOLÓGICO AGROINDUSTRIAL, PECUARIO Y TURÍSTICO</label>
                         </div>
 
@@ -2318,7 +2315,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_complejo_tecnoogico_minero_agroempresarial"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 COMPLEJO TECNOLÓGICO MINERO AGROEMPRESARIAL</label>
                         </div>
 
@@ -2329,7 +2326,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_textil_gestion_industrial"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO TEXTIL Y DE GESTIÓN INDUSTRIAL​</label>
                         </div>
 
@@ -2340,7 +2337,7 @@
                                 value="COMPLEJO TECNOLÓGICO TURÍSTICO Y AGROINDUSTRIAL DEL OCCIDENTE ANTIOQUEÑO​​"
                                 type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_complejo_tecnologico_turistico_agroindustrial_occidente_antioqueño"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 COMPLEJO TECNOLÓGICO TURÍSTICO Y AGROINDUSTRIAL DEL OCCIDENTE ANTIOQUEÑO​​</label>
                         </div>
 
@@ -2351,7 +2348,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_centro_formacion_minero_ambiental_bagre"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 CENTRO DE FORMACIÓN MINERO AMBIENTAL EL BAGRE​​</label>
                         </div>
 
@@ -2362,7 +2359,7 @@
                                 name="centro_formacion_actual_instructor" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="instructor_complejo_tecnologico_gestion_agroempresarial"
-                                class="block text-sm font-medium leading-6 text-gray-900">
+                                class="block text-sm font-medium leading-6 ">
                                 COMPLEJO TECNOLÓGICO PARA LA GESTIÓN AGROEMPRESARIAL​​</label>
                         </div>
                         @error('centro_formacion_actual_instructor')
@@ -2372,7 +2369,7 @@
                 </fieldset>
 
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Hace parte de un grupo de
+                    <h2 class="text-base font-semibold leading-7 ">Hace parte de un grupo de
                         investigación de
                         SENNOVA </h2>
                     <div class="mt-6 space-y-6">
@@ -2381,21 +2378,21 @@
                                 name="parte_sennova" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="sennova_si"
-                                class="block text-sm font-medium leading-6 text-gray-900">Si</label>
+                                class="block text-sm font-medium leading-6 ">Si</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="sennova_no" value="no" wire:model.defer="parte_sennova"
                                 name="parte_sennova" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="sennova_no"
-                                class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                                class="block text-sm font-medium leading-6 ">No</label>
                         </div>
                         @error('parte_sennova')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                         @enderror
                     </div>
                 </fieldset>
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back()">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -2410,7 +2407,7 @@
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 20 ? 'hidden' : '' }}" id="step-20">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Investigadores Sennova</h2>
+                    <h2 class="text-base font-semibold leading-7 ">Investigadores Sennova</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">Su participación en el grupo es</p>
 
                     <div class="mt-6 space-y-6">
@@ -2423,7 +2420,7 @@
                             </div>
                             <div class="text-sm leading-6">
                                 <label for="sennova_coordinador"
-                                    class="font-medium text-gray-900">Coordinador</label>
+                                    class="font-medium ">Coordinador</label>
                             </div>
                         </div>
 
@@ -2435,7 +2432,7 @@
                             </div>
                             <div class="text-sm leading-6">
                                 <label for="sennova_investigador"
-                                    class="font-medium text-gray-900">Investigador</label>
+                                    class="font-medium ">Investigador</label>
                             </div>
                         </div>
 
@@ -2446,7 +2443,7 @@
                                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 ">
                             </div>
                             <div class="text-sm leading-6">
-                                <label for="sennova_lider_semillero" class="font-medium text-gray-900">Líder de
+                                <label for="sennova_lider_semillero" class="font-medium ">Líder de
                                     semillero
                                 </label>
                             </div>
@@ -2458,7 +2455,7 @@
                 </fieldset>
 
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">El grupo cuenta con un Semillero de
+                    <h2 class="text-base font-semibold leading-7 ">El grupo cuenta con un Semillero de
                         Investigación </h2>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
@@ -2467,7 +2464,7 @@
                                 name="sennova_semillero_investigacion"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="semillero_senova_si"
-                                class="block text-sm font-medium leading-6 text-gray-900">Si</label>
+                                class="block text-sm font-medium leading-6 ">Si</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="semillero_sennova_no" value="no"
@@ -2475,7 +2472,7 @@
                                 name="sennova_semillero_investigacion"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="semillero_sennova_no"
-                                class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                                class="block text-sm font-medium leading-6 ">No</label>
                         </div>
                         @error('sennova_semillero_investigacion')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -2483,7 +2480,7 @@
                     </div>
                 </fieldset>
 
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back()">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -2494,17 +2491,17 @@
 
         {{-- Si forma parte de semillero - Semillero Informacion --}}
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 21 ? 'hidden' : '' }}" id="step-21">
-            <h2 class="text-base font-semibold leading-7 text-gray-900">Semillero </h2>
+            <h2 class="text-base font-semibold leading-7 ">Semillero </h2>
             <div class="mt-10 space-y-10">
                 <fieldset>
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div class="col-span-full">
                             <label for="nombre_semillero"
-                                class="block text-sm font-medium leading-6 text-gray-900">Nombre del semillero</label>
+                                class="block text-sm font-medium leading-6 ">Nombre del semillero</label>
                             <div class="mt-2">
                                 <input type="text" wire:model.defer="nombre_semillero" id="nombre_semillero"
                                     autocomplete="nombre_semillero"
-                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                    class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                             </div>
                             @error('nombre_semillero')
                                 <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -2515,13 +2512,13 @@
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div class="col-span-full">
                             <label for="semillero_cantidad_integrantes"
-                                class="block text-sm font-medium leading-6 text-gray-900">Cantidad de
+                                class="block text-sm font-medium leading-6 ">Cantidad de
                                 integrantes</label>
                             <div class="mt-2">
                                 <input type="number" wire:model.defer="semillero_cantidad_integrantes"
                                     id="semillero_cantidad_integrantes"
                                     autocomplete="semillero_cantidad_integrantes"
-                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                    class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                             </div>
                             @error('semillero_cantidad_integrantes')
                                 <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -2532,11 +2529,11 @@
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div class="col-span-full">
                             <label for="semillero_tema_trabajo"
-                                class="block text-sm font-medium leading-6 text-gray-900">Temas de trabajo</label>
+                                class="block text-sm font-medium leading-6 ">Temas de trabajo</label>
                             <div class="mt-2">
                                 <input type="text" wire:model.defer="semillero_tema_trabajo"
                                     id="semillero_tema_trabajo" autocomplete="semillero_tema_trabajo"
-                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                    class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                             </div>
                             @error('semillero_tema_trabajo')
                                 <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -2544,7 +2541,7 @@
                         </div>
                     </div>
                 </fieldset>
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(1)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -2556,20 +2553,20 @@
 
         {{-- Formulario si es investigador de universidad --}}
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 22 ? 'hidden' : '' }}" id="step-22">
-            <h2 class="text-base font-semibold leading-7 text-gray-900">Investigadores Universidades </h2>
+            <h2 class="text-base font-semibold leading-7 ">Investigadores Universidades </h2>
             <div class="mt-10 space-y-10">
                 <fieldset>
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div class="col-span-full">
                             <label for="investigador_universidad_nombre"
-                                class="block text-sm font-medium leading-6 text-gray-900">Nombre de la Universidad en
+                                class="block text-sm font-medium leading-6 ">Nombre de la Universidad en
                                 la
                                 que es investigador</label>
                             <div class="mt-2">
                                 <input type="text" wire:model.defer="investigador_universidad_nombre"
                                     id="investigador_universidad_nombre"
                                     autocomplete="investigador_universidad_nombre"
-                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                    class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                             </div>
                             @error('investigador_universidad_nombre')
                                 <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -2580,14 +2577,14 @@
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div class="col-span-full">
                             <label for="investigador_universidad_grupo_investigacion"
-                                class="block text-sm font-medium leading-6 text-gray-900">Grupo de
+                                class="block text-sm font-medium leading-6 ">Grupo de
                                 Investigación</label>
                             <div class="mt-2">
                                 <input type="text"
                                     wire:model.defer="investigador_universidad_grupo_investigacion"
                                     id="investigador_universidad_grupo_investigacion"
                                     autocomplete="investigador_universidad_grupo_investigacion"
-                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                    class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                             </div>
                             @error('investigador_universidad_grupo_investigacion')
                                 <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -2598,7 +2595,7 @@
 
                 <fieldset>
                     <div class="mt-6 space-y-6">
-                        <h2 class="text-base font-semibold leading-7 text-gray-900">En la actualidad tiene una idea
+                        <h2 class="text-base font-semibold leading-7 ">En la actualidad tiene una idea
                             con
                             capacidad de convertirse en un producto o un prototipo </h2>
 
@@ -2608,7 +2605,7 @@
                                 name="investigador_idea_capacidad_producto"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="investigador_idea_capacidad_producto_si"
-                                class="block text-sm font-medium leading-6 text-gray-900">Si</label>
+                                class="block text-sm font-medium leading-6 ">Si</label>
                         </div>
                         <div class="flex items-center gap-x-3">
                             <input id="investigador_idea_capacidad_producto_no" value="No"
@@ -2616,14 +2613,14 @@
                                 name="investigador_idea_capacidad_producto"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="investigador_idea_capacidad_producto_no"
-                                class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                                class="block text-sm font-medium leading-6 ">No</label>
                         </div>
                         @error('investigador_idea_capacidad_producto')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                         @enderror
                     </div>
                 </fieldset>
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back()">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -2639,7 +2636,7 @@
         <div class="border-b border-gray-900/10 pb-12 {{ $currentStep != 23 ? 'hidden' : '' }}" id="step-23">
             <div class="mt-10 space-y-10">
                 <fieldset>
-                    <h2 class="text-base font-semibold leading-7 text-gray-900">Nivel del Proyecto de Empresa</h2>
+                    <h2 class="text-base font-semibold leading-7 ">Nivel del Proyecto de Empresa</h2>
                     <p class="mt-1 text-sm leading-6 text-gray-600">En que nivel clasificaría su proyecto.</p>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
@@ -2647,7 +2644,7 @@
                                 value="Idea que está a nivel de articulo de investigación" type="radio"
                                 name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="proyecto_investigacion"
-                                class="block text-sm font-medium leading-6 text-gray-900">Es una idea que está a nivel
+                                class="block text-sm font-medium leading-6 ">Es una idea que está a nivel
                                 de
                                 articulo de investigación</label>
                         </div>
@@ -2657,7 +2654,7 @@
                                 type="radio" name="nivel_proyecto_empresa"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="proyecto_formulado_concepto"
-                                class="block text-sm font-medium leading-6 text-gray-900">Es un proyecto de
+                                class="block text-sm font-medium leading-6 ">Es un proyecto de
                                 investigación
                                 del cual ya hemos formulado un concepto</label>
                         </div>
@@ -2667,7 +2664,7 @@
                                 wire:model.defer="nivel_proyecto_empresa" type="radio"
                                 name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="proyecto_prototipos_basicos"
-                                class="block text-sm font-medium leading-6 text-gray-900">Es un proyecto del cual ya
+                                class="block text-sm font-medium leading-6 ">Es un proyecto del cual ya
                                 se
                                 tienen prototipos básicos</label>
                         </div>
@@ -2677,7 +2674,7 @@
                                 wire:model.defer="nivel_proyecto_empresa" type="radio"
                                 name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="proyecto_prototipos_funcionales"
-                                class="block text-sm font-medium leading-6 text-gray-900">Es un proyecto del cual ya
+                                class="block text-sm font-medium leading-6 ">Es un proyecto del cual ya
                                 se
                                 tienen prototipos funcionales a escala real</label>
                         </div>
@@ -2687,7 +2684,7 @@
                                 wire:model.defer="nivel_proyecto_empresa" type="radio"
                                 name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="producto_mercado_mejorable"
-                                class="block text-sm font-medium leading-6 text-gray-900">Es un producto en el mercado
+                                class="block text-sm font-medium leading-6 ">Es un producto en el mercado
                                 pero susceptible de mejoras</label>
                         </div>
                         <div class="flex items-center gap-x-3">
@@ -2695,10 +2692,10 @@
                                 wire:model.defer="nivel_proyecto_empresa" type="radio"
                                 name="nivel_proyecto_empresa" class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="otro_nivel_proyecto_empresa"
-                                class="block text-sm font-medium leading-6 text-gray-900">Otro</label>
+                                class="block text-sm font-medium leading-6 ">Otro</label>
                             <input type="text" wire:model.defer="otro_nivel_proyecto_empresa"
                                 id="input-otro-nivel_proyecto_empresa" autocomplete=""
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset dark:text-gray-900 dark:bg-gray-300  sm:text-sm sm:leading-6">
                         </div>
                         @error('nivel_proyecto_empresa')
                             <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -2706,7 +2703,7 @@
                     </div>
                 </fieldset>
 
-                <button type="button" class="text-base mr-2 font-semibold leading-6 text-gray-900"
+                <button type="button" class="text-base mr-2 font-semibold leading-6 "
                     wire:click="back(1)">Volver</button>
                 <button type="button"
                     class="rounded-md bg-blue-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -2726,7 +2723,7 @@
                                 <div class="">
                                     <div class=" mx-auto sm:px-2 lg:px-4">
                                         <div class="max-w-2xl mx-auto px-4 lg:max-w-full lg:px-0">
-                                            <h1 class="text-xl font-bold  text-gray-900 sm:text-2xl">
+                                            <h1 class="text-xl font-bold   sm:text-2xl">
                                                 Tu información Ingresada</h1>
                                             <p class="mt-2 text-sm text-gray-500">A continuacion podras ver aquellos datos que rellenaste, en dado caso de equivocación puedes volver y cambiarlos.</p>
                                         </div>
@@ -2749,7 +2746,7 @@
                                                             <div class="flex items-center sm:items-start">
                                                                 <div class="flex-1 ml-2 text-sm">
                                                                     <div class="">
-                                                                        <div class="font-medium text-gray-900 sm:flex ">
+                                                                        <div class="font-medium  sm:flex ">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
                                                                             <h5>Informacion personal:</h5>
                                                                           </div>
@@ -2775,7 +2772,7 @@
                                                             <div class="flex items-center sm:items-start">
                                                                 <div class="flex-1 ml-2 text-sm">
                                                                     <div class="">
-                                                                        <div class="font-medium text-gray-900 sm:flex ">
+                                                                        <div class="font-medium  sm:flex ">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
                                                                             <h5><strong>Informacion Ocupacion: </strong> {{$ocupacion_emprendedor}}</h5>
                                                                           </div>
@@ -2832,7 +2829,7 @@
                                                             <div class="flex items-center sm:items-start">
                                                                 <div class="flex-1 ml-2 text-sm">
                                                                     <div class="">
-                                                                        <div class="font-medium text-gray-900 sm:flex ">
+                                                                        <div class="font-medium  sm:flex ">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
                                                                             <h5>Tipo de Usuario</h5>
                                                                           </div>
@@ -2854,7 +2851,7 @@
                                                                 <div class="flex items-center sm:items-start">
                                                                     <div class="flex-1 ml-2 text-sm">
                                                                         <div class="">
-                                                                            <div class="font-medium text-gray-900 sm:flex ">
+                                                                            <div class="font-medium  sm:flex ">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
                                                                                 <h5>Tipo de Empresa</h5>
                                                                             </div>
@@ -2877,7 +2874,7 @@
                                                             <div class="flex items-center sm:items-start">
                                                                 <div class="flex-1 ml-2 text-sm">
                                                                     <div class="">
-                                                                        <div class="font-medium text-gray-900 sm:flex ">
+                                                                        <div class="font-medium  sm:flex ">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
                                                                             <h5>Asesoria Por Parte del SENA</h5>
                                                                           </div>
@@ -2898,7 +2895,7 @@
                                                             <div class="flex items-center sm:items-start">
                                                                 <div class="flex-1 ml-2 text-sm">
                                                                     <div class="">
-                                                                        <div class="font-medium text-gray-900 sm:flex ">
+                                                                        <div class="font-medium  sm:flex ">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
                                                                             <h5>Informacion de la Idea: {{$nombre_idea}}</h5>
                                                                           </div>
@@ -2926,7 +2923,7 @@
                                                                 <div class="flex items-center sm:items-start">
                                                                     <div class="flex-1 ml-2 text-sm">
                                                                         <div class="">
-                                                                            <div class="font-medium text-gray-900 sm:flex ">
+                                                                            <div class="font-medium  sm:flex ">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
                                                                                 <h5>Nivel de la Idea del Emprendedor</h5>
                                                                             </div>
@@ -2947,7 +2944,7 @@
                                                                 <div class="flex items-center sm:items-start">
                                                                     <div class="flex-1 ml-2 text-sm">
                                                                         <div class="">
-                                                                            <div class="font-medium text-gray-900 sm:flex ">
+                                                                            <div class="font-medium  sm:flex ">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
                                                                                 <h5>Informacion de la Empresa: </h5>
                                                                             </div>
@@ -2972,7 +2969,7 @@
                                                                 <div class="flex items-center sm:items-start">
                                                                     <div class="flex-1 ml-2 text-sm">
                                                                         <div class="">
-                                                                            <div class="font-medium text-gray-900 sm:flex ">
+                                                                            <div class="font-medium  sm:flex ">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
                                                                                 <h5>Nivel de la Idea de la Empresa</h5>
                                                                             </div>
@@ -2993,7 +2990,7 @@
                                                         <div class="flex items-center sm:items-start">
                                                             <div class="flex-1 ml-2 text-sm">
                                                                 <div class="">
-                                                                    <div class="font-medium text-gray-900 sm:flex ">
+                                                                    <div class="font-medium  sm:flex ">
                                                                         <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 " width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
                                                                         <h5>Servicio SENA Ingresado : {{$programa_sena_ingreso}}</h5>
                                                                     </div>
