@@ -12,5 +12,30 @@ class UsuarioController extends Controller
         $usuario = User::findOrFail($id);
 
         return view('usuario-configuracion.datos', compact('usuario'));
+    } 
+
+    public function edit($id)
+    {
+        $usuario = User::find($id);
+        return view('usuario-configuracion.datos', compact('usuario'));
+    }
+
+    
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'country' =>'required',
+        ]);
+    
+        $usuario = User::find($id);
+        $usuario->name = $request->input('name');
+        $usuario->email = $request->input('email');
+        $usuario->programa_sena = $request->input('country');
+    
+        $usuario->save();
+    
+        return view('usuario-configuracion.datos', compact('usuario'));
     }
 }

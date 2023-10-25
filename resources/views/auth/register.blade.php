@@ -100,7 +100,7 @@
                             <div class="relative mt-6">
                                 <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Confirmar Contraseña</label>
 
-                                <input placeholder="Confirmar Contraseña" name="password_confirmation" class="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white">
+                                <input type="password" placeholder="Confirmar Contraseña" name="password_confirmation" class="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white">
                                 @if ($errors->has('password_confirmation'))
                                 <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('password_confirmation') }}</span>
                                 @endif
