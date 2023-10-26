@@ -1,0 +1,19 @@
+.borrar-producto-mensaje {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color de texto blanco */
+    padding: 10px; /* Espacio alrededor del mensaje */
+    border-radius: 5px; /* Esquinas redondeadas */
+}
+
+.Error {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color de texto blanco */
+    padding: 10px; /* Espacio alrededor del mensaje */
+    border-radius: 5px; /* Esquinas redondeadas */
+}
+.contrasenia{
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color de texto blanco */
+    padding: 10px; /* Espacio alrededor del mensaje */
+    border-radius: 5px; /* Esquinas redondeadas */
+}

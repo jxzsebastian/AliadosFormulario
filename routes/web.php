@@ -61,6 +61,7 @@ Route::get('/marcar_notificacion/{notification_id}', [NotificationController::cl
 Route::get('/configuracion/perfil/{id}', [UsuarioController::class, 'index'])->name('usuario.configuracion');
 Route::get('/configuracion/perfil/{id}', [UsuarioController::class, 'edit'])->name('actualizado1');
 Route::put('/configuracion/perfil/{id}',  [UsuarioController::class, 'update'])->name('actualizado');
+Route::post('/configuracion/perfil/{id}',  [UsuarioController::class, 'updatePassword'])->name('contra');
 
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
