@@ -35,36 +35,48 @@ class UsuarioController extends Controller
         $usuario->name = $request->input('name');
         $usuario->email = $request->input('email');
         $usuario->programa_sena = $request->input('country');
-        $mensaje = 'Dato actualizado de manera ';
+        
+        if (!empty($name) && !empty($email) && !empty($programa_sena)){
+            
+
+        }
+
+        
         $usuario->save();
-        return redirect()->back()->with('mensaje', $mensaje);
         return view('usuario-configuracion.datos', compact('usuario'));
 
     }
 
     public function updatePassword(Request $request)
     {
-        // $request->validate([
-        //     'current_password'=>'required',
-        //     'new_password' => 'required|min:8|confirmed',
-        //     'new_password' =>'required',
-        // ]);
         $user = Auth::user();
         $currentPassword = $request->input('current_password');
-        // Verificar que la contraseña actual sea válida
-        if (Hash::check($currentPassword, $user->password)) {
-            $newPassword = $request->input('new_password');
-            // Verificar si los campos están en blanco
-            if (empty($newPassword)) {
-                return redirect()->back()->with('error', 'Por favor, complete todos los campos');
+        $newPassword = $request->input('new_password');
+        $new_password_confirmation = $request->input('new_password_confirmation');
+
+        if (!empty($currentPassword) && !empty($newPassword) && !empty($new_password_confirmation)) {
+            # code...
+            if (Hash::check($currentPassword, $user->password)) {
+                // El campo current_password coincide con la contraseña guardada en la base de datos
+                if ($newPassword == $new_password_confirmation) {
+                    // Las contraseñas coinciden, continuar con el código
+                    $user->update([
+                        'password' => Hash::make($newPassword),
+                    ]);
+                    return redirect()->back()->with('success', 'Contraseña actualizada con éxito');
+                } else {
+                    // Mostrar error porque las contraseñas no coinciden
+                    return redirect()->back()->with('error', 'las contrseñas no son Iguales Verifique Los Datos Ingresados');
+                }
+            } else {
+                // Mostrar error porque el campo current_password no coincide con la contraseña guardada
+                return redirect()->back()->with('error', 'La contraseña actual es incorrecta');
             }
-            // Actualizar la contraseña del usuario
-            $user->update([
-                'password' => Hash::make($newPassword),
-            ]);
-            return redirect()->back()->with('success', 'Contraseña actualizada con éxito');
-        } else {
-            return redirect()->back()->with('error', 'La contraseña actual es incorrecta');
+        }else {
+            # code...
+            return redirect()->back()->with('error', 'Por favor, complete todos los campos');
         }
-    }
+
+}
+
 }

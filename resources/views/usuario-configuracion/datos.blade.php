@@ -110,7 +110,7 @@
         $(document).ready(function() {
             setTimeout(function() {
                 $(".contrasenia").fadeOut("slow");
-            }, 2500);
+            }, 3000);
         });
     </script>
       </div>
@@ -125,7 +125,7 @@
     $(document).ready(function() {
         setTimeout(function() {
             $(".contrasenia").fadeOut("slow");
-        }, 2000);
+        }, 3000);
     });
 </script>
   @endif
