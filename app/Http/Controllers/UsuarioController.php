@@ -32,19 +32,32 @@ class UsuarioController extends Controller
         ]);
     
         $usuario = User::find($id);
-        $usuario->name = $request->input('name');
-        $usuario->email = $request->input('email');
-        $usuario->programa_sena = $request->input('country');
+        $nombre = $request->input('name');
+        $email = $request->input('email');
+        $programa_sena = $request->input('country');
         
-        if (!empty($name) && !empty($email) && !empty($programa_sena)){
-            
-
+        if (empty($nombre) || empty($email) || empty($programa_sena)) {
+            return redirect()->back()->with('error', 'Por favor, complete todos los campos');
+        } else {
+            // Verificar si los valores son iguales a los existentes en la base de datos
+            if ($nombre == $usuario->name && $email == $usuario->email && $programa_sena == $usuario->programa_sena) {
+                return redirect()->back()->with('errorr', 'No se han realizado cambios en los datos');
+            }
+        
+            // Verificar si el email ya está siendo utilizado por otro usuario
+            $existingUser = User::where('email', $email)->where('id', '!=', $id)->first();
+            if ($existingUser) {
+                return redirect()->back()->with('errorr', 'El email ingresado ya está siendo utilizado por otro usuario');
+            }
+        
+            // Aquí puedes colocar el código que deseas ejecutar si los valores no están vacíos, son diferentes a los existentes en la base de datos y el email no está siendo utilizado por otro usuario
+            $usuario->name = $nombre;
+            $usuario->email = $email;
+            $usuario->programa_sena = $programa_sena;
+            $usuario->save();
+        
+            return redirect()->back()->with('successs', 'Datos del Usuario actualizados con éxito');
         }
-
-        
-        $usuario->save();
-        return view('usuario-configuracion.datos', compact('usuario'));
-
     }
 
     public function updatePassword(Request $request)

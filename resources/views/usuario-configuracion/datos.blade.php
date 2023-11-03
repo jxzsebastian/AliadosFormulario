@@ -47,24 +47,35 @@
           </div>
         </div>
       </form>
-      @if(session('mensaje'))
-      <div class='flex flex-row bg-gray-900 h-10 w-[400px] rounded-[30px] mt-5 borrar-producto-mensaje'>
-        <span class='flex flex-col justify-center text-white font-bold grow-[1] max-w-[90%] text-center'>{{ session('mensaje') }}</span>
-        <div class='w-[10%] bg-green-600 rounded-r-2xl shadow-[0_0_20px_#ffbb3377]'></div>
+      @if(session('successs'))
+      <div class='flex flex-row bg-gray-900 h-10 w-[400px] rounded-[30px] mt-5 contrasenia' >
+        <span class='flex flex-col justify-center text-white font-bold grow-[1] max-w-[90%] text-center'>{{ session('successs') }}</span>
+        <div class='w-[10%] bg-green-600 rounded-r-2xl '></div>
       </div>
       <script>
-          $(document).ready(function() {
-              setTimeout(function() {
-                  $(".borrar-producto-mensaje").fadeOut("slow");
-              }, 2000);
-          });
-      </script>
-  @else
-      {{-- <div class="Error">
-          No se ingresó ningún dato.
-      </div> --}}
-
+        $(document).ready(function() {
+            setTimeout(function() {
+                $(".contrasenia").fadeOut("slow");
+            }, 3000);
+        });
+    </script>
+      </div>
   @endif
+  @if(session('errorr'))
+  <div class='flex flex-row bg-gray-900 h-10 w-[400px] rounded-[30px] mt-5 contrasenia' >
+    <span class='flex flex-col justify-center text-white font-bold grow-[1] max-w-[90%] text-center'>{{ session('errorr') }}</span>
+    <div class='w-[10%] bg-red-600 rounded-r-2xl '></div>
+  </div>
+  <script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $(".contrasenia").fadeOut("slow");
+        }, 3000);
+    });
+</script>
+  </div>
+@endif
+
     </section>
     {{-- Perfil Configuracion --}}
 
