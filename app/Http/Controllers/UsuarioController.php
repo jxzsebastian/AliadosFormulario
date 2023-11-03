@@ -36,7 +36,7 @@ class UsuarioController extends Controller
         $email = $request->input('email');
         $programa_sena = $request->input('country');
         
-        if (empty($nombre) || empty($email) || empty($programa_sena)) {
+        if (empty($nombre) || empty($email)) {
             return redirect()->back()->with('error', 'Por favor, complete todos los campos');
         } else {
             // Verificar si los valores son iguales a los existentes en la base de datos
