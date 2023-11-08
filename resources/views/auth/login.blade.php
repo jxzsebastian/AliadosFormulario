@@ -88,7 +88,7 @@
                         </p>
                         <p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
                             <span></span>
-                            <a href="{{ route('register.index') }}" class="text-indigo-500 hover:text-indigo-500no-underline hover:underline cursor-pointer transition ease-in duration-300">¿Olvidaste la Contrseña?</a>
+                            <a href="{{ route('password.request') }}" class="text-indigo-500 hover:text-indigo-500no-underline hover:underline cursor-pointer transition ease-in duration-300">¿Olvidaste la Contrseña?</a>
                         </p>
                     </form>
                 </div>

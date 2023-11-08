@@ -47,7 +47,7 @@ class UsuarioController extends Controller
             // Verificar si el email ya está siendo utilizado por otro usuario
             $existingUser = User::where('email', $email)->where('id', '!=', $id)->first();
             if ($existingUser) {
-                return redirect()->back()->with('errorr', 'El email ingresado ya está siendo utilizado por otro usuario');
+                return redirect()->back()->with('errorr', 'El email ya está siendo utilizado por otro usuario');
             }
         
             // Aquí puedes colocar el código que deseas ejecutar si los valores no están vacíos, son diferentes a los existentes en la base de datos y el email no está siendo utilizado por otro usuario

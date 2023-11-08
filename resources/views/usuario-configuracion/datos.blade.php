@@ -14,7 +14,34 @@
               <h2 id="payment-details-heading" class="text-lg leading-6 font-medium text-gray-900">Configurar Usuario</h2>
               <p class="mt-1 text-sm text-gray-500">En el siguiente formulario podras cambiar la información de tu usuario.</p>
             </div>
-
+            @if(session('successs'))
+            <div class='flex flex-row bg-gray-900 h-10 w-[400px] rounded-[30px] mt-5 contrasenia' >
+              <span class='flex flex-col justify-center text-white font-bold grow-[1] max-w-[90%] text-center'>{{ session('successs') }}</span>
+              <div class='w-[10%] bg-green-600 rounded-r-2xl '></div>
+            </div>
+            <script>
+              $(document).ready(function() {
+                  setTimeout(function() {
+                      $(".contrasenia").fadeOut("slow");
+                  }, 3000);
+              });
+          </script>
+            </div>
+        @endif
+        @if(session('errorr'))
+        <div class='flex flex-row bg-gray-900 h-10 w-[400px] rounded-[30px] mt-5 contrasenia' >
+          <span class='flex flex-col justify-center text-white font-bold grow-[1] max-w-[90%] text-center'>{{ session('errorr') }}</span>
+          <div class='w-[10%] bg-red-600 rounded-r-2xl '></div>
+        </div>
+        <script>
+          $(document).ready(function() {
+              setTimeout(function() {
+                  $(".contrasenia").fadeOut("slow");
+              }, 3000);
+          });
+      </script>
+        </div>
+      @endif
             <div class="mt-6 grid grid-cols-2 gap-6">
               <div class="col-span-2 sm:col-span-2">
                 <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
@@ -47,34 +74,7 @@
           </div>
         </div>
       </form>
-      @if(session('successs'))
-      <div class='flex flex-row bg-gray-900 h-10 w-[400px] rounded-[30px] mt-5 contrasenia' >
-        <span class='flex flex-col justify-center text-white font-bold grow-[1] max-w-[90%] text-center'>{{ session('successs') }}</span>
-        <div class='w-[10%] bg-green-600 rounded-r-2xl '></div>
-      </div>
-      <script>
-        $(document).ready(function() {
-            setTimeout(function() {
-                $(".contrasenia").fadeOut("slow");
-            }, 3000);
-        });
-    </script>
-      </div>
-  @endif
-  @if(session('errorr'))
-  <div class='flex flex-row bg-gray-900 h-10 w-[400px] rounded-[30px] mt-5 contrasenia' >
-    <span class='flex flex-col justify-center text-white font-bold grow-[1] max-w-[90%] text-center'>{{ session('errorr') }}</span>
-    <div class='w-[10%] bg-red-600 rounded-r-2xl '></div>
-  </div>
-  <script>
-    $(document).ready(function() {
-        setTimeout(function() {
-            $(".contrasenia").fadeOut("slow");
-        }, 3000);
-    });
-</script>
-  </div>
-@endif
+     
 
     </section>
     {{-- Perfil Configuracion --}}
@@ -91,7 +91,19 @@
                       <h2 id="payment-details-heading" class="text-lg leading-6 font-medium text-gray-900">Restaurar Contraseña</h2>
                       <p class="mt-1 text-sm text-gray-500">En el siguiente formulario podrás cambiar tu contraseña.</p>
                   </div>
-  
+                  @if(session('error'))
+                  <div class='flex flex-row bg-gray-900 h-10 w-[400px] rounded-[30px] mt-5 contrasenia' >
+                    <span class='flex flex-col justify-center text-white font-bold grow-[1] max-w-[90%] text-center'>{{ session('error') }}</span>
+                    <div class='w-[10%] bg-red-600 rounded-r-2xl '></div>
+                  </div>
+                  <script>
+                    $(document).ready(function() {
+                        setTimeout(function() {
+                            $(".contrasenia").fadeOut("slow");
+                        }, 3000);
+                    });
+                </script>
+                  @endif
                   <div class="mt-6 grid grid-cols-2 gap-6">
                       <div class="relative col-span-2 sm:col-span-2">
                           <label for="current_password" class="block text-sm font-medium text-gray-700">Digite su contraseña actual</label>

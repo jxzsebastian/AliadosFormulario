@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\RemisionController;
 use App\Http\Controllers\UsuarioController;
+use Illuminate\Support\Facades\Auth; 
 
 Route::get('/', function () {
     return view('default');
@@ -20,10 +21,10 @@ Route::get('/formulario', function () {
 
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
-Route::get('/login', [AuthController::class, 'index'])
+Route::get('/auth', [AuthController::class, 'index'])
     ->name('login.index');
 
-Route::post('/login', [AuthController::class, 'authenticate'])
+Route::post('/auth', [AuthController::class, 'authenticate'])
     ->name('login.store');
 
 Route::get('/registrar', [AuthController::class, 'register'])
@@ -65,3 +66,10 @@ Route::post('/configuracion/perfil/{id}',  [UsuarioController::class, 'updatePas
 
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::view('password/reset', 'auth.passwords.email')->name('password.request');
+
