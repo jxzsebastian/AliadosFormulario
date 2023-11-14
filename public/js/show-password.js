@@ -1,9 +1,9 @@
-function showPassword(clase) {
-    var passwordInput = document.getElementById(clase)
+    function showPassword(clase) {
+        var passwordInput = document.getElementById(clase)
 
-    if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-    } else {
-        passwordInput.type = "password";
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
     }
-}

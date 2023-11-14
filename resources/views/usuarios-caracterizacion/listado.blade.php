@@ -7,11 +7,11 @@
         <div class="flex flex-col dark:bg-gray-800">
             <div class="-mx-2 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 ">
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-2">
-                    <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6 mb-4">
+                    <div class=" px-4 py-5 border-b border-gray-200 sm:px-6 mb-4">
                         <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
                             <div class="ml-4 mt-2">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Usuarios Caracterizados</h3>
-                                <p class="mt-1 text-sm text-gray-500">A continuación podras ver los emprendedores que han hecho la caracterización.</p>
+                                <h3 class="text-lg leading-6 font-medium ">Usuarios Caracterizados</h3>
+                                <p class="mt-1 text-sm text-gray-300">A continuación podras ver los emprendedores que han hecho la caracterización.</p>
                             </div>
 
                         </div>

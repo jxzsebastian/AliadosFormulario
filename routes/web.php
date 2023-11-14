@@ -7,7 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\RemisionController;
 use App\Http\Controllers\UsuarioController;
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('default');
@@ -59,10 +59,9 @@ Route::get('/marcar_notificacion/{notification_id}', [NotificationController::cl
 
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
-Route::get('/configuracion/perfil/{id}', [UsuarioController::class, 'index'])->name('usuario.configuracion');
-Route::get('/configuracion/perfil/{id}', [UsuarioController::class, 'edit'])->name('actualizado1');
 Route::put('/configuracion/perfil/{id}',  [UsuarioController::class, 'update'])->name('actualizado');
 Route::post('/configuracion/perfil/{id}',  [UsuarioController::class, 'updatePassword'])->name('contra');
+Route::get('/configuracion/perfil/{id}', [UsuarioController::class, 'index'])->name('usuario.configuracion');
 
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //

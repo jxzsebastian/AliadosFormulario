@@ -1,6 +1,7 @@
 const modal = document.querySelector('.main-modal');
 const closeButton = document.querySelectorAll('.modal-close');
 const formEdit = document.getElementById('form-edit')
+const cancelButton = document.querySelectorAll('.modal-cancel');
 
 const modalClose = () => {
     modal.classList.remove('fadeIn');
@@ -9,9 +10,15 @@ const modalClose = () => {
         modal.style.display = 'none';
     }, 500);
 }
+const modalCancel = () => {
+    modal.classList.remove('fadeIn');
+    modal.classList.add('fadeOut');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 500);
+}
 
 const openModal = (datos) => {
-    console.log(datos)
 
     modal.classList.remove('fadeOut');
     modal.classList.add('fadeIn');
@@ -25,7 +32,7 @@ const openModal = (datos) => {
     inputSeguimiento.value = datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].seguimiento
 
     formEdit.action = "{{ route('remision.update', ':id') }}".replace(':id', datos.id);
-
+    console.log(datos)
 }
 
 for (let i = 0; i < closeButton.length; i++) {
@@ -39,4 +46,14 @@ for (let i = 0; i < closeButton.length; i++) {
     window.onclick = function (event) {
         if (event.target == modal) modalClose();
     }
+}
+
+for (let i = 0; i < cancelButton.length; i++) {
+
+    const elements = cancelButton[i];
+
+    elements.onclick = (e) => modalCancel();
+
+    modal.style.display = 'none';
+
 }
