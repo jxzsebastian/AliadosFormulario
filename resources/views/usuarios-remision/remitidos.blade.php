@@ -2,6 +2,7 @@
 @section('title', 'Home Page')
 
 @section('content')
+<main>
     <div class=" px-4 py-5 border-b border-gray-200 dark:border-gray-600 sm:px-6">
         <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
             <div class="ml-4 mt-2">
@@ -211,13 +212,14 @@
                                                                 x-transition:leave="transition ease-in duration-75"
                                                                 x-transition:leave-start="transform opacity-100 scale-100"
                                                                 x-transition:leave-end="transform opacity-0 scale-95"
-                                                                x-cloak
+
                                                                 class="z-50origin-bottom-right absolute right-0  mt-3  w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                                                                 role="menu" aria-orientation="vertical"
                                                                 aria-labelledby="menu-0-button" tabindex="-1">
                                                                 <div class="py-1" role="none">
                                                                     <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                                                                    <a href=""
+                                                                    <a type="button"
+                                                                        onclick="openModalEstado({{ json_encode($emprendedor) }})"
                                                                         class="cursor-pointer text-gray-700 block px-4 py-2 text-sm"
                                                                         role="menuitem" tabindex="-1"
                                                                         id="menu-0-item-0">
@@ -290,7 +292,7 @@
                                                                     </div>
                                                                 </li>
 
-                                                                @foreach ($remision->historialSeguimiento as $segumiento)
+                                                                @foreach ($remision->historialSeguimiento as $key => $segumiento)
                                                                     <li>
                                                                         <div class="relative pb-8">
                                                                             <span
@@ -351,6 +353,46 @@
                                                                             </div>
                                                                         </div>
                                                                     </li>
+
+                                                                    @if ($key + 1 < count($remision->historialSeguimiento) && $remision->historialSeguimiento[$key + 1]->estado !== $segumiento->estado)
+                                                                    <li>
+                                                                        <div class="relative pb-8">
+
+                                                                            <div class="relative flex space-x-3">
+                                                                                <div>
+                                                                                    <span
+                                                                                        class="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center ring-8 ring-white dark:ring-slate-800">
+                                                                                        <!-- Heroicon name: solid/check -->
+                                                                                        <svg class="h-5 w-5 text-white"
+                                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                                            viewBox="0 0 20 20"
+                                                                                            fill="currentColor"
+                                                                                            aria-hidden="true">
+                                                                                            <path fill-rule="evenodd"
+                                                                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                                                                clip-rule="evenodd" />
+                                                                                        </svg>
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                                                                    <div>
+                                                                                        <p class="text-sm text-gray-500 dark:text-gray-200 font-bold">
+                                                                                            Estado Cambiado a: {{ $remision->historialSeguimiento[$key + 1]->estado }}
+                                                                                        </p>
+                                                                                    </div>
+                                                                                {{--  <div
+                                                                                        class="text-right text-sm whitespace-nowrap text-gray-500">
+                                                                                        <time datetime="{{ $remision->historialSeguimiento->latest('created_at')->first()->created_at }}">
+                                                                                            {{ $remision->historialSeguimiento->latest('created_at')->first()->created_at }}</time>
+                                                                                    </div> --}}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                @endif
+
+
                                                                 @endforeach
 
                                                                 @if ($emprendedor->estado == 'Finalizado')
@@ -404,6 +446,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
 
     </div>
@@ -411,5 +455,10 @@
     {{-- Modal editar seguimiento --}}
     <x-editar-seguimiento />
 
+    <x-editar-estado />
+
+
+
+</main>
 
 @endsection

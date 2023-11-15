@@ -111,4 +111,26 @@ class RemisionController extends Controller
 		return redirect()->route('usuario.remitidos')->with('edit', 'ok');
 
     }
+
+    public function update_remision_estado(Request $request, $id){
+        $remision = Remision::where('emprendedor_id', $id)->first(); // Obtener la primera remisión que cumple con el criterio
+        if ($remision) {
+
+            $historialSeguimiento = new HistorialSeguimiento([
+                'user_id' => auth()->user()->id, // ID del usuario logeado
+                'remision_id' => $remision->id, // ID de la remisión creada
+                'notas' => $request->input('notas'),
+                'seguimiento' => $request->input('seguimiento'),
+                'estado' => $request->input('estado'),
+            ]);
+
+            $historialSeguimiento->save();
+
+        } else {
+            dd(' no success');
+        }
+
+		return redirect()->route('usuario.remitidos')->with('edit', 'ok');
+
+    }
 }

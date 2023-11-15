@@ -11,9 +11,13 @@ class UsuarioController extends Controller
 {
     //
     public function index($id){
-        $usuario = User::findOrFail($id);
+        if (auth()->id() == $id) {
+            $usuario = User::findOrFail($id);
+            return view('usuario-configuracion.datos', compact('usuario'));
+        }else{
+            abort(404);
+        }
 
-        return view('usuario-configuracion.datos', compact('usuario'));
     }
 
 
@@ -22,13 +26,13 @@ class UsuarioController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'country' =>'required',
+            'programaSena' =>'required',
         ]);
 
         $usuario = User::find($id);
         $nombre = $request->input('name');
         $email = $request->input('email');
-        $programa_sena = $request->input('country');
+        $programa_sena = $request->input('programaSena');
 
         if (empty($nombre) || empty($email)) {
             return redirect()->back()->with('error', 'Por favor, complete todos los campos');
@@ -58,21 +62,21 @@ class UsuarioController extends Controller
     {
         $user = Auth::user();
         $request->validate([
-			'current_password' => 'required',
-			'new_password' => 'required|min:8|confirmed',
-			'new_password_confirmation' => 'required',
+			'contrasena_actual' => 'required',
+			'nueva_contrasena' => 'required|min:8|same:confirmacion_contrasena',
+			'confirmacion_contrasena' => 'required',
 		]);
 
-        $currentPassword = $request->input('current_password');
-        $newPassword = $request->input('new_password');
-        $new_password_confirmation = $request->input('new_password_confirmation');
+        $currentPassword = $request->input('contrasena_actual');
+        $newPassword = $request->input('nueva_contrasena');
+        $confirmacion_contrasena = $request->input('confirmacion_contrasena');
 
-        if (!Hash::check($request->current_password, $user->password)) {
-			return back()->withErrors(['current_password' => 'La contraseña actual es incorrecta.']);
+        if (!Hash::check($request->contrasena_actual, $user->password)) {
+			return back()->withErrors(['contrasena_actual' => 'La contraseña actual es incorrecta.']);
 		}
 
         $user->update([
-			'password' => Hash::make($request->new_password),
+			'password' => Hash::make($request->nueva_contrasena),
 		]);
 
 		return redirect()->back()->with('success', 'ok');

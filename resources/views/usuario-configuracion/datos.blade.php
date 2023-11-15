@@ -70,8 +70,8 @@
 
                             {{-- Mostrar que programa sena tiene --}}
                             <div class=" ">
-                                <label for="country" class="block text-sm font-medium ">Programa SENA</label>
-                                <select id="country" name="country" autocomplete="country-name"
+                                <label for="programaSena" class="block text-sm font-medium ">Programa SENA</label>
+                                <select id="programaSena" name="programaSena" autocomplete="country-name"
                                     class="mt-1 block text-gray-800 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm">
                                     <option value="HUBInnovación" @if ($usuario->programa_sena == 'HUBInnovación') {{ 'selected' }} @endif>
                                         HUB Innovación</option>
@@ -137,31 +137,31 @@
 
                     <div class="mt-6 grid grid-cols-2 gap-6">
                         <div class="relative col-span-2 sm:col-span-2">
-                            <label for="current_password" class="block text-sm font-medium ">Digite su
+                            <label for="contrasena_actual" class="block text-sm font-medium ">Digite su
                                 contraseña actual</label>
-                            <input type="password" name="current_password" id="current_password"
-                                autocomplete="current_password"
+                            <input type="password" name="contrasena_actual" id="contrasena_actual"
+                                autocomplete="contrasena_actual"
                                 class="mt-1 block w-full border text-gray-800 border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm">
-                            <div onclick="showPassword('current_password')"  class="flex items-center absolute inset-y-11 right-0 mr-3  text-sm leading-5">
+                            <div onclick="showPassword('contrasena_actual')"  class="flex items-center absolute inset-y-11 right-0 mr-3  text-sm leading-5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="cursor-pointer" onclick=""  viewBox="0 0 24 24" style="fill: rgb(110, 110, 110);transform: ;msFilter:;"><path d="M12 9a3.02 3.02 0 0 0-3 3c0 1.642 1.358 3 3 3 1.641 0 3-1.358 3-3 0-1.641-1.359-3-3-3z"></path><path d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316-.105-.316C21.927 11.617 19.633 5 12 5zm0 12c-5.351 0-7.424-3.846-7.926-5C4.578 10.842 6.652 7 12 7c5.351 0 7.424 3.846 7.926 5-.504 1.158-2.578 5-7.926 5z"></path></svg>
                             </div>
                         </div>
                         <div class="relative col-span-2 sm:col-span-2">
-                            <label for="new_password" class="block text-sm font-medium ">Digite su nueva
+                            <label for="nueva_contrasena" class="block text-sm font-medium ">Digite su nueva
                                 Contraseña</label>
-                            <input type="password" name="new_password" id="new_password" autocomplete="new_password"
+                            <input type="password" name="nueva_contrasena" id="nueva_contrasena" autocomplete="nueva_contrasena"
                                 class="mt-1 block w-full border text-gray-800 border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm">
-                            <div onclick="showPassword('new_password')"  class="flex items-center absolute inset-y-11 right-0 mr-3  text-sm leading-5">
+                            <div onclick="showPassword('nueva_contrasena')"  class="flex items-center absolute inset-y-11 right-0 mr-3  text-sm leading-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="cursor-pointer" onclick=""  viewBox="0 0 24 24" style="fill: rgb(110, 110, 110);transform: ;msFilter:;"><path d="M12 9a3.02 3.02 0 0 0-3 3c0 1.642 1.358 3 3 3 1.641 0 3-1.358 3-3 0-1.641-1.359-3-3-3z"></path><path d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316-.105-.316C21.927 11.617 19.633 5 12 5zm0 12c-5.351 0-7.424-3.846-7.926-5C4.578 10.842 6.652 7 12 7c5.351 0 7.424 3.846 7.926 5-.504 1.158-2.578 5-7.926 5z"></path></svg>
                             </div>
                         </div>
                         <div class="relative col-span-2 sm:col-span-2">
-                            <label for="new_password_confirmation" class="block text-sm font-medium ">Repita su
+                            <label for="confirmacion_contrasena" class="block text-sm font-medium ">Repita su
                                 nueva Contraseña</label>
-                            <input type="password" name="new_password_confirmation" id="new_password_confirmation"
-                                autocomplete="new_password_confirmation"
+                            <input type="password" name="confirmacion_contrasena" id="confirmacion_contrasena"
+                                autocomplete="confirmacion_contrasena"
                                 class="mt-1 block w-full border text-gray-800 border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm">
-                                <div onclick="showPassword('new_password_confirmation')"  class="flex items-center absolute inset-y-11 right-0 mr-3  text-sm leading-5">
+                                <div onclick="showPassword('confirmacion_contrasena')"  class="flex items-center absolute inset-y-11 right-0 mr-3  text-sm leading-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="cursor-pointer" onclick=""  viewBox="0 0 24 24" style="fill: rgb(110, 110, 110);transform: ;msFilter:;"><path d="M12 9a3.02 3.02 0 0 0-3 3c0 1.642 1.358 3 3 3 1.641 0 3-1.358 3-3 0-1.641-1.359-3-3-3z"></path><path d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316-.105-.316C21.927 11.617 19.633 5 12 5zm0 12c-5.351 0-7.424-3.846-7.926-5C4.578 10.842 6.652 7 12 7c5.351 0 7.424 3.846 7.926 5-.504 1.158-2.578 5-7.926 5z"></path></svg>
                                 </div>
                         </div>

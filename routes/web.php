@@ -49,6 +49,7 @@ Route::get('listado/{id}/remitir',[RemisionController::class,'remision'])->middl
 Route::get('remitidos',[RemisionController::class,'listado_remitidos'])->middleware('auth')->name('usuario.remitidos');
 Route::post('remitidos/',[RemisionController::class,'remitir_usuario'])->middleware('auth')->name('usuario.remitir');
 Route::post('remitidos/update/{id}',[RemisionController::class,'update_remision'])->middleware('auth')->name('remision.update');
+Route::post('remitidos/update/estado/{id}',[RemisionController::class,'update_remision_estado'])->middleware('auth')->name('remision.update-estado');
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- //
 
