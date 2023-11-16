@@ -54,6 +54,14 @@
                 </span>
             @endif
 
+            @if (
+                $emprendedor->ocupacion_emprendedor == "Trabajador Independiente"
+                )
+                <span>
+                    <p><strong>Trabajador Independiente</strong></p>
+                </span>
+            @endif
+
             @foreach ($emprendedor->emprendedor_empleado as $emprendedor_empleado)
                 @if (!empty($emprendedor_empleado->empleado_idea_negocio))
                     <span>

@@ -15,6 +15,7 @@ class HistorialSeguimiento extends Model
         'notas',
         'seguimiento',
         'estado',
+        'programa_sena_actual',
     ];
     public function usuario()
     {

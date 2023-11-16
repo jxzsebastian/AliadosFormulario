@@ -43,7 +43,7 @@ class RemisionController extends Controller
             });
         }
 
-        $emprendedores = $query->with(['ideas', 'remisiones.historialSeguimiento.usuario'])->paginate(2);
+        $emprendedores = $query->with(['ideas', 'remisiones.historialSeguimiento.usuario'])->paginate(5 );
 
         return view('usuarios-remision/remitidos', compact('emprendedores'));
 
@@ -82,6 +82,7 @@ class RemisionController extends Controller
             'remision_id' => $remision->id, // ID de la remisión creada
             'notas' => $request->input('notas'),
             'seguimiento' => $request->input('seguimiento'),
+            'programa_sena_actual' => $request->input('estrategia_llegada'),
         ]);
 
         $historialSeguimiento->save();
@@ -102,6 +103,8 @@ class RemisionController extends Controller
                 'remision_id' => $remision->id, // ID de la remisión creada
                 'notas' => $request->input('notas'),
                 'seguimiento' => $request->input('seguimiento'),
+                'estado' => $request->input('estado'),
+                'programa_sena_actual' => $request->input('programa_sena_actual'),
             ]);
             $historialSeguimiento->save();
         } else {
@@ -112,7 +115,7 @@ class RemisionController extends Controller
 
     }
 
-    public function update_remision_estado(Request $request, $id){
+/*     public function update_remision_estado(Request $request, $id){
         $remision = Remision::where('emprendedor_id', $id)->first(); // Obtener la primera remisión que cumple con el criterio
         if ($remision) {
 
@@ -132,5 +135,5 @@ class RemisionController extends Controller
 
 		return redirect()->route('usuario.remitidos')->with('edit', 'ok');
 
-    }
+    } */
 }

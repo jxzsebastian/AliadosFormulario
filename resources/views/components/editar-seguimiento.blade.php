@@ -35,10 +35,12 @@ style="background: rgba(43, 43, 43, 0.601);">
                                     </span>
                                     Programa SENA
                                 </p>
-                                <input id="red_whatsapp" type="url" name="link_whatsapp"
-                                    class="h-10 border mt-1.5 rounded px-4 w-full  outline-none"
-                                    autocomplete="off" />
-
+                                <select name="programa_sena_actual" id="programa_sena_actual" class="block w-full rounded-md border-0 py-1 pl-1 mt-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    <option value="Tecnoparque"  id="Tecnoparque">Tecnoparque</option>
+                                    <option value="Emprendimiento" id="Emprendimiento">Emprendimiento</option>
+                                    <option value="HubInnovacion" id="HubInnovacion">Hub Innovacion</option>
+                                    <option value="Extensionismo" id="Extensionismo">Extensionismo</option>
+                                </select>
 
                             </div>
                             <div class="md:col-span-5">
@@ -70,6 +72,27 @@ style="background: rgba(43, 43, 43, 0.601);">
                                 </p>
                                 <textarea id="nota" name="notas" name="notas" rows="3" class="block w-full mt-1.5 rounded-md border-0 py-1 pl-1 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
                                 @error('notas')
+                                <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
+                                @enderror
+
+                            </div>
+
+                            <div class="md:col-span-5">
+                                <p class="flex items-center gap-x-2">
+                                    <span class=" items-baseline">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                        </svg>
+
+                                    </span>
+                                    Estado
+                                </p>
+                                <select name="estado" id="estado" class="block w-full rounded-md border-0 py-1 pl-1 mt-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    <option id="Remitido">Remitido</option>
+                                    <option value="Finalizado">Finalizado</option>
+                                    <option value="Restablecido">Restablecido</option>
+                                </select>
+                                @error('seguimiento')
                                 <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                                 @enderror
 
@@ -109,18 +132,26 @@ function validateFm() {
             notas: {
                 required: true,
             },
+            estado: {
+                required: true,
+            },
+            programa_sena_actual: {
+                required: true,
+            },
         },
         messages: {
-           /*  link_facebook: {
-                required: "El campo es Requerido y no puede estar Vacio.",
-                url: "El campo debe ser un a URL valida.",
-            }, */
             seguimiento: {
                 required: "El campo es Requerido y no puede estar Vacio.",
             },
             notas: {
                 required: "El campo es Requerido y no puede estar Vacio.",
             },
+            estado: {
+                required: "El campo es Requerido y no puede estar Vacio.",
+            },
+            programa_sena_actual: {
+                required: "El campo es Requerido y no puede estar Vacio.",
+            }
 
         },
         errorClass: "error text-red-500 text-sm italic mt-2",
@@ -149,6 +180,7 @@ const openModal = (datos) => {
     modal.classList.add('fadeIn');
     modal.style.display = 'flex';
     const historialSeguimiento = datos.remisiones[0].historial_seguimiento;
+    console.log(datos)
 
 
     const inputNota = document.getElementById('nota');
@@ -156,8 +188,67 @@ const openModal = (datos) => {
     const inputSeguimiento = document.getElementById('seguimiento');
     inputSeguimiento.value = datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].seguimiento
 
+    const selectTecnoparque = document.getElementById('Tecnoparque');
+    const selectHubInnovacion = document.getElementById('HubInnovacion');
+    const selectEmprendimiento = document.getElementById('Emprendimiento');
+    const selectExtensionismo = document.getElementById('Extensionismo');
+
+    switch (true) {
+        case datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].programa_sena_actual == "Tecnoparque":
+            selectTecnoparque.selected = true;
+            break;
+        case datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].programa_sena_actual == "HubInnovacion":
+            selectHubInnovacion.selected = true;
+            break;
+        case datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].programa_sena_actual == "Emprendimiento":
+            selectEmprendimiento.selected = true;
+            break;
+        case datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].programa_sena_actual == "Extensionismo":
+            selectExtensionismo.selected = true;
+            break;
+        default:
+            break;
+    }
+
+  /*   const selectEstado = document.getElementById('estado_actual');
+
+    selectEstado.value = datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].estado
+    selectEstado.textContent = datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].estado
+ */
+
     formEdit.action = "{{ route('remision.update', ':id') }}".replace(':id', datos.id);
 }
+
+$(document).ready(function () {
+        $('#estado_actual, #programa_sena_actual').change(function () {
+            var selectedEstado = $('#estado_actual').val();
+            var selectedPrograma = $('#programa_sena_actual').val();
+
+            $('option[data-estado]').each(function () {
+                var opcion = $(this);
+                var estado = opcion.data('estado');
+                if (estado === selectedEstado) {
+                    opcion.hide();
+                } else {
+                    opcion.show();
+                }
+            });
+
+            $('option[data-programa]').each(function () {
+                var opcion = $(this);
+                var programa = opcion.data('programa');
+                if (programa === selectedPrograma) {
+                    opcion.hide();
+                } else {
+                    opcion.show();
+                }
+            });
+        });
+
+        // Llama a la función al cargar la página para manejar el estado inicial
+        $('#estado_actual, #programa_sena_actual').trigger('change');
+    });
+
 
 for (let i = 0; i < closeButton.length; i++) {
 

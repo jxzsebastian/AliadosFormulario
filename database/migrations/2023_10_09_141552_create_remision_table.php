@@ -16,8 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('emprendedor_id');
             $table->foreign('emprendedor_id')->references('id')->on('emprendedor');
-            $table->string('estrategia_llegada')->nullable();
-            $table->string('contacto_recepcion')->nullable();
+            $table->string('estrategia_llegada');
+            $table->string('contacto_recepcion');
         });
     }
 

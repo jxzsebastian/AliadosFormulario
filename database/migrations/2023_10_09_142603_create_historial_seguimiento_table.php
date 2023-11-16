@@ -17,9 +17,10 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('remision_id');
             $table->foreign('remision_id')->references('id')->on('remisiones');
-            $table->longText('notas')->nullable();
-            $table->longText('seguimiento')->nullable();
-            $table->string('estado')->nullable()->default('Remitido');
+            $table->longText('notas');
+            $table->longText('seguimiento');
+            $table->longText('programa_sena_actual');
+            $table->string('estado')->default('Remitido');
             $table->timestamps();
 
         });

@@ -16,6 +16,6 @@ class NotificationController extends Controller
             return $query->where('id', $notification_id);
         })->markAsRead();
 
-        return redirect()->route('usuario.remitidos');
+        return redirect()->route('listado');
     }
 }

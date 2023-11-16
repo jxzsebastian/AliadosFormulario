@@ -56,6 +56,10 @@
                     </a>
                 </li>
             </ul>
+            @foreach ($emprendedor->remisiones as $remision)
+            @endforeach
+
+
             <form action="{{route('usuario.remitir')}}" method="POST">
                 <input type="hidden" value="{{ $emprendedor->id}}" name="emprendedor_id">
                 @csrf
@@ -64,9 +68,13 @@
                         <label for="estrategia_llegada" class="block text-sm font-medium leading-6 text-gray-900">Estrategia de
                             Llegada</label>
                         <div class="mt-2">
-                            <input id="estrategia_llegada" name="estrategia_llegada" type="text" autocomplete="estrategia_llegada"
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6">
-                            @error('estrategia_llegada')
+                                <select name="estrategia_llegada" id="estrategia_llegada" class="py-1.5 block w-full rounded-md border-0 py-1 pl-1 mt-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    <option value="Tecnoparque"  id="Tecnoparque" @if ($emprendedor->programa_sena_ingreso == "Tecnoparque") selected @endif>Tecnoparque</option>
+                                    <option value="Emprendimiento" id="Emprendimiento" @if ($emprendedor->programa_sena_ingreso == "Emprendimiento") selected @endif>Emprendimiento</option>
+                                    <option value="HubInnovacion" id="HubInnovacion" @if ($emprendedor->programa_sena_ingreso == "HubInnovacion") selected @endif>Hub Innovacion</option>
+                                    <option value="Extensionismo" id="Extensionismo" @if ($emprendedor->programa_sena_ingreso == "Extensionismo") selected @endif>Extensionismo</option>
+                                </select>
+                                @error('estrategia_llegada')
                                 <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
                             @enderror
                             </div>
