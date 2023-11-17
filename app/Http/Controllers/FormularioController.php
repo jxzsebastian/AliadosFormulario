@@ -16,12 +16,9 @@ class FormularioController extends Controller
 
     public function index(){
 
-    $formulario = Formulario::paginate();
-
+        $formulario = Formulario::paginate();
         return view('usuarios-caracterizacion.index', compact('formulario'));
     }
-
-
 
     public function mostrarEmprendedor($id)
     {
@@ -42,8 +39,7 @@ class FormularioController extends Controller
     }
 
     public function listado (){
-        $emprendedores = Emprendedor::where('estado', 'Caracterizacion')
-        ->get();
+        $emprendedores = Emprendedor::where('estado', 'Caracterizacion')->get();
 
         return view('usuarios-caracterizacion/listado', compact('emprendedores'));
     }

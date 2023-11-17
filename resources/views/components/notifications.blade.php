@@ -49,11 +49,11 @@
                <div class="flex-1 pt-1 overflow-y-hidden hover:overflow-y-auto">
                    <!-- Action tab -->
                    @if (auth()->user()->unreadNotifications->count() > 0)
-                    <a href="{{route('marcar.notificaciones')}}" class=" focus:outline-none text-sm leading-none text-indigo-700 bg-red-600">
-                           <span class="hover:text-gray-600 my-3 mr-2 flex justify-end items-center">
+                    <a href="{{route('marcar.notificaciones')}}" class=" focus:outline-none text-sm leading-none text-blue-300  bg-red-600">
+                           <span class="hover:text-gray-600 dark:text-blue-300 my-3 mr-2 flex justify-end items-center">
                                Marcar todas como leidas
                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24"
-                                   style="fill: rgb(67, 56, 202);transform: ;msFilter:;">
+                                   style="fill: rgb(147, 197, 253);transform: ;msFilter:;">
                                    <path
                                        d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z">
                                    </path>
@@ -101,15 +101,15 @@
                                                    <h5 class="text-sm font-semibold text-gray-500 dark:text-light">
                                                        Nuevo Emprendedor Caracterizado y Asignado a su Unidad SENA
                                                    </h5>
-                                                   <p class="text-sm font-normal text-gray-500 truncate dark:text-blue-400">
+                                                   <p class="text-sm font-normal text-gray-500 truncate dark:text-gray-50">
                                                        Nombre de Emprendedor: <strong>
                                                            {{ $notification->data['nombre_emprendedor'] }}</strong>
                                                    </p>
-                                                   <p class="text-sm font-normal text-gray-500 truncate dark:text-blue-500">
+                                                   <p class="text-sm font-normal text-gray-500 truncate dark:text-gray-50">
                                                        Programa SENA Ingreado:
                                                        <strong>{{ $notification->data['programa_sena_ingreso'] }}</strong>
                                                    </p>
-                                                   <span class="text-sm font-normal text-gray-500 dark:text-blue-500">
+                                                   <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
                                                        {{ $notification->created_at->diffForHumans() }} </span>
                                                @break
 

@@ -26,29 +26,37 @@ class RemisionController extends Controller
         $estado = $request->input('estado', 'Todos');
         $filtro = $request->input('filtro');
 
-        $query = Emprendedor::query();
+        $emprendedores = Emprendedor::get();
+        $emprendedoresFiltrados = collect(); // Crear una nueva colección
 
-        if($estado === 'Remitido') {
-            $query->where('estado', 'Remitido');
-        }elseif ($estado === 'Finalizado') {
-            $query->where('estado', 'Finalizado');
+        if ($estado != 'Todos') {
+
+            foreach ($emprendedores as $emprendedor) {
+                $remisiones = $emprendedor->remisiones()->with('historialSeguimiento')->first();
+
+                $historialSeguimiento = $remisiones->historialSeguimiento->last();
+
+                if ($historialSeguimiento->estado == $estado) {
+                    $emprendedoresFiltrados->add($emprendedor);
+                }
+            }
         }else{
-            $query->whereNotIn('estado', ['Caracterizacion']);
+            $emprendedoresFiltrados = Emprendedor::with(['remisiones.historialSeguimiento.usuario'])->get();
         }
 
+        // Filtrar por nombre o identificación si hay un filtro
         if ($filtro) {
-            $query->where(function($subquery) use ($filtro) {
-                $subquery->where('nombre_emprendedor', 'like', '%' . $filtro . '%')
-                        ->orWhere('identificacion_emprendedor', 'like', '%' . $filtro . '%');
+            $emprendedoresFiltrados = $emprendedoresFiltrados->filter(function ($emprendedor) use ($filtro) {
+                return stripos($emprendedor->nombre_emprendedor, $filtro) !== false ||
+                       stripos($emprendedor->identificacion_emprendedor, $filtro) !== false;
             });
         }
-
-        $emprendedores = $query->with(['ideas', 'remisiones.historialSeguimiento.usuario'])->paginate(5 );
+        // Paginar los resultados
+        $emprendedores = $emprendedoresFiltrados;
 
         return view('usuarios-remision/remitidos', compact('emprendedores'));
 
     }
-
 
     public function remitir_usuario(Request $request){
 

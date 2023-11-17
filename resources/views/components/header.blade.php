@@ -101,7 +101,7 @@
                             tabindex="-1" role="menu" aria-orientation="vertical" aria-label="User menu">
 
                             <p role="menuitem"
-                                class="block px-4 py-2 text-sm text-gray-700 transition-colors  dark:text-light border border-b-gray-300">
+                                class="block px-4 py-2 text-sm text-gray-700 transition-colors  dark:text-light border-b dark:border-b-black border-b-gray-300">
                                 Bienvenido, {{Auth::user()->name}}
                             </p>
 

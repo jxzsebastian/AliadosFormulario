@@ -24,7 +24,7 @@
                         <div>
 
                             <div class="relative mt-6">
-                            <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">{{ __('Email Address') }}</label>
+                            <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Correo Electronico</label>
                             <input id="email" placeholder="Correo Electronico" type="email" class="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
@@ -39,7 +39,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
+
                             </div>
+
                         </div>
                         <p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
                             <a href="{{ route('login.index') }}" class="text-indigo-500 hover:text-indigo-500no-underline hover:underline cursor-pointer transition ease-in duration-300">Regresar</a>

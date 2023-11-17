@@ -89,8 +89,8 @@ style="background: rgba(43, 43, 43, 0.601);">
                                 </p>
                                 <select name="estado" id="estado" class="block w-full rounded-md border-0 py-1 pl-1 mt-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     <option id="Remitido">Remitido</option>
-                                    <option value="Finalizado">Finalizado</option>
-                                    <option value="Restablecido">Restablecido</option>
+                                    <option id="Finalizado"  value="Finalizado">Finalizado</option>
+                                    <option id="Restablecido" value="Restablecido">Restablecido</option>
                                 </select>
                                 @error('seguimiento')
                                 <p class="text-red-500 text-sm italic mt-2">{{ $message }}</p>
@@ -193,6 +193,13 @@ const openModal = (datos) => {
     const selectEmprendimiento = document.getElementById('Emprendimiento');
     const selectExtensionismo = document.getElementById('Extensionismo');
 
+
+    const selectFinalizado = document.getElementById('Finalizado');
+    const selectRemitido = document.getElementById('Remitido');
+    const selectRestablecido = document.getElementById('Restablecido');
+
+
+
     switch (true) {
         case datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].programa_sena_actual == "Tecnoparque":
             selectTecnoparque.selected = true;
@@ -210,6 +217,21 @@ const openModal = (datos) => {
             break;
     }
 
+    switch (true) {
+        case datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].estado == "Remitido":
+        selectRemitido.selected = true;
+            break;
+        case datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].estado == "Finalizado":
+        selectFinalizado.selected = true;
+            break;
+        case datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].estado == "Restablecido":
+        selectRestablecido.selected = true;
+            break;
+
+        default:
+            break;
+    }
+
   /*   const selectEstado = document.getElementById('estado_actual');
 
     selectEstado.value = datos.remisiones[0].historial_seguimiento[historialSeguimiento.length - 1].estado
@@ -218,37 +240,6 @@ const openModal = (datos) => {
 
     formEdit.action = "{{ route('remision.update', ':id') }}".replace(':id', datos.id);
 }
-
-$(document).ready(function () {
-        $('#estado_actual, #programa_sena_actual').change(function () {
-            var selectedEstado = $('#estado_actual').val();
-            var selectedPrograma = $('#programa_sena_actual').val();
-
-            $('option[data-estado]').each(function () {
-                var opcion = $(this);
-                var estado = opcion.data('estado');
-                if (estado === selectedEstado) {
-                    opcion.hide();
-                } else {
-                    opcion.show();
-                }
-            });
-
-            $('option[data-programa]').each(function () {
-                var opcion = $(this);
-                var programa = opcion.data('programa');
-                if (programa === selectedPrograma) {
-                    opcion.hide();
-                } else {
-                    opcion.show();
-                }
-            });
-        });
-
-        // Llama a la función al cargar la página para manejar el estado inicial
-        $('#estado_actual, #programa_sena_actual').trigger('change');
-    });
-
 
 for (let i = 0; i < closeButton.length; i++) {
 

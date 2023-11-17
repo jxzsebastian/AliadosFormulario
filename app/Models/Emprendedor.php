@@ -30,6 +30,7 @@ class Emprendedor extends Model
         return $this->hasMany(Remision::class);
     }
 
+
     public function emprendedor_aprendiz(){
         return $this->hasMany(Emprendedor_AprendizEgresado::class);
     }
