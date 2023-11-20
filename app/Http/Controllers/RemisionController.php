@@ -21,43 +21,39 @@ class RemisionController extends Controller
     }
 
 
-    public function listado_remitidos(Request $request){
-
+    public function listado_remitidos(Request $request)
+    {
         $estado = $request->input('estado', 'Todos');
         $filtro = $request->input('filtro');
 
-        $emprendedores = Emprendedor::get();
-        $emprendedoresFiltrados = collect(); // Crear una nueva colección
+        // Cambios en la consulta para utilizar paginate
+        $query = Emprendedor::where('estado', '!=', 'Caracterizacion');
 
         if ($estado != 'Todos') {
-
-            foreach ($emprendedores as $emprendedor) {
-                $remisiones = $emprendedor->remisiones()->with('historialSeguimiento')->first();
-
-                $historialSeguimiento = $remisiones->historialSeguimiento->last();
-
-                if ($historialSeguimiento->estado == $estado) {
-                    $emprendedoresFiltrados->add($emprendedor);
-                }
-            }
-        }else{
-            $emprendedoresFiltrados = Emprendedor::with(['remisiones.historialSeguimiento.usuario'])->get();
+            $query->whereHas('remisiones.historialSeguimiento', function ($query) use ($estado) {
+                $query->where('estado', $estado);
+            });
+        } else {
+            $query->with(['remisiones.historialSeguimiento.usuario']);
         }
 
         // Filtrar por nombre o identificación si hay un filtro
         if ($filtro) {
-            $emprendedoresFiltrados = $emprendedoresFiltrados->filter(function ($emprendedor) use ($filtro) {
-                return stripos($emprendedor->nombre_emprendedor, $filtro) !== false ||
-                       stripos($emprendedor->identificacion_emprendedor, $filtro) !== false;
+            $query->where(function ($query) use ($filtro) {
+                $query->where('nombre_emprendedor', 'like', '%' . $filtro . '%')
+                    ->orWhere('identificacion_emprendedor', 'like', '%' . $filtro . '%');
             });
         }
-        // Paginar los resultados
-        $emprendedores = $emprendedoresFiltrados;
 
+        // Agregar ordenación por fecha de creación
+        $query->orderBy('updated_at', 'desc');
+
+        // Obtener los resultados paginados
+        $emprendedores = $query->paginate(12); // Puedes ajustar el número de elementos por página
+
+        // Devolver la vista con los datos paginados
         return view('usuarios-remision/remitidos', compact('emprendedores'));
-
     }
-
     public function remitir_usuario(Request $request){
 
 
@@ -97,7 +93,7 @@ class RemisionController extends Controller
 
         $emprendedores = Emprendedor::with(['remisiones.historialSeguimiento.usuario'])->where('estado', 'Remitido')->get();
 
-       return redirect()->route('usuario.remitidos')->with('edit', 'ok');
+       return redirect()->route('usuario.remitidos')->with('remitido', 'ok');
 
     }
 

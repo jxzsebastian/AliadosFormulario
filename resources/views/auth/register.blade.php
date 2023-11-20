@@ -92,7 +92,7 @@
                                 @if ($errors->has('password'))
                                 <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('password') }}</span>
                                 @endif
-                                <div class="flex items-center absolute inset-y-12 right-0 mr-3  text-sm leading-5" onclick="showPasword()">
+                                <div class="flex items-center absolute inset-y-12 right-0 mr-3  text-sm leading-5" onclick="showPassword('password')">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="cursor-pointer" onclick="" style="fill: rgb(110, 110, 110);transform: ;msFilter:;"><path d="M12 9a3.02 3.02 0 0 0-3 3c0 1.642 1.358 3 3 3 1.641 0 3-1.358 3-3 0-1.641-1.359-3-3-3z"></path><path d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316-.105-.316C21.927 11.617 19.633 5 12 5zm0 12c-5.351 0-7.424-3.846-7.926-5C4.578 10.842 6.652 7 12 7c5.351 0 7.424 3.846 7.926 5-.504 1.158-2.578 5-7.926 5z"></path></svg>
                                 </div>
                             </div>
@@ -100,11 +100,11 @@
                             <div class="relative mt-6">
                                 <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Confirmar Contraseña</label>
 
-                                <input type="password" placeholder="Confirmar Contraseña" name="password_confirmation" class="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white">
+                                <input id="password_confirmation" type="password" placeholder="Confirmar Contraseña" name="password_confirmation" class="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white">
                                 @if ($errors->has('password_confirmation'))
                                 <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{ $errors->first('password_confirmation') }}</span>
                                 @endif
-                                <div class="flex items-center absolute inset-y-12 right-0 mr-3  text-sm leading-5">
+                                <div class="flex items-center absolute inset-y-12 right-0 mr-3  text-sm leading-5" onclick="showPassword('password_confirmation')">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" class="cursor-pointer" onclick=""  style="fill: rgb(110, 110, 110);transform: ;msFilter:;"><path d="M12 9a3.02 3.02 0 0 0-3 3c0 1.642 1.358 3 3 3 1.641 0 3-1.358 3-3 0-1.641-1.359-3-3-3z"></path><path d="M12 5c-7.633 0-9.927 6.617-9.948 6.684L1.946 12l.105.316C2.073 12.383 4.367 19 12 19s9.927-6.617 9.948-6.684l.106-.316-.105-.316C21.927 11.617 19.633 5 12 5zm0 12c-5.351 0-7.424-3.846-7.926-5C4.578 10.842 6.652 7 12 7c5.351 0 7.424 3.846 7.926 5-.504 1.158-2.578 5-7.926 5z"></path></svg>
                                 </div>
                             </div>
@@ -152,13 +152,14 @@
     </div>
 
     <script>
-        function showPasword() {
-            var contraseñaInput = document.getElementById("password");
-            if (contraseñaInput.type === "password") {
-                contraseñaInput.type = "text";
-            } else {
-                contraseñaInput.type = "password";
-            }
+    function showPassword(clase) {
+        var passwordInput = document.getElementById(clase)
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
         }
+    }
     </script>
 @endsection

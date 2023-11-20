@@ -8,12 +8,23 @@
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+  {{-- Styles --}}
   <link href="{{ asset('css/wizard.css') }}" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
-
   <link href="{{ asset('css/style.css') }}" rel="stylesheet" id="bootstrap-css">
   <link href="{{ asset('css/modal.css') }}" rel="stylesheet" id="bootstrap-css">
   <link href="{{ asset('css/datatables-style.css') }}" rel="stylesheet" id="bootstrap-css">
+
+    {{-- Scripts --}}
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.6.x/dist/component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <script src="{{ asset('js/modal.js') }}"></script>
+  <script src="{{ asset('js/show-password.js') }}"></script>
 
   <livewire:styles>
 
@@ -75,13 +86,6 @@
         </div>
       </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.6.x/dist/component.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-    <script src="{{ asset('js/modal.js') }}"></script>
-    <script src="{{ asset('js/show-password.js') }}"></script>
 
 
 </body>

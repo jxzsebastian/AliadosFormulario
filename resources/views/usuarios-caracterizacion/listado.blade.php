@@ -52,8 +52,9 @@
                             <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                                 @foreach ($emprendedores as $emprendedor)
                                     <tr>
-                                        <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                            {{ $emprendedor->created_at/* ->isoFormat('MMMM Do YYYY, h:mm:ss a') */ }}</td>
+                                        <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap font-semibold">
+                                            {{ \Carbon\Carbon::parse($emprendedor->created_at)->isoFormat('MMMM Do YYYY, h:mm a') }}
+                                        </td>
                                         <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                                             <div class="flex items-center gap-x-2">
                                                 <div>
@@ -142,6 +143,5 @@
                     },
                 });
             });
-
         </script>
     @endsection

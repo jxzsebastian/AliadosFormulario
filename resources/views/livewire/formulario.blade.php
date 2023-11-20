@@ -612,7 +612,7 @@
                     </h2>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
-                            <input id="empresa_innovacion_desarrollo_producto_si" value="si"
+                            <input id="empresa_innovacion_desarrollo_producto_si" value="Si"
                                 wire:model.defer="empresa_innovacion_desarrollo_producto" type="radio"
                                 name="empresa_innovacion_desarrollo_producto"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
@@ -620,7 +620,7 @@
                                 class="block text-sm font-medium leading-6 ">Si</label>
                         </div>
                         <div class="flex items-center gap-x-3">
-                            <input id="empresa_innovacion_desarrollo_producto_no" value="no"
+                            <input id="empresa_innovacion_desarrollo_producto_no" value="No"
                                 wire:model.defer="empresa_innovacion_desarrollo_producto" type="radio"
                                 name="empresa_innovacion_desarrollo_producto"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
@@ -643,7 +643,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="empresa_proyecto_desarrollo_avances_requiere_prototipos_si"
                                 wire:model.defer="empresa_proyecto_desarrollo_avances_requiere_prototipos"
-                                value="si" type="radio"
+                                value="Si" type="radio"
                                 name="empresa_proyecto_desarrollo_avances_requiere_prototipos"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="empresa_proyecto_desarrollo_avances_requiere_prototipos_si"
@@ -652,7 +652,7 @@
                         <div class="flex items-center gap-x-3">
                             <input id="empresa_proyecto_desarrollo_avances_requiere_prototipos_no"
                                 wire:model.defer="empresa_proyecto_desarrollo_avances_requiere_prototipos"
-                                value="no" type="radio"
+                                value="No" type="radio"
                                 name="empresa_proyecto_desarrollo_avances_requiere_prototipos"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="empresa_proyecto_desarrollo_avances_requiere_prototipos_no"
@@ -2374,14 +2374,14 @@
                         SENNOVA </h2>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
-                            <input id="sennova_si" value="si" wire:model.defer="parte_sennova"
+                            <input id="sennova_si" value="Si" wire:model.defer="parte_sennova"
                                 name="parte_sennova" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="sennova_si"
                                 class="block text-sm font-medium leading-6 ">Si</label>
                         </div>
                         <div class="flex items-center gap-x-3">
-                            <input id="sennova_no" value="no" wire:model.defer="parte_sennova"
+                            <input id="sennova_no" value="No" wire:model.defer="parte_sennova"
                                 name="parte_sennova" type="radio"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
                             <label for="sennova_no"
@@ -2459,7 +2459,7 @@
                         Investigación </h2>
                     <div class="mt-6 space-y-6">
                         <div class="flex items-center gap-x-3">
-                            <input id="semillero_senova_si" value="si"
+                            <input id="semillero_senova_si" value="Si"
                                 wire:model.defer="sennova_semillero_investigacion" type="radio"
                                 name="sennova_semillero_investigacion"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
@@ -2467,7 +2467,7 @@
                                 class="block text-sm font-medium leading-6 ">Si</label>
                         </div>
                         <div class="flex items-center gap-x-3">
-                            <input id="semillero_sennova_no" value="no"
+                            <input id="semillero_sennova_no" value="No"
                                 wire:model.defer="sennova_semillero_investigacion" type="radio"
                                 name="sennova_semillero_investigacion"
                                 class="h-4 w-4 border-gray-300 text-indigo-600 ">
