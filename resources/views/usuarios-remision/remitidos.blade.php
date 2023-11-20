@@ -2,9 +2,8 @@
 @section('title', 'Home Page')
 
 @section('content')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/simplePagination.min.css">
+<script src="{{ asset('js/pagination.js') }}"></script>
+
 <style type="text/css">
 
     #pagination {
@@ -72,12 +71,12 @@
                             </button>
                         </form>
                     </div>
-                    <div class="flex flex-col mt-6" x-data="{ openRows: [] }">
+
+                    <div id="demo" class="flex flex-col mt-6" x-data="{ openRows: [] }">
                         <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div class=" inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                                 <div class="max-h-full	border-gray-300 dark:border-gray-700 md:rounded-lg">
-                                    <table
-                                        class="border border-gray-300 dark:border-gray-700 rounded-lg min-w-full max-w-full divide-y divide-gray-300 dark:divide-gray-700">
+                                    <table  id="data-container" class=" listitems border border-gray-300 dark:border-gray-700 rounded-lg min-w-full max-w-full divide-y divide-gray-300 dark:divide-gray-700">
                                         <thead class="bg-gray-50 dark:bg-gray-800">
                                             <tr>
                                                 <th scope="col"
@@ -114,9 +113,9 @@
                                                 @foreach ($remision->historialSeguimiento as $estado )
                                                 @endforeach
 
-                                                <div>
+                                                <div >
                                                     <tr>
-                                                        <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
+                                                        <td class="px-4 py-4 text-sm font-medium whitespace-nowrap" >
                                                             <a href="{{route('lista.show', $emprendedor->id)}}">
                                                                 <h2 class="font-medium text-gray-800 dark:text-white ">
                                                                     {{ $emprendedor->nombre_emprendedor }}</h2>
@@ -261,11 +260,11 @@
                                                                     x-transition:leave="transition ease-in duration-75"
                                                                     x-transition:leave-start="transform opacity-100 scale-100"
                                                                     x-transition:leave-end="transform opacity-0 scale-95"
-                                                                    class="z-50 origin-bottom-right absolute right-0  mt-3  w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                                                    class="z-50 origin-bottom-right absolute right-0  mt-3  w-40 rounded-md shadow-lg bg-white dark:bg-slate-900 dark:text-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                                                                     role="menu" aria-orientation="vertical"
                                                                     aria-labelledby="menu-0-button" tabindex="-1">
                                                                     <div class="py-1" role="none">
-                                                                        <a href="{{route('lista.show', $emprendedor->id)}}" class="hover:bg-gray-100 cursor-pointer text-gray-700 block px-4 py-2 text-sm"
+                                                                        <a href="{{route('lista.show', $emprendedor->id)}}" class="hover:bg-gray-100 dark:hover:bg-slate-800 cursor-pointer dark:text-white text-gray-700 block px-4 py-2 text-sm"
                                                                             role="menuitem" tabindex="-1"
                                                                             id="menu-0-item-0">
                                                                             Ver Información</a>
@@ -273,7 +272,7 @@
                                                                     <div class="py-1" role="none">
                                                                         <a type="button"
                                                                             onclick="openModal({{ json_encode($emprendedor) }})"
-                                                                            class="hover:bg-gray-100 cursor-pointer text-gray-700 block px-4 py-2 text-sm"
+                                                                            class="hover:bg-gray-100 dark:hover:bg-slate-800 cursor-pointer text-gray-700 dark:text-white block px-4 py-2 text-sm"
                                                                             role="menuitem" tabindex="-1"
                                                                             id="menu-0-item-0">
                                                                             Editar
@@ -283,15 +282,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    <tr x-show="openRows[{{ $loop->index }}]"
-                                                        x-transition:enter="transition ease-out duration-200"
-                                                        x-transition:enter-start="opacity-0 "
-                                                        x-transition:enter-end="opacity-100"
-                                                        x-transition:leave="transition ease-in duration-150"
-                                                        x-transition:leave-start="opacity-100"
-                                                        x-transition:leave-end="opacity-0" x-cloak
-                                                        @keydown.escape="openRows[{{ $loop->index }}] = false"
-                                                        role="list">
+                                                    <tr x-show="openRows[{{ $loop->index }}]" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 " x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-cloak @keydown.escape="openRows[{{ $loop->index }}] = false" role="list">
                                                         <td colspan="5" class="max-w-xl">
                                                             <h4 class="sr-only">Items</h4>
                                                             <div class="flow-root">
@@ -491,8 +482,9 @@
                             </div>
                         </div>
                         {{-- {{ $emprendedores->links() }} --}}
-
                     </div>
+
+                    <div id="paging-container"></div>
                 </div>
 
 
@@ -522,5 +514,7 @@
         </script>
 
     </main>
+    <script>
 
+    </script>
 @endsection

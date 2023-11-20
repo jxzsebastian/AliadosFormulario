@@ -4,29 +4,29 @@
 
 @section('content')
 
-    <div class="max-w-full mx-auto  bg-white w-10/12  rounded-lg shadow-xl">
+    <div class="max-w-full mx-auto dark:bg-slate-800 bg-white w-10/12  rounded-lg shadow-xl">
         <div class="p-4 border-b">
             <h2 class="text-2xl ">
                 Informacion sobre:
             </h2>
         </div>
 
-        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-            <p class="text-gray-600 font-medium">
+        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 dark:text-gray-300 font-medium">
                 Ocupacion
             </p>
             <p> {{ $emprendedor->ocupacion_emprendedor }}</p>
         </div>
 
-        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-            <p class="text-gray-600 font-medium">
+        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 dark:text-gray-300 font-medium">
                 Educación
             </p>
             <p> {{ $emprendedor->niveles_educacion_emprendedor }}</p>
         </div>
 
-        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-            <p class="text-gray-600 font-medium">
+        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 dark:text-gray-300 font-medium">
                 Informacion Ocupacion
             </p>
             @foreach ($emprendedor->emprendedor_aprendiz as $aprendiz_egresado)
@@ -123,8 +123,8 @@
         </div>
 
         @if ($emprendedor->tipo_usuario)
-        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-            <p class="text-gray-600 font-medium">
+        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 dark:text-gray-300 font-medium">
                 Tipo de Usuario
             </p>
             <strong> {{ $emprendedor->tipo_usuario }}</strong>
@@ -133,8 +133,8 @@
 
 
         @if ($emprendedor->necesidad_asesoria_sena)
-        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-            <p class="text-gray-600 font-medium">
+        <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 dark:text-gray-300 font-medium">
                Asesoria Necesitada:
             </p>
             <p> {{ $emprendedor->necesidad_asesoria_sena }}</p>
@@ -143,8 +143,8 @@
 
         <div>
             @if ($emprendedor->ideas->isNotEmpty())
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-                    <p class="text-gray-600 font-medium">
+                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+                    <p class="text-gray-600 dark:text-gray-300 font-medium">
                         Detalles de La idea Registrada
                     </p>
 
@@ -172,8 +172,8 @@
 
                 </div>
             @else
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-                    <strong class="text-gray-600 font-medium">
+                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+                    <strong class="text-gray-600 dark:text-gray-300 font-medium">
                         Nombre de La idea Registrada
                     </strong>
                     <p>
@@ -185,8 +185,8 @@
 
             @if ($emprendedor->emprendedor_nivel_idea->isNotEmpty())
 
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-                    <p class="text-gray-600 font-medium">
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+                    <p class="text-gray-600 dark:text-gray-300 font-medium">
                         Nivel de la Idea del Emprendedor
                     </p>
                 @foreach ($emprendedor->emprendedor_nivel_idea as $nivel_idea)
@@ -197,9 +197,9 @@
 
                 </div>
             @else
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
+                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
 
-                    <p class="text-gray-600">
+                    <p class="text-gray-600 dark:text-gray-300">
                         Nivel de la Idea
                     </p>
                     <p>No se ha proporcionado información sobre el Nivel de Idea del Emprendedor.</p>
@@ -209,8 +209,8 @@
 
 
             @if ($emprendedor->empresas->isNotEmpty())
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-                    <p class="text-gray-600 font-medium">
+                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+                    <p class="text-gray-600 dark:text-gray-300 font-medium">
                         Detalles de la Empresa
                     </p>
                     @foreach ($emprendedor->empresas as $empresa)
@@ -232,8 +232,8 @@
                     @endforeach
                 </div>
             @else
-                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-                    <p class="text-gray-600 font-medium">
+                <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+                    <p class="text-gray-600 dark:text-gray-300 font-medium">
                         Detalles de la Empresa
                     </p>
                     <p>
@@ -242,8 +242,8 @@
                 </div>
             @endif
 
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-                <p class="text-gray-600 font-medium">
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+                <p class="text-gray-600 dark:text-gray-300 font-medium">
                     Servicio del SENA ingresado:
                 </p>
                 <p>
@@ -251,8 +251,8 @@
                 </p>
             </div>
 
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-100 md:space-y-0 space-y-1 p-4 border-b">
-                <p class="text-gray-600 font-medium">
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-100 dark:hover:bg-gray-700 md:space-y-0 space-y-1 p-4 border-b">
+                <p class="text-gray-600 dark:text-gray-300 font-medium">
                     Servicios accedidos en: <strong>{{ $emprendedor->programa_sena_ingreso }}</strong>
                 </p>
 

@@ -132,7 +132,7 @@
                 x-transition:leave-start="translate-y-0 opacity-100"
                 x-transition:leave-end="-translate-y-full opacity-0" x-show="isMobileSubMenuOpen"
                 @click.away="isMobileSubMenuOpen = false"
-                class="absolute z-50 flex items-center p-4 bg-white rounded-md shadow-lg dark:bg-darker top-16 inset-x-4 md:hidden"
+                class="absolute z-10 flex items-center p-4 bg-white rounded-md shadow-lg dark:bg-darker top-16 inset-x-4 md:hidden"
                 aria-label="Secondary">
                 <div class="space-x-2   ">
                     <!-- Toggle dark theme button -->
