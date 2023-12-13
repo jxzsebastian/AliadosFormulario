@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home Page')
+@section('title', 'Reinicio de Contraseña')
 
 @section('content')
 <div class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">

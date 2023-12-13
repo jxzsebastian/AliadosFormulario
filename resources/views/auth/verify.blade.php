@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Home Page')
+@section('title', 'Verificación')
 
 @section('content')
     <div class="container">

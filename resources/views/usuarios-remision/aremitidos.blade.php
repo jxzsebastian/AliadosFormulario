@@ -1,5 +1,5 @@
 @extends('layouts.sidebar')
-@section('title', 'Home Page')
+@section('title', 'Usuarios Remitidos')
 
 @section('content')
     <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
