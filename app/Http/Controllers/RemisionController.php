@@ -37,7 +37,7 @@ class RemisionController extends Controller
             $query->with(['remisiones.historialSeguimiento.usuario']);
         }
 
-        // Filtrar por nombre o identificación si hay un filtro
+        // Filtrar por nombre o identificación si le dio al boton de filtro o filtro manualmente
         if ($filtro) {
             $query->where(function ($query) use ($filtro) {
                 $query->where('nombre_emprendedor', 'like', '%' . $filtro . '%')
@@ -45,13 +45,10 @@ class RemisionController extends Controller
             });
         }
 
-        // Agregar ordenación por fecha de creación
-        $query->orderBy('updated_at', 'desc');
-
         // Obtener los resultados paginados
-        $emprendedores = $query->paginate(12); // Puedes ajustar el número de elementos por página
+        $query->orderBy('updated_at', 'desc');
+        $emprendedores = $query->paginate(4); // Paginación
 
-        // Devolver la vista con los datos paginados
         return view('usuarios-remision/remitidos', compact('emprendedores'));
     }
     public function remitir_usuario(Request $request){
